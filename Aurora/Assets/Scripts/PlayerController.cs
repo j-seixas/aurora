@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    private Vector3 movement;
-    private CharacterController controller;
+    private Rigidbody rb;
+    private float speed = 7.0f;
+
     void Start() {
-        this.controller = GetComponent<CharacterController>();
+        this.rb = GetComponent<Rigidbody>();
     }
 
-    void Update() {
-        this.movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        this.movement = transform.TransformDirection(this.movement) * 5.0f;
-        this.controller.Move(this.movement * Time.deltaTime);
+    void FixedUpdate() {
+        if (Input.GetKey(KeyCode.W)) {
+            this.rb.MovePosition(transform.position + transform.forward * Time.deltaTime * this.speed);  
+        }
+        if (Input.GetKey(KeyCode.S)) {
+            this.rb.MovePosition(transform.position - transform.forward * Time.deltaTime * this.speed);  
+        }
+
+        //this.rb.MovePosition(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * Time.deltaTime);
     }
 }
