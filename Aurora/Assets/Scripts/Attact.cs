@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attact : MonoBehaviour
-{
-    public int AttackDamage;
+public class Attact : MonoBehaviour {
     public Animator animator;
+    public GameObject weapon;
 
     // Start is called before the first frame update
     void Start() {
@@ -19,4 +18,13 @@ public class Attact : MonoBehaviour
             this.animator.Play("Attack");
         }
     }
+
+    void ActivateCollider() {
+        this.weapon.GetComponent<Collider>().enabled = true;
+    }
+
+    void DeactivateCollider() {
+        this.weapon.GetComponent<Collider>().enabled = false;
+    }
+
 }

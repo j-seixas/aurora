@@ -468,8 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6b015046c8ba14082173134270337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 5
   animator: {fileID: 0}
+  weapon: {fileID: 1610862471}
 --- !u!95 &258815133
 Animator:
   serializedVersion: 3
@@ -1502,6 +1502,7 @@ GameObject:
   - component: {fileID: 1610862477}
   - component: {fileID: 1610862476}
   - component: {fileID: 1610862473}
+  - component: {fileID: 1610862474}
   m_Layer: 0
   m_Name: Player Weapon
   m_TagString: Untagged
@@ -1536,6 +1537,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1610862474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610862471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a4c37f6b0f5cc4596572fbfe266a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackDamage: 0
 --- !u!23 &1610862476
 MeshRenderer:
   m_ObjectHideFlags: 0
