@@ -468,6 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6b015046c8ba14082173134270337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackDamage: 5
+  animator: {fileID: 0}
 --- !u!95 &258815133
 Animator:
   serializedVersion: 3
