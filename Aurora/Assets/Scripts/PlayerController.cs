@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate() {
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        this.rb.MovePosition(transform.position + direction * Time.deltaTime * this.speed);
+        this.rb.MovePosition(transform.position + direction.normalized * Time.deltaTime * this.speed);
         
         if (direction != Vector3.zero)
             this.rb.MoveRotation(Quaternion.LookRotation(direction));
