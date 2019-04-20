@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileSpawnerController : ObstacleController {
+    public float spawnRate = 5.0f, firingAngle = 65.0f, gravity = 40.0f;
+    public GameObject projectile, bullseye;
     private GameObject player;
-    private float firingAngle = 60.0f, gravity = 80.0f;
-    public GameObject projectile;
-    public float spawnRate = 2.0f;
     void Start() {
         this.player = GameObject.FindWithTag("Player");
         InvokeRepeating("ProjectileSpawner", 0.0f, spawnRate);
@@ -22,8 +21,10 @@ public class ProjectileSpawnerController : ObstacleController {
     IEnumerator LaunchProjectile() {
         yield return new WaitForSeconds(0f);
 
-        GameObject proj = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
+        // Instantiate projectile and bullseye objects.
         Vector3 target = player.transform.position;
+        GameObject proj = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
+        GameObject bull = Instantiate(bullseye, target - new Vector3(0.0f, 0.99f, 0.0f), Quaternion.identity);
         
         // Calculate distance to target.
         float distance = Vector3.Distance(proj.transform.position, target);
@@ -46,6 +47,7 @@ public class ProjectileSpawnerController : ObstacleController {
             yield return null;
         }
 
+        Destroy(bull, 0.0f);
         Destroy(proj, 1.0f);
     }
 }
