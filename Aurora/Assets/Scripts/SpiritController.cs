@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpiritController : MonoBehaviour {
     private Rigidbody rb;
@@ -19,7 +20,12 @@ public class SpiritController : MonoBehaviour {
             rb.AddForce(10f * magnetField * multiplier);
 
             if (multiplier >= 0.85) {
-                print("Spirit get!"); Destroy(gameObject);
+                int spiritCount;
+                Text spiritCountLabel = GameObject.Find("SpiritCount").GetComponent<Text>();
+                int.TryParse(spiritCountLabel.text, out spiritCount);
+                spiritCountLabel.text = (spiritCount + 1).ToString();
+
+                Destroy(gameObject);
             }
         }
     }
