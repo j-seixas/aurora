@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
     public GameObject target;
+    public float sensitivity = 2f;
 
     private Vector3 offset;
     private float pitch = 0f;   //up/down
     private float yaw = 0f;     //left/right
     private float minPitch = -40f, maxPitch = 60f;
-    private float sensitivity = 2f;
 
     void Start() {
         this.offset = target.transform.position - transform.position;
