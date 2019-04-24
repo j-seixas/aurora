@@ -4,22 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SpiritController : MonoBehaviour {
-    private Rigidbody rb;
+    private Transform player;
     void Start() {
-        this.rb = GetComponent<Rigidbody>();
-    }
-
-    void OnTriggerExit(Collider other) {
-        if (other.tag == "Player") rb.velocity = rb.angularVelocity = Vector3.zero;
+        this.player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void OnTriggerStay(Collider other) {
         if (other.tag == "Player") {
-            Vector3 magnetField = other.transform.position - transform.position;
-            float multiplier = (10f - magnetField.magnitude) / 10f;
-            rb.AddForce(10f * magnetField * multiplier);
-
-            if (multiplier >= 0.85) {
+            float distance = Vector3.Distance(transform.position, other.transform.position);
+            
+            // Collect spirit.
+            if (distance >= 0.0f && distance < 0.50f) {
                 int spiritCount;
                 Text spiritCountLabel = GameObject.Find("SpiritCount").GetComponent<Text>();
                 int.TryParse(spiritCountLabel.text, out spiritCount);
@@ -27,6 +22,7 @@ public class SpiritController : MonoBehaviour {
 
                 Destroy(gameObject);
             }
+            transform.position = Vector3.MoveTowards(transform.position, other.transform.position, Time.deltaTime * 50.0f * 1/distance);
         }
     }
 }

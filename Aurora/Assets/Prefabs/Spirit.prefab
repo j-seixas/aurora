@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4396998462939485368}
   - component: {fileID: 4396998462939485371}
   m_Layer: 0
-  m_Name: Spirit (2)
+  m_Name: Spirit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,5 +119,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
