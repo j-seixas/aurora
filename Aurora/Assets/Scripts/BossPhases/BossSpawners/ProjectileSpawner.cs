@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSpawnerController : ObstacleController {
+public class ProjectileSpawner : MonoBehaviour {
     public float spawnRate = 5.0f, firingAngle = 65.0f, gravity = 40.0f;
     public GameObject projectile, bullseye;
     private GameObject player;
     void Start() {
         this.player = GameObject.FindWithTag("Player");
-        InvokeRepeating("ProjectileSpawner", 0.0f, spawnRate);
+        InvokeRepeating("Spawner", 0.0f, spawnRate);
     }
 
     void Update() {   
     }
 
-    void ProjectileSpawner() {
+    void Spawner() {
         StartCoroutine("LaunchProjectile");
     }
 

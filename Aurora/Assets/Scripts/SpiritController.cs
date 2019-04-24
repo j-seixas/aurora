@@ -22,7 +22,7 @@ public class SpiritController : MonoBehaviour {
 
                 Destroy(gameObject);
             }
-            transform.position = Vector3.MoveTowards(transform.position, other.transform.position, Time.deltaTime * 50.0f * 1/distance);
+            transform.position = Vector3.MoveTowards(transform.position, other.transform.position, Time.deltaTime * 100.0f * 0.6f/distance);
         }
     }
 }
