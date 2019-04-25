@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attact : MonoBehaviour {
+public class Attack : MonoBehaviour {
     public Animator animator;
     public GameObject weapon;
 
@@ -16,7 +16,7 @@ public class Attact : MonoBehaviour {
         if (Input.GetButtonDown("Fire3")) {
             print("Fire");
             this.animator.Play("Attack");
-        }
+        } 
     }
 
     void ActivateCollider() {
