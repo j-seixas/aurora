@@ -35,3 +35,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Configs
+Aurora/ProjectSettings/InputManager.asset

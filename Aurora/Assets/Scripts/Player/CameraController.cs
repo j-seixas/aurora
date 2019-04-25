@@ -19,9 +19,20 @@ public class CameraController : MonoBehaviour {
     void Update() {
         yaw += sensitivity * Input.GetAxis("Mouse X");
         pitch += sensitivity * Input.GetAxis("Mouse Y");
-        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
+        if(Input.GetButtonDown("Fire1")) Recenter();
+        
+        UpdateCameraTransform();
+    }
+
+    void UpdateCameraTransform(){
+        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         transform.position = target.transform.position - offset.magnitude * transform.forward;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(pitch, yaw, 0f)), cameraRotationSpeed * Time.deltaTime);
+    }
+
+    void Recenter(){
+        pitch = target.transform.localEulerAngles.x;
+        yaw = target.transform.localEulerAngles.y;
     }
 }

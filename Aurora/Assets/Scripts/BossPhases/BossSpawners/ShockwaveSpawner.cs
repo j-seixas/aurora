@@ -5,9 +5,11 @@ using UnityEngine;
 public class ShockwaveSpawner : MonoBehaviour {
     public float spawnRate = 5.0f, despawnRange = 60.0f, travelSpeed = 0.2f;
     public GameObject shockwave;
+    
     private SphereCollider collider;
     private List<GameObject> shockwaves = new List<GameObject>();
-    void Start() {
+    
+    void Start() { 
         InvokeRepeating("Spawner", 0.0f, spawnRate);
     }
 
