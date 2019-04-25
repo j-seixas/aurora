@@ -21,13 +21,16 @@ public class ShockwaveSpawner : MonoBehaviour {
         for (int i = this.shockwaves.Count - 1; i >= 0; i--) {
 
             // If the shockwave travels for too long, despawn it.
-            if (this.shockwaves[i].transform.localScale.x >= this.despawnRange * 2) {
+            if (this.shockwaves[i].transform.localScale.x >= this.despawnRange * 2) {       
                 Destroy(this.shockwaves[i]);
                 this.shockwaves.Remove(this.shockwaves[i]);
+
+            } else {
+
+                // Else, increase the wave's travel speed by a fixed amount.
+                this.shockwaves[i].transform.localScale += new Vector3(travelSpeed, travelSpeed, travelSpeed);
             }
 
-            // Else, increase the wave's travel speed by a fixed amount.
-            this.shockwaves[i].transform.localScale += new Vector3(travelSpeed, travelSpeed, travelSpeed);
         }
     }
 }
