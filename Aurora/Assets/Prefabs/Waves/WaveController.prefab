@@ -43,3 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188832c61092ae9428c02aca2e7fa82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minCount: 0
+  spawnRateBase: 0
+  spawnPerRate: 0
+  spawnRateMultiplier: 0
+  remainingTime: 0
+  minionMelee: {fileID: 1674260462448652948, guid: 81f43b4638c33474c96a0f8bbcffbd5f,
+    type: 3}
+  minionRanged: {fileID: 1674260462448652948, guid: c5fd4256e27964845a8f7aaa30f3c34a,
+    type: 3}

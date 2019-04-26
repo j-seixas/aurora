@@ -131,7 +131,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 3
+    axis: 5
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse ScrollWheel
