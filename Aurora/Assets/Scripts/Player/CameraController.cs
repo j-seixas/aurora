@@ -13,14 +13,14 @@ public class CameraController : MonoBehaviour {
     private float cameraRotationSpeed = 4f;         //how fast camera rotates, the slower the smoother
 
     void Start() {
-        this.offset = target.transform.position - transform.position;
+        offset = target.transform.position - transform.position;
     }
 
     void Update() {
         yaw += sensitivity * Input.GetAxis("Mouse X");
         pitch += sensitivity * Input.GetAxis("Mouse Y");
 
-        if(Input.GetButtonDown("Fire1")) Recenter();
+        if(Input.GetButtonDown("Fire2")) Recenter();
         
         UpdateCameraTransform();
     }
@@ -34,5 +34,6 @@ public class CameraController : MonoBehaviour {
     void Recenter(){
         pitch = target.transform.localEulerAngles.x;
         yaw = target.transform.localEulerAngles.y;
+        //Uncomment to recenter automatically: transform.rotation = Quaternion.Euler(new Vector3(pitch, yaw, 0f));
     }
 }
