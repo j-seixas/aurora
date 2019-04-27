@@ -28,7 +28,8 @@ public class CameraController : MonoBehaviour {
     void UpdateCameraTransform(){
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         transform.position = target.transform.position - offset.magnitude * transform.forward;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(pitch, yaw, 0f)), cameraRotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(new Vector3(pitch, yaw, 0f)), cameraRotationSpeed * Time.deltaTime);
+        // TODO: Slerp vs Lerp, try it at will, probably add to settings?
     }
 
     void Recenter(){
