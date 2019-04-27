@@ -30,7 +30,7 @@ public class WaveFactory : MonoBehaviour {
     
     void Start() {
         GameObject wave1 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
-        wave1.GetComponent<WaveController>().Setup(new Settings(5, 5, 5, 5, 5, 5, 60));
+        wave1.GetComponent<WaveController>().Setup(new Settings(5, 5, 5, 5, 5, 5, 10));
         this.waves.Add(wave1);
     }
 }

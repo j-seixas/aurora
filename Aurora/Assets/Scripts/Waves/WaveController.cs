@@ -12,7 +12,7 @@ public class WaveController : MonoBehaviour {
     public WaveFactory.Settings settings;
 
     void Start() {
-        // TODO: There's probably a more clever way to do this.
+        // TODO: There's probably a more elegant way to do this.
         StartCoroutine(Spawn(true));
         StartCoroutine(Spawn(false));
     }
@@ -32,8 +32,14 @@ public class WaveController : MonoBehaviour {
         }
     }
 
-
     void Update() {
-        
+        if (this.settings.remainingTime - Time.deltaTime < 0) {
+            print("Wave completed!");
+            GameObject.Find(gameObject.name).SetActive(false);
+        }
+        else {
+            this.settings.remainingTime -= Time.deltaTime;
+            print(this.settings.remainingTime);
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour {
     public static ObjectPooler SharedInstance;
     
-    public List<GameObject> pooled = new List<GameObject>();
+    private List<GameObject> pooled = new List<GameObject>();
     public GameObject objectToPool;
     public int amountToPoll;
 
@@ -15,8 +15,8 @@ public class ObjectPooler : MonoBehaviour {
     }
 
     void Start() {
-        for (int i = 0; i < amountToPoll; i++) {
-            GameObject obj = Instantiate(objectToPool);
+        for (int i = 0; i < this.amountToPoll; i++) {
+            GameObject obj = Instantiate(this.objectToPool);
             obj.SetActive(false);
             this.pooled.Add(obj);
         }
