@@ -5,42 +5,29 @@ using Random = UnityEngine.Random;
 
 public class WaveController : MonoBehaviour {
 
-    // The minimum no. of minions in the field at all times.
-    public int minCount;
-
-    // The spawn base frequency of minions.
-    public float spawnRateBase;
-
-    // The no. of minions spawned per rate.
-    public int spawnPerRate;
-
-    // A multiplier which affects the base spawn rate. Changes with more time elapsed.
-    public float spawnRateMultiplier;
-    
-    // The wave's remaining time. Always decreases.
-    public float remainingTime;
-
     // The melee and ranged minion game objects.
     public GameObject minionMelee, minionRanged;
 
+    // Wave settings.
+    public WaveFactory.Settings settings;
+
     void Start() {
-        StartCoroutine(SpawnMinion(1, 2f));
+        // TODO: There's probably a more clever way to do this.
+        StartCoroutine(Spawn(true));
+        StartCoroutine(Spawn(false));
     }
 
-    public void Setup(int minCount, float spawnRateBase, int spawnPerRate, float spawnRateMultiplier, float remainingTime) {
-        this.minCount = minCount; 
-        this.spawnRateBase = spawnRateBase;
-        this.spawnPerRate = spawnPerRate;
-        this.spawnRateMultiplier = spawnRateMultiplier;
-        this.remainingTime = remainingTime;
+    public void Setup(WaveFactory.Settings settings) {
+        this.settings = settings;
     }
 
-    private IEnumerator SpawnMinion(int spawnPerRate, float spawnRateBase) {
+    private IEnumerator Spawn(bool isMelee) {
         while (true) {
-            yield return new WaitForSeconds(spawnRateBase);
+            yield return new WaitForSeconds(isMelee ? settings.freqMelee : settings.freqRanged);
 
-            for (int i = 0; i < spawnPerRate; i++) {
-                Instantiate(this.minionRanged, new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f)), Quaternion.identity);
+            for (int i = 0; i < (isMelee ? settings.spawnMelee : settings.spawnRanged); i++) {
+                Vector3 position = new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f));
+                Instantiate(isMelee ? this.minionMelee : this.minionRanged, position, Quaternion.identity);
             }
         }
     }
