@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Random = UnityEngine.Random;
 
@@ -10,6 +11,10 @@ public class WaveController : MonoBehaviour {
 
     // Wave settings.
     public WaveFactory.Settings settings;
+
+    void Awake() {
+        GameObject.Find("WaveCount").GetComponent<Text>().text = this.settings.name;
+    }
 
     void Start() {
         // TODO: There's probably a more elegant way to do this.
@@ -32,9 +37,11 @@ public class WaveController : MonoBehaviour {
         }
     }
 
+
     void Update() {
         if (this.settings.remainingTime - Time.deltaTime < 0) {
             print("Wave completed!");
+            GameObject.Find("WaveFactory").GetComponent<WaveFactory>().NextWave();
             GameObject.Find(gameObject.name).SetActive(false);
         }
         else {
