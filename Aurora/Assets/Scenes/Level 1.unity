@@ -2174,6 +2174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
+  speed: 2
 --- !u!54 &1694869008
 Rigidbody:
   m_ObjectHideFlags: 0
