@@ -17,7 +17,7 @@ public class MinionController : MonoBehaviour
     void Start(){
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        agent.speed = speed;
+        agent.velocity = agent.velocity * speed;
     }
 
     // Update is called once per frame

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188832c61092ae9428c02aca2e7fa82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionMelee: {fileID: 1674260462448652948, guid: 81f43b4638c33474c96a0f8bbcffbd5f,
+  minionMelee: {fileID: 5999608337142371106, guid: 46b4d86a3b5b22561b8065a0215e162a,
     type: 3}
-  minionRanged: {fileID: 1674260462448652948, guid: c5fd4256e27964845a8f7aaa30f3c34a,
+  minionRanged: {fileID: 5999608337142371106, guid: 12f52a22ff811279f99494de6850e788,
     type: 3}
