@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &684549365444607780
 Transform:
   m_ObjectHideFlags: 0
@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188832c61092ae9428c02aca2e7fa82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minionMelee: {fileID: 1674260462448652948, guid: 81f43b4638c33474c96a0f8bbcffbd5f,
+    type: 3}
+  minionRanged: {fileID: 1674260462448652948, guid: c5fd4256e27964845a8f7aaa30f3c34a,
+    type: 3}
