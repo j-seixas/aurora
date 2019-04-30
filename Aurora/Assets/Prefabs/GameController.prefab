@@ -46,3 +46,4 @@ MonoBehaviour:
   objectToPool: {fileID: 5999608337142371106, guid: 12f52a22ff811279f99494de6850e788,
     type: 3}
   amountToPoll: 50
+  expand: 1

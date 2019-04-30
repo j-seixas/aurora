@@ -32,8 +32,9 @@ public class WaveController : MonoBehaviour {
 
             for (int i = 0; i < (isMelee ? settings.spawnMelee : settings.spawnRanged); i++) {
                 Vector3 position = new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f));
-                //Instantiate(isMelee ? this.minionMelee : this.minionRanged, position, Quaternion.identity);
-                GameObject minion = ObjectPooler.SharedInstance.GetPooledObject(); 
+
+                string type = isMelee ? "MinionMelee" : "MinionRanged";
+                GameObject minion = ObjectPooler.SharedInstance.GetPooledObject(type); 
                 if (minion != null) {
                     minion.transform.position = position;
                     minion.transform.rotation = Quaternion.identity;
