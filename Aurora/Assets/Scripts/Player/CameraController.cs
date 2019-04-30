@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour {
     void Recenter(){
         pitch = target.transform.localEulerAngles.x;
         yaw = target.transform.localEulerAngles.y;
-        //TODO: Try recenter automatically (UNCOMMENT LINE BELOW): 
+        //TODO: Try recenter automatically (UNCOMMENT LINE BELOW), probably add to settings?
         //transform.rotation = Quaternion.Euler(new Vector3(pitch, yaw, 0f));
     }
 }

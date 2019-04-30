@@ -32,7 +32,14 @@ public class WaveController : MonoBehaviour {
 
             for (int i = 0; i < (isMelee ? settings.spawnMelee : settings.spawnRanged); i++) {
                 Vector3 position = new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f));
-                Instantiate(isMelee ? this.minionMelee : this.minionRanged, position, Quaternion.identity);
+                //Instantiate(isMelee ? this.minionMelee : this.minionRanged, position, Quaternion.identity);
+                GameObject minion = ObjectPooler.SharedInstance.GetPooledObject(); 
+                if (minion != null) {
+                    minion.transform.position = position;
+                    minion.transform.rotation = Quaternion.identity;
+                    minion.SetActive(true);
+                }
+            
             }
         }
     }
@@ -46,7 +53,7 @@ public class WaveController : MonoBehaviour {
         }
         else {
             this.settings.remainingTime -= Time.deltaTime;
-            print(this.settings.remainingTime);
+            //print(this.settings.remainingTime);
         }
     }
 }
