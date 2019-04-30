@@ -197,4 +197,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
-  speed: 2
+  speed: 5
