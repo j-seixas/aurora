@@ -48,6 +48,7 @@ public class WaveFactory : MonoBehaviour {
 
     public void NextWave() {
         this.waves.RemoveAt(0); // Remove the cleared wave.
+        ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
 
         if (this.waves.Count != 0)
             this.waves[0].SetActive(true);  // Enable the next wave.

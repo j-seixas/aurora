@@ -40,16 +40,18 @@ public class ObjectPooler : MonoBehaviour {
         }
 
         foreach (ObjectPoolItem item in itemsToPool) {
-            if (item.objectToPool.tag == tag) {
-                if (item.shouldExpand) {
-                    GameObject obj = (GameObject) Instantiate (item.objectToPool);
-                    obj.SetActive (false);
-                    pool.Add (obj);
-                    return obj;
-                }
+            if (item.objectToPool.tag == tag && item.shouldExpand) {
+                GameObject obj = (GameObject) Instantiate(item.objectToPool);
+                obj.SetActive(false);
+                pool.Add(obj);
+                return obj;
             }
         }
         return null;
+    }
+
+    public void ClearPool() {
+        this.pool.ForEach(obj => obj.SetActive(false));
     }
 
 }
