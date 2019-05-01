@@ -5,16 +5,26 @@ using UnityEngine.UI;
 
 public class SpiritController : MonoBehaviour {
     private Transform player;
-    private bool playerInRange = false;
     private Text spiritCountLabel;
+
+    private float isCollectableCountdown = 2.0f;
 
     void Start() {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
         spiritCountLabel = GameObject.Find("SpiritCount").GetComponent<Text>();
     }
 
+    private void OnDisable() {
+        this.isCollectableCountdown = 2.0f;  // Reset the collectable countdown because of object pool reutilization.
+    }
+
     void Update() {
-        if (playerInRange) {
+        Debug.Log(this.isCollectableCountdown);
+        if (this.isCollectableCountdown > 0.0f) {
+            this.isCollectableCountdown -= Time.deltaTime;
+        }
+
+        if (this.isCollectableCountdown <= 0.0f) {
             float distance = Vector3.Distance(transform.position, player.transform.position);
 
             // Collect spirit.
@@ -24,14 +34,14 @@ public class SpiritController : MonoBehaviour {
                 int.TryParse(spiritCountLabel.text, out spiritCount);
                 spiritCountLabel.text = (spiritCount + 1).ToString();
 
-                Destroy(gameObject);
+                this.isCollectableCountdown = 2.0f;
+                this.gameObject.SetActive(false);
             }
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 0.6f / distance);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 1.5f / distance);
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player")
-            playerInRange = true;
+    public void PositionSelf(Transform minion) {
+        this.transform.position = minion.position;
     }
 }

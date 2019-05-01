@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MinionMelee
   - MinionRanged
+  - Spirit
   layers:
   - Default
   - TransparentFX

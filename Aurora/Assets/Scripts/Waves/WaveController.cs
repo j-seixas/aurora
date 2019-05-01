@@ -14,7 +14,7 @@ public class WaveController : MonoBehaviour {
 
     private Text waveTimeLabel;
 
-    private bool canCount = true, doOnce = false;
+    private float remainingTime;
 
     void Awake() {
         this.waveTimeLabel = GameObject.Find("WaveTime").GetComponent<Text>();
@@ -29,6 +29,9 @@ public class WaveController : MonoBehaviour {
 
     public void Setup(WaveFactory.Settings settings) {
         this.settings = settings;
+
+        // Create a local copy of remaining time for timer update.
+        this.remainingTime = settings.remainingTime;
     }
 
     private IEnumerator Spawn(bool isMelee) {
@@ -52,15 +55,13 @@ public class WaveController : MonoBehaviour {
 
 
     void Update() {
-        if (this.settings.remainingTime - Time.deltaTime > 0.0f && this.canCount) {
-            this.settings.remainingTime -= Time.deltaTime;
-            this.waveTimeLabel.text = this.settings.remainingTime.ToString("F");
+        if (this.remainingTime - Time.deltaTime > 0.0f) {
+            this.remainingTime -= Time.deltaTime;
+            this.waveTimeLabel.text = this.remainingTime.ToString("F");
         }
-        else if (this.settings.remainingTime - Time.deltaTime <= 0.0f && !this.doOnce) {
-            this.canCount = false;
-            this.doOnce = true;
+        else if (this.remainingTime - Time.deltaTime <= 0.0f) {
             this.waveTimeLabel.text = "0.00";
-            this.settings.remainingTime = 0.0f;
+            this.remainingTime = 0.0f;
             GameObject.Find("WaveFactory").GetComponent<WaveFactory>().NextWave();
             GameObject.Find(gameObject.name).SetActive(false);
         }
