@@ -56,6 +56,9 @@ public class WaveController : MonoBehaviour {
 
     void Update() {
         if (this.remainingTime - Time.deltaTime > 0.0f) {
+            //TODO: @Miguel this is how you access it
+            print("Wave " + this.settings.name + " - Melee: " + ObjectPooler.SharedInstance.GetActiveObjectCount("MinionMelee"));
+            print("Wave " + this.settings.name + " - Ranged: " + ObjectPooler.SharedInstance.GetActiveObjectCount("MinionRanged"));
             this.remainingTime -= Time.deltaTime;
             this.waveTimeLabel.text = this.remainingTime.ToString("F");
         }
