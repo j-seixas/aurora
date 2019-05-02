@@ -506,7 +506,7 @@ Transform:
   m_LocalScale: {x: 4.53, y: 0.5, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &631971937
 GameObject:
@@ -578,11 +578,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749253295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1600035833}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919366486
 GameObject:
@@ -697,7 +697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122299066
 GameObject:
@@ -730,6 +730,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveController: {fileID: 2984532927584546205, guid: 0b535691be590294ab6a7249fd96216a,
     type: 3}
+  settings:
+  - name: WAVE 1
+    minMelee: 0
+    minRanged: 0
+    freqMelee: 5
+    freqRanged: 5
+    spawnMelee: 2
+    spawnRanged: 2
+    remainingTime: 15
+  - name: WAVE 2
+    minMelee: 0
+    minRanged: 0
+    freqMelee: 5
+    freqRanged: 5
+    spawnMelee: 2
+    spawnRanged: 2
+    remainingTime: 45
 --- !u!4 &1122299068
 Transform:
   m_ObjectHideFlags: 0
@@ -742,7 +759,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179612121
 GameObject:
@@ -824,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 3927366232377240671, guid: fe1d202bdf737464a88b7d93c836570f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3927366232377240671, guid: fe1d202bdf737464a88b7d93c836570f,
         type: 3}
@@ -1062,7 +1079,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 25}
   m_LocalScale: {x: 1, y: 50, z: 50.00006}
-  m_Children: []
+  m_Children:
+  - {fileID: 749253297}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -1548,7 +1566,7 @@ PrefabInstance:
     - target: {fileID: 1409123747488252040, guid: cc1184ec03e99713badbf1e539e4c750,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1409123747488252040, guid: cc1184ec03e99713badbf1e539e4c750,
         type: 3}

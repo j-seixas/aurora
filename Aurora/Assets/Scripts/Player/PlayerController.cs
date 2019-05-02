@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     
@@ -11,6 +12,12 @@ public class PlayerController : MonoBehaviour {
 
     void Start() {
         this.rb = GetComponent<Rigidbody>();
+    }
+
+    void Update() {
+        if (Input.GetButton("Start")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void FixedUpdate() {

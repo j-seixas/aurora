@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WaveFactory : MonoBehaviour {
     public GameObject waveController;
+    public List<Settings> settings = new List<Settings>();
     private List<GameObject> waves = new List<GameObject>();
 
+    [System.Serializable]
     public struct Settings {
         // Wave name.
         public string name;
@@ -35,13 +37,11 @@ public class WaveFactory : MonoBehaviour {
     void Start() {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
 
-        GameObject wave1 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
-        wave1.GetComponent<WaveController>().Setup(new Settings("WAVE 1", 5, 5, 2, 2, 2, 2, 10));
-        this.waves.Add(wave1);
-
-        GameObject wave2 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
-        wave2.GetComponent<WaveController>().Setup(new Settings("WAVE 2", 5, 5, 2, 2, 3, 3, 20));
-        this.waves.Add(wave2);
+        this.settings.ForEach(setting => {
+            GameObject wave1 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
+            wave1.GetComponent<WaveController>().Setup(setting);
+            this.waves.Add(wave1);
+        });
 
         this.waves[0].SetActive(true);
     }
