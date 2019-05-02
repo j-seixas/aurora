@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571343, b: 0.30692208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,7 +193,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.35e-43, y: 0, z: 1.61e-43, w: 0}
+  m_BoundingSphereOverride: {x: 2.1523e-41, y: 1.1754944e-38, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1887,17 +1887,17 @@ PrefabInstance:
     - target: {fileID: 1409123747488252043, guid: cc1184ec03e99713badbf1e539e4c750,
         type: 3}
       propertyPath: itemsToPool.Array.data[0].amountToPool
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1409123747488252043, guid: cc1184ec03e99713badbf1e539e4c750,
         type: 3}
       propertyPath: itemsToPool.Array.data[1].amountToPool
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1409123747488252043, guid: cc1184ec03e99713badbf1e539e4c750,
         type: 3}
       propertyPath: itemsToPool.Array.data[2].amountToPool
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1409123747488252043, guid: cc1184ec03e99713badbf1e539e4c750,
         type: 3}
