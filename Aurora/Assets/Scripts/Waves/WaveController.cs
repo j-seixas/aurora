@@ -54,7 +54,9 @@ public class WaveController : MonoBehaviour {
         }
         else {
             this.settings.remainingTime -= Time.deltaTime;
-            //print(this.settings.remainingTime);
+            //TODO: Delete this prints @Miguel this is how you get current active objects of a type
+            print("Melee:  " + ObjectPooler.SharedInstance.GetActiveObjectCount("MinionMelee"));
+            print("Ranged: " + ObjectPooler.SharedInstance.GetActiveObjectCount("MinionRanged"));
         }
     }
 }
