@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionMelee: {fileID: 5999608337142371106, guid: 46b4d86a3b5b22561b8065a0215e162a,
     type: 3}
-  minionRanged: {fileID: 5999608337142371106, guid: 12f52a22ff811279f99494de6850e788,
+  minionRanged: {fileID: 5999608337142371106, guid: 1872507f1fd10a94ba7841c2b070e497,
     type: 3}
