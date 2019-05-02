@@ -19,7 +19,6 @@ public class SpiritController : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log(this.isCollectableCountdown);
         if (this.isCollectableCountdown > 0.0f) {
             this.isCollectableCountdown -= Time.deltaTime;
         }
