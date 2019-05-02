@@ -12,7 +12,7 @@ public class AttackBehaviour : MinionBehaviour
        if(target != null && Vector3.Distance(minion.transform.position,target.transform.position) >= range){
            animator.SetBool("attackRange",false);
        }else{
-           Debug.Log("Attack");
+           //Debug.Log("Attack");
            
        }
     }
