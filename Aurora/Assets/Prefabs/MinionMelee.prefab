@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99a604a94975744ca1042cb11b4ab09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 30
   speed: 5
 --- !u!1001 &3994040383833729285
 PrefabInstance:
@@ -188,26 +188,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8386282481857148754, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8386282481857148754, guid: c743885985ba3304abecc04a08b6809f,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -216,21 +196,6 @@ PrefabInstance:
     - target: {fileID: 8386282481857148754, guid: c743885985ba3304abecc04a08b6809f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8386282481857148754, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8386282481857148754, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8386282481857148754, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
