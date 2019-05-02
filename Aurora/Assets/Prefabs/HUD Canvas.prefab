@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 3927366232294903467}
   - component: {fileID: 3927366232294903466}
   m_Layer: 5
-  m_Name: Wave
+  m_Name: WaveName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,7 +1656,7 @@ GameObject:
   - component: {fileID: 3927366232817278280}
   - component: {fileID: 3927366232817278287}
   m_Layer: 5
-  m_Name: TimeText
+  m_Name: WaveTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

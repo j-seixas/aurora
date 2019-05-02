@@ -36,11 +36,11 @@ public class WaveFactory : MonoBehaviour {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
 
         GameObject wave1 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
-        wave1.GetComponent<WaveController>().Setup(new Settings("Wave 1", 5, 5, 2, 2, 2, 2, 30));
+        wave1.GetComponent<WaveController>().Setup(new Settings("WAVE 1", 5, 5, 2, 2, 2, 2, 30));
         this.waves.Add(wave1);
 
         GameObject wave2 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
-        wave2.GetComponent<WaveController>().Setup(new Settings("Wave 2", 5, 5, 2, 2, 3, 3, 30));
+        wave2.GetComponent<WaveController>().Setup(new Settings("WAVE 2", 5, 5, 2, 2, 3, 3, 30));
         this.waves.Add(wave2);
 
         this.waves[0].SetActive(true);

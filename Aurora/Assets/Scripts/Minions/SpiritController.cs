@@ -11,7 +11,7 @@ public class SpiritController : MonoBehaviour {
 
     void Start() {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
-        spiritCountLabel = GameObject.Find("SpiritCount").GetComponent<Text>();
+        spiritCountLabel = GameObject.Find("EssenceUI/Value").GetComponent<Text>();
     }
 
     private void OnDisable() {

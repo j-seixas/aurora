@@ -18,7 +18,7 @@ public class WaveController : MonoBehaviour {
 
     void Awake() {
         this.waveTimeLabel = GameObject.Find("WaveTime").GetComponent<Text>();
-        GameObject.Find("WaveCount").GetComponent<Text>().text = this.settings.name;
+        GameObject.Find("WaveName").GetComponent<Text>().text = this.settings.name;
     }
 
     void Start() {
