@@ -9,28 +9,29 @@ public class WaveFactory : MonoBehaviour {
 
     [System.Serializable]
     public struct Settings {
-        // Wave name.
         public string name;
-
-        // The minimum no. of minions in the field at all times.
-        public int minMelee, minRanged;
-
-        // The spawn base frequency of minions.
-        public float freqMelee, freqRanged;
-
-        // The no. of minions spawned per rate.
-        public float spawnMelee, spawnRanged;
-
-        // The wave's remaining time. Always decreases.
         public float remainingTime;
+        public List<MinionSettings> minionSettings;
 
-        // Struct constructor.
         public Settings(string name, int minMelee, int minRanged, float freqMelee, float freqRanged, float spawnMelee, float spawnRanged, float remainingTime) {
             this.name = name;
-            this.minMelee = minMelee; this.minRanged = minRanged;
-            this.freqMelee = freqMelee; this.freqRanged = freqRanged;
-            this.spawnMelee = spawnMelee; this.spawnRanged = spawnRanged;
             this.remainingTime = remainingTime;
+            this.minionSettings = new List<MinionSettings>();
+        }
+    }
+
+    [System.Serializable]
+    public struct MinionSettings {
+        public string tag;
+        public int minimum;
+        public float frequency;
+        public int spawnNo;
+
+        public MinionSettings(string tag, int minimum, float frequency, int spawnNo) {
+            this.tag = tag;
+            this.minimum = minimum;
+            this.frequency = frequency;
+            this.spawnNo = spawnNo;
         }
     }
     
@@ -46,14 +47,13 @@ public class WaveFactory : MonoBehaviour {
         this.waves[0].SetActive(true);
     }
 
-    public void NextWave() {
+    public void EndWave() {
         this.waves.RemoveAt(0); // Remove the cleared wave.
         ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
 
         if (this.waves.Count != 0)
             this.waves[0].SetActive(true);  // Enable the next wave.
-        else {
-            GameObject.Find("Mountain").GetComponent<DissolveController>().StartDissolving();
-        }
+        else
+            GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>().StartDissolving();
     }
 }

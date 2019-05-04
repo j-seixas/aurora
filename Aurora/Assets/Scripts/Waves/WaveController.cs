@@ -5,16 +5,9 @@ using System.Collections;
 using Random = UnityEngine.Random;
 
 public class WaveController : MonoBehaviour {
-
-    // The melee and ranged minion game objects.
     public GameObject minionMelee, minionRanged;
-
-    // Wave settings.
     public WaveFactory.Settings settings;
-
     private Text waveTimeLabel;
-
-    private float remainingTime;
 
     void Awake() {
         this.waveTimeLabel = GameObject.Find("WaveTime").GetComponent<Text>();
@@ -22,50 +15,50 @@ public class WaveController : MonoBehaviour {
     }
 
     void Start() {
-        // TODO: There's probably a more elegant way to do this.
-        StartCoroutine(Spawn(true));
-        StartCoroutine(Spawn(false));
+        settings.minionSettings.ForEach(minion => StartCoroutine(Spawn(minion)));
     }
 
     public void Setup(WaveFactory.Settings settings) {
         this.settings = settings;
-
-        // Create a local copy of remaining time for timer update.
-        this.remainingTime = settings.remainingTime;
     }
 
-    private IEnumerator Spawn(bool isMelee) {
-        while (true) {
-            yield return new WaitForSeconds(isMelee ? settings.freqMelee : settings.freqRanged);
+    public void StepSpawn(WaveFactory.MinionSettings minion, float toSpawn) {
+        for (int i = 0; i < toSpawn; i++) {
+            Vector3 position = new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f));
+            GameObject minionObj = ObjectPooler.SharedInstance.GetPooledObject(minion.tag);
 
-            for (int i = 0; i < (isMelee ? settings.spawnMelee : settings.spawnRanged); i++) {
-                Vector3 position = new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f));
-
-                string type = isMelee ? "MinionMelee" : "MinionRanged";
-                GameObject minion = ObjectPooler.SharedInstance.GetPooledObject(type); 
-                if (minion != null) {
-                    minion.transform.position = position;
-                    minion.transform.rotation = Quaternion.identity;
-                    minion.SetActive(true);
-                }
-            
+            if (minionObj != null) {
+                minionObj.transform.position = position;
+                minionObj.transform.rotation = Quaternion.identity;
+                minionObj.SetActive(true);
             }
+        }
+    }
+
+    private IEnumerator Spawn(WaveFactory.MinionSettings minion) {
+        while (true) {
+            this.StepSpawn(minion, minion.spawnNo);
+            yield return new WaitForSeconds(minion.frequency);
         }
     }
 
 
     void Update() {
-        if (this.remainingTime - Time.deltaTime > 0.0f) {
-            //TODO: @Miguel this is how you access it
-            print("Wave " + this.settings.name + " - Melee: " + ObjectPooler.SharedInstance.GetActiveObjectCount("MinionMelee"));
-            print("Wave " + this.settings.name + " - Ranged: " + ObjectPooler.SharedInstance.GetActiveObjectCount("MinionRanged"));
-            this.remainingTime -= Time.deltaTime;
-            this.waveTimeLabel.text = this.remainingTime.ToString("F");
+
+        // Check whether any minion count hasn't exceeded the minimum.
+        this.settings.minionSettings.ForEach(minion => {
+            int toSpawn = ObjectPooler.SharedInstance.GetActiveObjectCount(minion.tag) - minion.minimum;
+            if (toSpawn < 0) this.StepSpawn(minion, toSpawn);
+        });
+
+        if (settings.remainingTime - Time.deltaTime > 0.0f) {
+            settings.remainingTime -= Time.deltaTime;
+            this.waveTimeLabel.text = settings.remainingTime.ToString("F");
         }
-        else if (this.remainingTime - Time.deltaTime <= 0.0f) {
+        else if (settings.remainingTime - Time.deltaTime <= 0.0f) {
             this.waveTimeLabel.text = "0.00";
-            this.remainingTime = 0.0f;
-            GameObject.Find("WaveFactory").GetComponent<WaveFactory>().NextWave();
+            settings.remainingTime = 0.0f;
+            GameObject.Find("WaveFactory").GetComponent<WaveFactory>().EndWave();
             GameObject.Find(gameObject.name).SetActive(false);
         }
     }

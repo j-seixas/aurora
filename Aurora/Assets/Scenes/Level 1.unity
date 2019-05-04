@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.69923186, g: 0.5623549, b: 0.38635597, a: 1}
+  m_IndirectSpecularColor: {r: 0.69933814, g: 0.56237423, b: 0.38647467, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2004,21 +2004,12 @@ MonoBehaviour:
     type: 3}
   settings:
   - name: WAVE 1
-    minMelee: 0
-    minRanged: 0
-    freqMelee: 5
-    freqRanged: 5
-    spawnMelee: 2
-    spawnRanged: 2
-    remainingTime: 5
-  - name: WAVE 2
-    minMelee: 0
-    minRanged: 0
-    freqMelee: 5
-    freqRanged: 5
-    spawnMelee: 2
-    spawnRanged: 2
-    remainingTime: 5
+    remainingTime: 30
+    minionSettings:
+    - tag: MinionMelee
+      minimum: 2
+      frequency: 5
+      spawnNo: 2
 --- !u!4 &1122299068
 Transform:
   m_ObjectHideFlags: 0

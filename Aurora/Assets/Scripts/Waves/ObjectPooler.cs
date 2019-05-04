@@ -75,7 +75,7 @@ public class ObjectPooler : MonoBehaviour {
         ((ObjectPoolItem)itemsToPoolState[tag]).DecActive();
     }
 
-    public int GetActiveObjectCount(string tag){
+    public int GetActiveObjectCount(string tag) {
         return ((ObjectPoolItem)itemsToPoolState[tag]).GetActive();
     }
 
