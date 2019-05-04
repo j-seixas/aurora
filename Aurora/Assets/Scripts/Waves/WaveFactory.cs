@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveFactory : MonoBehaviour {
-    public GameObject waveController;
+    public GameObject waveController, upgradeObj;
     public List<Settings> settings = new List<Settings>();
     private List<GameObject> waves = new List<GameObject>();
 
@@ -39,21 +39,26 @@ public class WaveFactory : MonoBehaviour {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
 
         this.settings.ForEach(setting => {
-            GameObject wave1 = Instantiate(waveController, Vector3.zero, Quaternion.identity);
-            wave1.GetComponent<WaveController>().Setup(setting);
-            this.waves.Add(wave1);
+            GameObject wave = Instantiate(waveController, Vector3.zero, Quaternion.identity);
+            wave.GetComponent<WaveController>().Setup(setting);
+            this.waves.Add(wave);
         });
 
         this.waves[0].SetActive(true);
     }
 
-    public void EndWave() {
-        this.waves.RemoveAt(0); // Remove the cleared wave.
-        ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
-
+    public void NextWave() {
         if (this.waves.Count != 0)
             this.waves[0].SetActive(true);  // Enable the next wave.
         else
             GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>().StartDissolving();
+    }
+
+    public void EndWave() {
+        Destroy(this.waves[0]);
+        this.waves.RemoveAt(0); // Remove the cleared wave.
+        ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
+
+        Instantiate(upgradeObj, new Vector3(0, 2, 15), Quaternion.identity);
     }
 }

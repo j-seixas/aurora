@@ -59,7 +59,6 @@ public class WaveController : MonoBehaviour {
             this.waveTimeLabel.text = "0.00";
             settings.remainingTime = 0.0f;
             GameObject.Find("WaveFactory").GetComponent<WaveFactory>().EndWave();
-            GameObject.Find(gameObject.name).SetActive(false);
         }
     }
 }
