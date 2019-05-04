@@ -62,7 +62,10 @@ public class ObjectPooler : MonoBehaviour {
         }
         return null;
     }
-
+    public void FreePooledObject(GameObject obj){
+        obj.SetActive(false);
+        ((ObjectPoolItem)itemsToPoolState[tag]).DecActive();
+    }
     public void ClearPool() {
         this.pool.ForEach(obj => obj.SetActive(false));
         foreach (DictionaryEntry pair in itemsToPoolState){
@@ -70,11 +73,6 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
     
-    public void FreePooledObject(GameObject obj){
-        obj.SetActive(false);
-        ((ObjectPoolItem)itemsToPoolState[tag]).DecActive();
-    }
-
     public int GetActiveObjectCount(string tag) {
         return ((ObjectPoolItem)itemsToPoolState[tag]).GetActive();
     }

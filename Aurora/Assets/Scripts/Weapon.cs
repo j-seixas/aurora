@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         // TODO: Likely change this so it's just minion, right?
         if (other.tag == "MinionMelee" || other.tag == "MinionRanged") {
-            other.gameObject.SetActive(false);
+            ObjectPooler.SharedInstance.FreePooledObject(other.gameObject);
             
             GameObject spirit = ObjectPooler.SharedInstance.GetPooledObject("Spirit");
             spirit.GetComponent<SpiritController>().PositionSelf(other.transform);
