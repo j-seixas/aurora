@@ -46,6 +46,7 @@ public class ObjectPooler : MonoBehaviour {
         for (int i = 0; i < pool.Count; i++) {
             if (!pool[i].activeInHierarchy && pool[i].tag == tag) {
                 ((ObjectPoolItem)itemsToPoolState[tag]).IncActive();
+                pool[i].SetActive(true);
                 return pool[i];
             }
         }
@@ -53,7 +54,7 @@ public class ObjectPooler : MonoBehaviour {
             if (item.objectToPool.tag == tag) {
                 if (item.shouldExpand) {
                     GameObject obj = (GameObject) Instantiate (item.objectToPool);
-                    obj.SetActive (false);
+                    obj.SetActive (true);
                     pool.Add (obj);
                     ((ObjectPoolItem)itemsToPoolState[tag]).IncActive();
                     return obj;
@@ -64,7 +65,7 @@ public class ObjectPooler : MonoBehaviour {
     }
     public void FreePooledObject(GameObject obj){
         obj.SetActive(false);
-        ((ObjectPoolItem)itemsToPoolState[tag]).DecActive();
+        ((ObjectPoolItem)itemsToPoolState[obj.tag]).DecActive();
     }
     public void ClearPool() {
         this.pool.ForEach(obj => obj.SetActive(false));

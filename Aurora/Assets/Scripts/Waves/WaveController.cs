@@ -30,7 +30,6 @@ public class WaveController : MonoBehaviour {
             if (minionObj != null) {
                 minionObj.transform.position = position;
                 minionObj.transform.rotation = Quaternion.identity;
-                minionObj.SetActive(true);
             }
         }
     }
@@ -47,8 +46,8 @@ public class WaveController : MonoBehaviour {
 
         // Check whether any minion count hasn't exceeded the minimum.
         this.settings.minionSettings.ForEach(minion => {
-            int toSpawn = ObjectPooler.SharedInstance.GetActiveObjectCount(minion.tag) - minion.minimum;
-            if (toSpawn < 0) this.StepSpawn(minion, toSpawn);
+            int toSpawn = minion.minimum - ObjectPooler.SharedInstance.GetActiveObjectCount(minion.tag);
+            this.StepSpawn(minion, toSpawn);
         });
 
         if (settings.remainingTime - Time.deltaTime > 0.0f) {

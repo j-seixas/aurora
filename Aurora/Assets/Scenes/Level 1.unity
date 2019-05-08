@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.69933814, g: 0.56237423, b: 0.38647467, a: 1}
+  m_IndirectSpecularColor: {r: 0.6995017, g: 0.56213903, b: 0.386014, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1976,7 +1976,7 @@ MonoBehaviour:
     type: 3}
   settings:
   - name: WAVE 1
-    remainingTime: 5
+    remainingTime: 20
     minionSettings:
     - tag: MinionMelee
       minimum: 2
