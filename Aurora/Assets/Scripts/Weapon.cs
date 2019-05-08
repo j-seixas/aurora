@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour {
             
             GameObject spirit = ObjectPooler.SharedInstance.GetPooledObject("Spirit");
             spirit.GetComponent<SpiritController>().PositionSelf(other.transform);
-            spirit.SetActive(true);
+            // spirit.SetActive(true);
         }
     }
 }

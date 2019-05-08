@@ -34,7 +34,9 @@ public class SpiritController : MonoBehaviour {
                 spiritCountLabel.text = (spiritCount + 1).ToString();
 
                 this.isCollectableCountdown = 2.0f;
-                this.gameObject.SetActive(false);
+
+                ObjectPooler.SharedInstance.FreePooledObject(this.gameObject);
+                // this.gameObject.SetActive(false);
             }
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 1.5f / distance);
         }
