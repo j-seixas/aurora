@@ -26,12 +26,14 @@ public class WaveFactory : MonoBehaviour {
         public int minimum;
         public float frequency;
         public int spawnNo;
+        public float multiplier;
 
-        public MinionSettings(string tag, int minimum, float frequency, int spawnNo) {
+        public MinionSettings(string tag, int minimum, float frequency, int spawnNo, float multiplier) {
             this.tag = tag;
             this.minimum = minimum;
             this.frequency = frequency;
             this.spawnNo = spawnNo;
+            this.multiplier = multiplier;
         }
     }
     

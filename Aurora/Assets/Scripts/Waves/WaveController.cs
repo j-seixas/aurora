@@ -37,6 +37,7 @@ public class WaveController : MonoBehaviour {
     private IEnumerator Spawn(WaveFactory.MinionSettings minion) {
         while (true) {
             this.StepSpawn(minion, minion.spawnNo);
+            minion.frequency *= 1 / minion.multiplier;
             yield return new WaitForSeconds(minion.frequency);
         }
     }
@@ -44,7 +45,7 @@ public class WaveController : MonoBehaviour {
 
     void Update() {
 
-        // Check whether any minion count hasn't exceeded the minimum.
+        // If the minion count doesn't reach the minimum, spawn the remaining ones.
         this.settings.minionSettings.ForEach(minion => {
             int toSpawn = minion.minimum - ObjectPooler.SharedInstance.GetActiveObjectCount(minion.tag);
             this.StepSpawn(minion, toSpawn);
