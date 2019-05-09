@@ -27,6 +27,8 @@ public class ShockwaveController : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player") print("Shockwave hit!");
+        if (other.tag == "Player" && !other.gameObject.transform.parent.gameObject.GetComponent<PlayerDash>().IsInDashGracePeriod()) {
+            print("Shockwave hit!");
+        }
     }
 }

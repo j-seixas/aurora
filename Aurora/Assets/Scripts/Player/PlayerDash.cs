@@ -16,7 +16,9 @@ public class PlayerDash : MonoBehaviour {
     [SerializeField] private float dashForce = 50;
     [SerializeField] private float dashDuration = 0.1f;
     [SerializeField] private float dashCooldown = 2f;
+    [SerializeField] private float dashGracePeriod = 0.5f;
     [SerializeField] private int dashCost = 50;
+    private bool isInDashGracePeriod = false;
 
     private Rigidbody rb;
     private bool isDashing = false;
@@ -53,17 +55,25 @@ public class PlayerDash : MonoBehaviour {
             }
         }
         
-        if(isDashing && dashTime <= 0) {
+        if (isDashing && dashTime <= 0) {
             rb.velocity = Vector3.zero;
             isDashing = false;
             ActivateBodyCollider();
         }
 
-        if(isDashing) {
+        if (isDashing) {
+            if (!IsInvoking("CountDashGracePeriod")) {
+                this.isInDashGracePeriod = true;
+                Invoke("CountDashGracePeriod", this.dashGracePeriod);
+            }
+
             dashTime -= Time.deltaTime;
             rb.velocity = rb.transform.forward * dashForce;
         }
     }
+
+    private void CountDashGracePeriod() =>
+        this.isInDashGracePeriod = false;
 
     private void DeactivateBodyCollider() {
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
@@ -81,4 +91,6 @@ public class PlayerDash : MonoBehaviour {
             hud.UpdateSlider("StaminaUI" , staminaRegen);
         }
     }
+
+    public bool IsInDashGracePeriod() => this.isInDashGracePeriod;
 }

@@ -626,9 +626,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 534669904}
   PlayerBody: {fileID: 1634731538}
+  maxStamina: 100
+  stamina: 0
+  staminaRegen: 5
+  regenTime: 0.25
   dashForce: 50
   dashDuration: 0.1
-  dashCooldown: 2
+  dashCooldown: 0.2
+  dashGracePeriod: 1
+  dashCost: 25
 --- !u!114 &258815130
 MonoBehaviour:
   m_ObjectHideFlags: 0
