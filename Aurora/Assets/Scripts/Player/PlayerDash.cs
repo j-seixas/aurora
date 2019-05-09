@@ -2,48 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDash : MonoBehaviour
-{
+public class PlayerDash : MonoBehaviour {
     public Camera mainCam;
     public GameObject PlayerBody;
 
+    [Header("Stamina")]
+    [SerializeField] private int maxStamina = 100;
+    [SerializeField] private int stamina = 0;
+    [SerializeField] private int staminaRegen = 5;
+    [SerializeField] private float regenTime = 0.25f;
+
+    [Header("Dash Variables")]
     [SerializeField] private float dashForce = 50;
     [SerializeField] private float dashDuration = 0.1f;
     [SerializeField] private float dashCooldown = 2f;
+    [SerializeField] private int dashCost = 50;
 
     private Rigidbody rb;
     private bool isDashing = false;
     private float dashTime;
     private float dashCooldownTime;
     private BoxCollider bodyCollider;
+    private HUDUpdater hud;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
         dashTime = 0;
         dashCooldownTime = 0;
         bodyCollider = PlayerBody.GetComponent<BoxCollider>();
+        hud = GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>();
+        hud.UpdateSlider("StaminaUI", -50 + stamina); // Change -50 to 0 (Fix HUD)
+        InvokeRepeating("RegenStamina", 1f, regenTime);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        /*
-        if (Input.GetButton("Dash"))
-        {
-            StartCoroutine(Dash());
-        }
-        */
-        if(!isDashing)
-        {
-            if (dashCooldownTime > 0)
-            {
+    void Update() {
+        if(!isDashing) {
+            if (dashCooldownTime > 0) {
 
                 dashCooldownTime -= Time.deltaTime;
             }
-            else if(Input.GetButton("Dash"))
-            {
+            else if(Input.GetButton("Dash") && stamina >= dashCost) {
+                stamina -= dashCost;
+                hud.UpdateSlider("StaminaUI", -dashCost);
                 isDashing = true;
                 DeactivateBodyCollider();
                 dashTime = dashDuration;
@@ -51,39 +53,32 @@ public class PlayerDash : MonoBehaviour
             }
         }
         
-        if(isDashing && dashTime <= 0)
-        {
+        if(isDashing && dashTime <= 0) {
             rb.velocity = Vector3.zero;
             isDashing = false;
             ActivateBodyCollider();
         }
 
-        if(isDashing)
-        {
- 
+        if(isDashing) {
             dashTime -= Time.deltaTime;
             rb.velocity = rb.transform.forward * dashForce;
         }
     }
 
-    private void DeactivateBodyCollider()
-    {
+    private void DeactivateBodyCollider() {
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
         bodyCollider.enabled = false;
     }
 
-    private void ActivateBodyCollider()
-    {
+    private void ActivateBodyCollider() {
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         bodyCollider.enabled = true;
     }
 
-    public IEnumerator Dash()
-    {
-        rb.AddForce(rb.transform.forward * dashForce, ForceMode.VelocityChange);
-
-        yield return new WaitForSeconds(dashDuration);
-
-        rb.velocity = Vector3.zero;
+    private void RegenStamina() {
+        if(stamina < maxStamina) {
+            stamina = stamina + staminaRegen > 100 ? 100 : stamina + staminaRegen;
+            hud.UpdateSlider("StaminaUI" , staminaRegen);
+        }
     }
 }
