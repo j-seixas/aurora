@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     
@@ -9,19 +10,26 @@ public class PlayerController : MonoBehaviour {
     
     private Rigidbody rb;
     private float speed = 10.0f;
+    
+    [SerializeField]
+    private int health = 100;
 
     void Start() {
         this.rb = GetComponent<Rigidbody>();
     }
 
     void Update() {
-        if (Input.GetButton("Start")) {
+        if (Input.GetButton("Start") || health <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
     }
 
     void FixedUpdate() {
         HandlePlayerMovement();
+    }
+
+    public void ReceiveDamage(int damage) {
+        this.health -= damage;
+        GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI", -damage);
     }
 
     void HandlePlayerMovement(){

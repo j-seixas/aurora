@@ -624,6 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 534669904}
+  health: 100
 --- !u!54 &258815131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1929,6 +1930,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 838890651}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1076647595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3927366232377240675, guid: fe1d202bdf737464a88b7d93c836570f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1305293643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1076647600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076647595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e4929aff048304b8f5ca4ad0c6a556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1098571891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
@@ -2025,7 +2044,7 @@ PrefabInstance:
     - target: {fileID: 3927366232377240675, guid: fe1d202bdf737464a88b7d93c836570f,
         type: 3}
       propertyPath: m_Name
-      value: HUD Canvas
+      value: HUDCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3927366232377240671, guid: fe1d202bdf737464a88b7d93c836570f,
         type: 3}
@@ -2832,7 +2851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a4c37f6b0f5cc4596572fbfe266a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 0
+  attackDamage: 0
 --- !u!23 &1610862476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3401,18 +3420,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1305293643}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1760184001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760183996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e4929aff048304b8f5ca4ad0c6a556, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1786220529
 PrefabInstance:
   m_ObjectHideFlags: 0

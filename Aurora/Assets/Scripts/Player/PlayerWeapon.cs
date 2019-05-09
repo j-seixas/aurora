@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour {
-    public int AttackDamage;
 
-    void Start() {
+    [SerializeField]
+    private int attackDamage;
+
+    private void Start() {
+        this.attackDamage = 50;
     }
 
-    void Update() {    
-    }
+    private void DealDamage(GameObject minion, int damage) =>
+        minion.GetComponent<MinionController>().ReceiveDamage(damage);
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Weapon collision");
+        if (other.tag == "MinionMelee" || other.tag == "MinionRanged") {
+            this.DealDamage(other.gameObject, this.attackDamage);
+        }
     }
 
-    void ToggleWeaponCollider(bool isActive) {
+    public void ToggleWeaponCollider(bool isActive) =>
         this.GetComponent<Collider>().enabled = isActive;
-    }
 }

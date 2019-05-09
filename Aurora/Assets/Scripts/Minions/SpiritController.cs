@@ -5,13 +5,11 @@ using UnityEngine.UI;
 
 public class SpiritController : MonoBehaviour {
     private Transform player;
-    private Text spiritCountLabel;
 
     private float isCollectableCountdown = 2.0f;
 
     void Start() {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
-        spiritCountLabel = GameObject.Find("EssenceUI/Value").GetComponent<Text>();
     }
 
     private void OnDisable() {
@@ -28,13 +26,7 @@ public class SpiritController : MonoBehaviour {
 
             // Collect spirit.
             if (distance >= 0.0f && distance < 0.50f) {
-                int spiritCount;
-                
-                int.TryParse(spiritCountLabel.text, out spiritCount);
-                spiritCountLabel.text = (spiritCount + 1).ToString();
-
-                this.isCollectableCountdown = 2.0f;
-
+                GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("EssenceUI", 1);
                 ObjectPooler.SharedInstance.FreePooledObject(this.gameObject);
             }
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 1.5f / distance);

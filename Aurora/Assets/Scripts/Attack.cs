@@ -14,7 +14,6 @@ public class Attack : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetButtonDown("Fire3")) {
-            print("Fire");
             this.animator.Play("Attack");
         } 
     }

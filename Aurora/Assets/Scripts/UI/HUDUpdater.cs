@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HUDUpdater : MonoBehaviour {
-    void Start() {   
-    }
 
-    void Update() {
-        GameObject.Find("EssenceUI/Slider").GetComponent<Slider>().value = float.Parse(gameObject.GetComponent<Text>().text) + 15;
+    public void UpdateSlider(string type, float delta) {
+        // Update text below the slider.
+        Text txtObj = GameObject.Find(type + "/Value").GetComponent<Text>();
+        txtObj.text = (float.Parse(txtObj.text) + delta).ToString();
+
+        // Update slider bar.
+        GameObject.Find(type + "/Slider").GetComponent<Slider>().value += delta;
     }
 }
