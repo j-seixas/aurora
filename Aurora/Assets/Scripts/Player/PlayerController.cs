@@ -21,6 +21,12 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         if (Input.GetButton("Start") || health <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        if (Input.GetButtonDown("Ability")) {
+            Debug.Log(gameObject.GetComponentInChildren<FreezeUpgrade>());
+            gameObject.GetComponentInChildren<FreezeUpgrade>().Run();
+        }
+
     }
 
     void FixedUpdate() {

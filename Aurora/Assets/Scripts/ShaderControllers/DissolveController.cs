@@ -14,6 +14,7 @@ public class DissolveController : MonoBehaviour {
     void Update() {
         if (this.canDissolve) {
             this.material.SetFloat("_AnimationFrame", this.material.GetFloat("_AnimationFrame") + this.animationSpeed);
+            this.gameObject.GetComponent<Collider>().enabled = false;
         }
         if (this.material.GetFloat("_AnimationFrame") >= 1) {
             this.canDissolve = false;
