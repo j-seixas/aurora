@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5999608337142371108}
   - component: {fileID: 5999608337142371109}
   - component: {fileID: 5999608337142371129}
-  - component: {fileID: 5999608337142371110}
+  - component: {fileID: -4694919345049421005}
   m_Layer: 0
   m_Name: MinionMelee
   m_TagString: MinionMelee
@@ -107,7 +107,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5999608337142371110
+--- !u!114 &-4694919345049421005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,11 +116,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5999608337142371106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99a604a94975744ca1042cb11b4ab09, type: 3}
+  m_Script: {fileID: 11500000, guid: 31f665ab46bcb614eac2015d12957be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 30
+  lookRadius: 50
   speed: 5
+  range: 3
+  health: 100
 --- !u!1001 &3994040383833729285
 PrefabInstance:
   m_ObjectHideFlags: 0

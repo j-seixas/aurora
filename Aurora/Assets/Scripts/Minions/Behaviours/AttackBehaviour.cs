@@ -9,11 +9,10 @@ public class AttackBehaviour : MinionBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator,stateInfo,layerIndex);
-       if(target != null && Vector3.Distance(minion.transform.position,target.transform.position) >= range){
+       if(target != null && Vector3.Distance(minion.transform.position,target.transform.position) >= minion.range){
            animator.SetBool("attackRange",false);
        }else{
-           //Debug.Log("Attack");
-           
+           minion.Attack();  
        }
     }
 

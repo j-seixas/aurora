@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5999608337142371108}
   - component: {fileID: 5999608337142371109}
   - component: {fileID: 5999608337142371129}
-  - component: {fileID: 5999608337142371110}
+  - component: {fileID: -1434505806453057739}
   m_Layer: 0
   m_Name: MinionRanged
   m_TagString: MinionRanged
@@ -107,7 +107,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5999608337142371110
+--- !u!114 &-1434505806453057739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,11 +116,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5999608337142371106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99a604a94975744ca1042cb11b4ab09, type: 3}
+  m_Script: {fileID: 11500000, guid: 861cf5de318b05440961bc775c6a04a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 30
+  lookRadius: 50
   speed: 5
+  range: 15
+  damage: 20
+  health: 120
 --- !u!1001 &3994040383833729285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,21 +190,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c743885985ba3304abecc04a08b6809f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c743885985ba3304abecc04a08b6809f, type: 3}

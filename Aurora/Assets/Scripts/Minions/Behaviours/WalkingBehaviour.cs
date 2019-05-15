@@ -11,10 +11,13 @@ public class WalkingBehaviour : MinionBehaviour
     {
         base.OnStateUpdate(animator,stateInfo,layerIndex);
         if(target != null){
-            minion.goToPosition(target.transform.position - new Vector3(1,0,1));
-            if(Vector3.Distance(minion.transform.position,target.transform.position) <= range){
+            if(Vector3.Distance(minion.transform.position,target.transform.position) <= minion.range){
+                minion.goToPosition(minion.transform.position);
                 animator.SetBool("attackRange",true);
+            }else{
+                minion.goToPosition(target.transform.position);
             }
+            
         }else{
             animator.SetBool("playerNear",true);
         }

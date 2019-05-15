@@ -5,7 +5,7 @@ using UnityEngine;
 using static MinionController;
 public class MinionBehaviour : StateMachineBehaviour
 {
-    protected float range = 3f;
+    
 
     protected Collider target;
     protected MinionController minion;
