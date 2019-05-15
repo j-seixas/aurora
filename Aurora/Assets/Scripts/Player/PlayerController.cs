@@ -14,8 +14,17 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private int health = 100;
 
+    private int maxHealth;
+
+    [SerializeField]
+    private float healthRegenTime = 1f;
+
+    [SerializeField] private int addHealth = 5;
+
     void Start() {
         this.rb = GetComponent<Rigidbody>();
+        this.maxHealth = this.health;
+        InvokeRepeating("healthRegen", 1f, healthRegenTime);
     }
 
     void Update() {
@@ -40,5 +49,12 @@ public class PlayerController : MonoBehaviour {
         
         if (direction != Vector3.zero)
             this.rb.MoveRotation(Quaternion.LookRotation(direction));
+    }
+
+    void healthRegen(){
+        if(health < maxHealth) {
+            health = health + addHealth > maxHealth ? maxHealth : health + addHealth;
+            GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI" , addHealth);
+        }
     }
 }

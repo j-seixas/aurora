@@ -649,6 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 534669904}
   health: 100
+  healthAdd: 5
 --- !u!54 &258815131
 Rigidbody:
   m_ObjectHideFlags: 0

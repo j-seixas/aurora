@@ -9,7 +9,7 @@ public abstract class MinionController : MonoBehaviour {
 
     public float speed = 10f;
     public float range = 3f;
-    public float damage = 20f;
+    public int damage = 1;
     protected NavMeshAgent agent;
     protected Animator anim;
 
