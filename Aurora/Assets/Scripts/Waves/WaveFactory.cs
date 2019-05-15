@@ -7,6 +7,9 @@ public class WaveFactory : MonoBehaviour {
     public List<Settings> settings = new List<Settings>();
     private List<GameObject> waves = new List<GameObject>();
 
+    [SerializeField] private List<Transform> spawnPoints;
+    private List<GameObject> upgradeObjs = new List<GameObject>();
+
     [System.Serializable]
     public struct Settings {
         public string name;
@@ -50,17 +53,24 @@ public class WaveFactory : MonoBehaviour {
     }
 
     public void NextWave() {
-        if (this.waves.Count != 0)
-            this.waves[0].SetActive(true);  // Enable the next wave.
-        else
-            GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>().StartDissolving();
+        this.DespawnUpgrades(this.upgradeObjs);
+        this.waves[0].SetActive(true);  // Enable the next wave.
+    }
+
+    private void SpawnUpgrades(List<Transform> spawnPoints) =>
+        spawnPoints.ForEach(sp => upgradeObjs.Add(Instantiate(upgradeObj, sp.position, Quaternion.identity)));
+
+    private void DespawnUpgrades(List<GameObject> upgradeObjs) {
+        upgradeObjs.ForEach(up => Destroy(up));
+        upgradeObjs.Clear();
     }
 
     public void EndWave() {
         Destroy(this.waves[0]);
         this.waves.RemoveAt(0); // Remove the cleared wave.
         ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
-
-        Instantiate(upgradeObj, new Vector3(0, 2, 15), Quaternion.identity);
+        
+        if (this.waves.Count != 0) this.SpawnUpgrades(spawnPoints);
+        else GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>().StartDissolving();
     }
 }

@@ -11,7 +11,6 @@ public abstract class Upgrade : MonoBehaviour {
     public abstract void Run();
 
     public void ConsumeStamina() { 
-        Debug.Log("ola");
         GameObject.FindWithTag("Canvas").GetComponent<HUDUpdater>().UpdateSlider("StaminaUI", -this.staminaCost);
     }
     

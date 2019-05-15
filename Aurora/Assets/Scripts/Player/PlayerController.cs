@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
     private float speed = 10.0f;
     
-    [SerializeField]
-    private int health = 100;
+    [SerializeField] private int health = 100;
+    [SerializeField] private int stamina = 100;
 
     void Start() {
         this.rb = GetComponent<Rigidbody>();
