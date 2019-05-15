@@ -116,13 +116,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5999608337142371106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f665ab46bcb614eac2015d12957be3, type: 3}
+  m_Script: {fileID: 11500000, guid: b88caf19d0a2a7f4286adbf30d2753f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 50
-  speed: 5
+  speed: 10
   range: 3
-  damage: 1
+  damage: 20
   health: 100
 --- !u!1001 &3994040383833729285
 PrefabInstance:

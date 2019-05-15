@@ -7,7 +7,8 @@ using static MinionController;
 
 public class RangeMininionController: MinionController {
     
-    public override void Attack(){
+    public override bool Attack(){
         Debug.Log("Attack ranged");
+        return false;
     }
 }

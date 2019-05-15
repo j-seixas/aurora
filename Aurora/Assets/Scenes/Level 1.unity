@@ -488,7 +488,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 6.873879e-11, z: -2.0434358e-25, w: -1.1377978e+37}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -649,7 +649,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 534669904}
   health: 100
-  healthAdd: 5
+  healthRegenTime: 1
+  addHealth: 5
 --- !u!54 &258815131
 Rigidbody:
   m_ObjectHideFlags: 0

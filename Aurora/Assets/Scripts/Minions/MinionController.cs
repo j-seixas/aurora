@@ -63,5 +63,5 @@ public abstract class MinionController : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position,lookRadius);
     }
 
-    public abstract void Attack();
+    public abstract bool Attack();
 }
