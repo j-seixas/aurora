@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveFactory : MonoBehaviour {
-    public GameObject waveController, upgradeObj;
+    public GameObject waveController;
     public List<Settings> settings = new List<Settings>();
     private List<GameObject> waves = new List<GameObject>();
 
     [SerializeField] private List<Transform> spawnPoints;
-    private List<GameObject> upgradeObjs = new List<GameObject>();
+    [SerializeField] private List<GameObject> upgradeObjects = new List<GameObject>();
+    private List<GameObject> spawnedObjs = new List<GameObject>();
 
     [System.Serializable]
     public struct Settings {
@@ -53,12 +54,14 @@ public class WaveFactory : MonoBehaviour {
     }
 
     public void NextWave() {
-        this.DespawnUpgrades(this.upgradeObjs);
+        this.DespawnUpgrades(this.spawnedObjs);
         this.waves[0].SetActive(true);  // Enable the next wave.
     }
 
-    private void SpawnUpgrades(List<Transform> spawnPoints) =>
-        spawnPoints.ForEach(sp => upgradeObjs.Add(Instantiate(upgradeObj, sp.position, Quaternion.identity)));
+    private void SpawnUpgrades(List<Transform> spawnPoints) {
+        for (int i = 0; i < this.spawnPoints.Count; i++)
+            spawnedObjs.Add(Instantiate(this.upgradeObjects[i], this.spawnPoints[i].position, Quaternion.identity));
+    }
 
     private void DespawnUpgrades(List<GameObject> upgradeObjs) {
         upgradeObjs.ForEach(up => Destroy(up));

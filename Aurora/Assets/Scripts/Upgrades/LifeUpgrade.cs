@@ -1,13 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreezeUpgrade : Upgrade {
+public class LifeUpgrade : Upgrade {
     [Header("Specific")]
     [SerializeField] private float radius;
 
     public override void Active() {
-        Debug.Log("FREEZE ACTIVE");
+        Debug.Log("LIFE ACTIVE");
     }
 
     public override void Passive() { 

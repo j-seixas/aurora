@@ -9,6 +9,7 @@ TagManager:
   - Spirit
   - Mountain
   - Canvas
+  - Upgrade
   layers:
   - Default
   - TransparentFX
