@@ -6,6 +6,10 @@ public class ShockwaveSpawner : MonoBehaviour {
     public float spawnRate = 5.0f;
     public GameObject shockwave;
     private List<GameObject> shockwaves = new List<GameObject>();
+
+    private void OnDisable() {
+        CancelInvoke();
+    }
     
     void Start() { 
         InvokeRepeating("Spawner", 0.0f, spawnRate);

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5121853168187620622}
   - component: {fileID: 5121853168187620617}
   m_Layer: 0
-  m_Name: UpgradeIce
-  m_TagString: Untagged
+  m_Name: IceGem
+  m_TagString: IceGem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

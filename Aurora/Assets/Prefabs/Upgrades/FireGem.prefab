@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5121853168187620622}
   - component: {fileID: 5121853168187620617}
   m_Layer: 0
-  m_Name: UpgradeHeal
-  m_TagString: Untagged
+  m_Name: FireGem
+  m_TagString: FireGem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5b93e4b5e4c32d4a83caea502b4e204, type: 2}
+  - {fileID: 2100000, guid: 70fba02c0ba041d4da0b6292a15cda34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

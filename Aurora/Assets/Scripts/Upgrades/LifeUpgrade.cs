@@ -10,7 +10,8 @@ public class LifeUpgrade : Upgrade {
         Debug.Log("LIFE ACTIVE");
     }
 
-    public override void Passive() { 
+    public override void Passive() {
+        
     }
 
 }

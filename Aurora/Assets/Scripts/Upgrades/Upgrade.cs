@@ -13,12 +13,11 @@ public abstract class Upgrade : MonoBehaviour {
     [SerializeField] protected float staminaCost;
     [SerializeField] protected int damageDealt;
 
+    [Header("Passive")]
+    [SerializeField] protected float tick;
+
     public abstract void Active();
     public abstract void Passive();
-
-    public void ConsumeStamina() { 
-        GameObject.FindWithTag("Canvas").GetComponent<HUDUpdater>().UpdateSlider("StaminaUI", -this.staminaCost);
-    }
 
     public int GetLevel() => 
         this.level;

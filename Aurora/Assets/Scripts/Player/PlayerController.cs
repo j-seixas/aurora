@@ -15,21 +15,21 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private int stamina = 100;
     
     [Header("Upgrade")]
-    private List<Upgrade> upgrades = new List<Upgrade>();
+    public List<Upgrade> upgrades = new List<Upgrade>();
     [SerializeField] private int active = -1;
 
     void Start() {
         this.rb = GetComponent<Rigidbody>();
-        
-        foreach (GameObject upgrade in GameObject.FindGameObjectsWithTag("Upgrade")) {
-            upgrades.Add(upgrade.GetComponent<Upgrade>());
-        }
     }
 
     private void SwitchLevel(int index) {
+        // Deactivate previous upgrade only if there's only active.
+        if (this.active != -1)
+            upgrades[this.active].SetActive(false);
+
         upgrades[index].SetActive(true);
-        upgrades[this.active].SetActive(false);
         this.active = index;
+        Debug.Log("Selected " + upgrades[index].tag + " upgrade.");
     }
 
     void Update() {
@@ -53,13 +53,9 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void UnlockUpgrade(string name) {
+    public void UnlockUpgrade(string upTag) {
         for (int i = 0; i < this.upgrades.Count; i++) {
-            if (this.upgrades[i].name + "(Clone)" == name) { 
-                this.upgrades[i].LevelUpUpgrade();
-                this.SwitchLevel(i);
-                break;
-            }
+            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUpUpgrade(); break; }
         }
     }
 

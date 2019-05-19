@@ -11,6 +11,9 @@ TagManager:
   - Canvas
   - MenuPointer
   - Upgrade
+  - FireGem
+  - IceGem
+  - LifeGem
   layers:
   - Default
   - TransparentFX
