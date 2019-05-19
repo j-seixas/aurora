@@ -9,6 +9,7 @@ TagManager:
   - Spirit
   - Mountain
   - Canvas
+  - MenuPointer
   layers:
   - Default
   - TransparentFX
