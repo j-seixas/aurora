@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour {
         this.rb = GetComponent<Rigidbody>();
     }
 
+    public void AddHealth(int increment) {
+        if (this.health + increment > 100) this.health = 100;
+        else this.health += increment;
+    }
+
     private void SwitchLevel(int index) {
         // Deactivate previous upgrade only if there's only active.
         if (this.active != -1)
@@ -33,6 +38,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
+        GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI", this.health);
+
         if (Input.GetButton("Start") || health <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
@@ -55,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 
     public void UnlockUpgrade(string upTag) {
         for (int i = 0; i < this.upgrades.Count; i++) {
-            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUpUpgrade(); break; }
+            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUp(); break; }
         }
     }
 

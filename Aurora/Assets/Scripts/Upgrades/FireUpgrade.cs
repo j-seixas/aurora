@@ -11,6 +11,11 @@ public class FireUpgrade : Upgrade {
     }
 
     public override void Passive() { 
+        Debug.Log("FIRE PASSIVE");
     }
+
+    public override void LevelUp() {
+        this.level++;
+    } 
 
 }

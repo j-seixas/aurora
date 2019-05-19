@@ -18,14 +18,11 @@ public abstract class Upgrade : MonoBehaviour {
 
     public abstract void Active();
     public abstract void Passive();
+    public abstract void LevelUp();
 
     public int GetLevel() => 
         this.level;
 
     public void SetActive(bool state) =>
         this.active = state;
-
-    public void LevelUpUpgrade() => 
-        this.level++;
-    
 }

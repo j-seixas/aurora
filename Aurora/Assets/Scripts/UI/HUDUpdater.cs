@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class HUDUpdater : MonoBehaviour {
 
-    public void UpdateSlider(string type, float delta) {
+    public void UpdateSlider(string type, int newValue) {
         // Update text below the slider.
         Text txtObj = GameObject.Find(type + "/Value").GetComponent<Text>();
-        txtObj.text = (float.Parse(txtObj.text) + delta).ToString();
+        txtObj.text = newValue.ToString();
 
         // Update slider bar.
-        GameObject.Find(type + "/Slider").GetComponent<Slider>().value += delta;
+        GameObject.Find(type + "/Slider").GetComponent<Slider>().value = newValue;
     }
 }

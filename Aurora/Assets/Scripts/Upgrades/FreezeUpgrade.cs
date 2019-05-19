@@ -11,6 +11,10 @@ public class FreezeUpgrade : Upgrade {
     }
 
     public override void Passive() { 
+        Debug.Log("FREEZE PASSIVE");
     }
 
+    public override void LevelUp() {
+        this.level++;
+    } 
 }
