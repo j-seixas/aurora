@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.6995017, g: 0.56213903, b: 0.38592613, a: 1}
+  m_IndirectSpecularColor: {r: 0.6995017, g: 0.56213903, b: 0.386014, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -94,8 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 557e71497b74ba749830022ae7f27f39,
     type: 2}
   m_UseShadowmask: 0
@@ -132,6 +132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -213,6 +218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -313,6 +323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -381,6 +396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -571,7 +591,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.85186e-34, y: 1.5046328e-36, z: 2.3509887e-38, w: 4.5918e-41}
+  m_BoundingSphereOverride: {x: -6.3384464e+29, y: 1.7592186e+13, z: -1.7014118e+38,
+    w: 2.5243547e-29}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -600,6 +621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -843,6 +869,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,6 +948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -999,6 +1035,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1067,6 +1108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -1168,7 +1214,8 @@ GameObject:
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
-  m_Layer: 0
+  - component: {fileID: 534669908}
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1211,7 +1258,7 @@ Camera:
   field of view: 75
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1262,6 +1309,66 @@ Skybox:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: e34afaafc9ec16546ad76b2a15bad314, type: 2}
+--- !u!114 &534669908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 534669905}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!4 &544021403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
@@ -1379,7 +1486,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1449,6 +1555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -1625,6 +1736,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1694,6 +1810,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1762,6 +1883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -1887,6 +2013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1986,6 +2117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2066,7 +2202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1036003344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,13 +2215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1036003345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2098,9 +2227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!4 &1036003346
 Transform:
   m_ObjectHideFlags: 0
@@ -2126,6 +2252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -2598,6 +2729,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2666,6 +2802,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -2741,6 +2882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -2862,6 +3008,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2978,7 +3129,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3084,7 +3234,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3130,6 +3279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -3273,7 +3427,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3305,6 +3458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -3374,6 +3532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -3503,7 +3666,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3535,6 +3697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -3611,6 +3778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3686,6 +3858,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3754,6 +3931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
@@ -3902,6 +4084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3995,6 +4182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4075,6 +4267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251152188144310485, guid: 2bcf0280ea5ea814898de9b965ab4121,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
         type: 3}
