@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour {
 
     public void ReceiveDamage(int damage) {
         this.health -= damage;
+        if(this.health < 0)
+            this.health = 0;
         GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI", -damage);
     }
 

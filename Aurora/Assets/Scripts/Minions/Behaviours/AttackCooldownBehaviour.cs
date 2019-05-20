@@ -10,8 +10,11 @@ public class AttackCooldownBehaviour : MinionBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator,stateInfo,layerIndex);
-        
-        animator.SetBool("didAttack",false);    
+        if(target != null && Vector3.Distance(minion.transform.position,target.transform.position) >= minion.range){
+           animator.SetBool("attackRange",false);
+        }
+        else
+            animator.SetBool("didAttack",false);    
     }
 
     private void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {

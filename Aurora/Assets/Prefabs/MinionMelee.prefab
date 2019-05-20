@@ -122,7 +122,7 @@ MonoBehaviour:
   lookRadius: 50
   speed: 10
   range: 3
-  damage: 20
+  damage: 10
   health: 100
 --- !u!1001 &3994040383833729285
 PrefabInstance:

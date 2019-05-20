@@ -8,6 +8,7 @@ TagManager:
   - MinionRanged
   - Spirit
   - Mountain
+  - Fireball
   layers:
   - Default
   - TransparentFX

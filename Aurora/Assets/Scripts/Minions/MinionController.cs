@@ -25,6 +25,8 @@ public abstract class MinionController : MonoBehaviour {
         anim = GetComponent<Animator>();
         agent.speed =  speed;
         agent.acceleration = speed;
+        agent.updateRotation = true;
+        agent.updatePosition = true;
     }
 
     protected void Update() {
