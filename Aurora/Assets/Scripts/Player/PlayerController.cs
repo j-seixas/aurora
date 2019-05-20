@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
         }
         
         if (Input.GetButtonDown("Ability")) {
-            this.upgrades[this.active].Active();
+            if (this.active != -1) this.upgrades[this.active].Active();
         }
     }
 

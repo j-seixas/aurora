@@ -2208,6 +2208,9 @@ MonoBehaviour:
   damageDealt: 0
   tick: 2
   radius: 0
+  player: {fileID: 258815125}
+  freezeAOE: {fileID: 3537795107389722655, guid: 0a9a0d6733eb88144922abc7141a1736,
+    type: 3}
 --- !u!4 &1098571891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,
