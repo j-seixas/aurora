@@ -5,7 +5,7 @@ using UnityEngine;
 using static MinionController;
 public class MinionBehaviour : StateMachineBehaviour
 {
-    protected float range = 3f;
+    
 
     protected Collider target;
     protected MinionController minion;
@@ -18,6 +18,7 @@ public class MinionBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+    
        target = minion.checkForPlayer();
     }
 

@@ -4,28 +4,32 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class MinionController : MonoBehaviour {
+public abstract class MinionController : MonoBehaviour {
     public float lookRadius = 10f;
 
     public float speed = 10f;
-    private NavMeshAgent agent;
-    private Animator anim;
+    public float range = 3f;
+    public int damage = 1;
+    protected NavMeshAgent agent;
+    protected Animator anim;
 
-    private Vector3 target;
+    protected Vector3 target;
 
     [SerializeField]
-    private int health = 100;
+    protected int health = 100;
 
         
 
-    void Start() {
+    protected void Start() {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         agent.speed =  speed;
         agent.acceleration = speed;
+        agent.updateRotation = true;
+        agent.updatePosition = true;
     }
 
-    void Update() {
+    protected void Update() {
         if (health <= 0) {
             // On death, spawn a spirit in its place.
             GameObject spirit = ObjectPooler.SharedInstance.GetPooledObject("Spirit");
@@ -36,7 +40,7 @@ public class MinionController : MonoBehaviour {
         }
     }
 
-    private void OnDisable() {
+    protected void OnDisable() {
         // Reset health so new minions won't have zero health.
         this.health = 100;
     }
@@ -56,8 +60,10 @@ public class MinionController : MonoBehaviour {
         agent.SetDestination(pos);
     }
 
-    void OnDrawGizmosSelected() {
+    protected void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,lookRadius);
     }
+
+    public abstract bool Attack();
 }
