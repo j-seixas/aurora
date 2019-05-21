@@ -73,7 +73,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NoiseScale: 128.64
+    - _NoiseScale: 200
     - _OcclusionStrength: 1
     - _OutlineDelay: 0.1
     - _OutlineThickness: 0.05

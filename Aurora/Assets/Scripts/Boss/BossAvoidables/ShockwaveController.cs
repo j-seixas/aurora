@@ -13,17 +13,16 @@ public class ShockwaveController : MonoBehaviour {
         this.sphCollider = gameObject.GetComponent<SphereCollider>();
         this.material = gameObject.GetComponent<Renderer>().material;
 
-        this.spawner = GameObject.Find("ShockwaveSpawner").transform.position;
+        this.spawner = GameObject.Find("ShockwaveSpawner").transform.parent.position;
         this.material.SetVector("_RippleLocation", new Vector4(spawner.x, spawner.y, spawner.z, 0));
-        this.sphCollider.center = new Vector3(0, 0, spawner.z / 5);
     }
 
     private void Update() {
         this.material.SetFloat("_RippleRadius", this.material.GetFloat("_RippleRadius") + this.speed);
-        this.sphCollider.radius = this.material.GetFloat("_RippleRadius") / 5;
+        this.sphCollider.radius = this.material.GetFloat("_RippleRadius") / transform.lossyScale.x;
 
         if (this.sphCollider.radius >= this.maxRadius) {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

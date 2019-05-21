@@ -16,7 +16,7 @@ public class ShockwaveSpawner : MonoBehaviour {
     }
 
     void Spawner() {
-        shockwaves.Add(Instantiate(shockwave, new Vector3(0, 0.3f, 0), Quaternion.identity));
+        shockwaves.Add(Instantiate(shockwave, transform.position, Quaternion.identity));
     }
 
     void Update() {
