@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShockwaveController : MonoBehaviour {
-    public float speed = 0.1f, maxRadius = 25.0f, damage = 10;
+    public float speed = 0.1f, maxRadius = 25.0f;
+    public int damage = 10;
     private Vector3 spawner;
     private SphereCollider sphCollider;
     private Material material;
@@ -29,7 +30,7 @@ public class ShockwaveController : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player" && !other.gameObject.transform.parent.gameObject.GetComponent<PlayerDash>().IsInDashGracePeriod()) {
             GameObject player = other.gameObject.transform.parent.gameObject;
-            player.GetComponent<PlayerController>().ReceiveDamage(5);
+            player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, -this.damage);
         }
     }
 }

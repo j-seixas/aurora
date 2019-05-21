@@ -17,7 +17,7 @@ public class LifeUpgrade : Upgrade {
     }
 
     public override void Passive() {
-        transform.parent.gameObject.GetComponent<PlayerController>().AddHealth(this.health);
+        GetComponentInParent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, this.health);
     }
 
     public override void LevelUp() {

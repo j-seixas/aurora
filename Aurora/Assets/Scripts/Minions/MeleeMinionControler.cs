@@ -12,7 +12,8 @@ public class MeleeMinionControler : MinionController {
         //Debug.Log(this.damage);
         //THIS IS ONLY UNTIL MINION HAS A WEAPON OR SOMETHING
         //NOT CHECKING IF ATTACK HITS
-        GameObject.FindWithTag("Player").GetComponent<PlayerController>().ReceiveDamage(this.damage);
+        
+        GameObject.FindWithTag("Player").GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, -this.damage);
         return false;
         
     }
