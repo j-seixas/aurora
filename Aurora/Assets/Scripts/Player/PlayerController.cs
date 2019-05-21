@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
+
+        //Debug.Log(1.0f/Time.smoothDeltaTime);
         GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI", this.health);
 
         if (Input.GetButton("Start") || health <= 0)

@@ -46,6 +46,7 @@ public class PlayerDash : MonoBehaviour {
                 dashCooldownTime -= Time.deltaTime;
             }
             else if(Input.GetButton("Dash") && stamina >= dashCost) {
+                Debug.Log("FODASSE");
                 stamina -= dashCost;
                 hud.UpdateSlider("StaminaUI", -dashCost);
                 isDashing = true;

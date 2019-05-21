@@ -5,11 +5,9 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour {
 
     [SerializeField]
-    private int attackDamage;
+    private int attackDamage=50;
 
-    private void Start() {
-        this.attackDamage = 50;
-    }
+   
 
     private void DealDamage(GameObject minion, int damage) =>
         minion.GetComponent<MinionController>().ReceiveDamage(damage);
