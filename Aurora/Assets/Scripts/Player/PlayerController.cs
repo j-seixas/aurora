@@ -11,12 +11,19 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
     private float speed = 10.0f;
     
+    [Header("Health")]
     [SerializeField] private int health = 100;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int healthRegenAmount = 5;
+    [SerializeField] private float healthRegenRate = 2;
 
+    [Header("Stamina")]
     [SerializeField] private int stamina = 100;
     [SerializeField] private int maxStamina = 100;
+    [SerializeField] private int staminaRegenAmount = 1;
+    [SerializeField] private float staminaRegenRate = 0.1f;
 
+    [Header("Spirits")]
     [SerializeField] private int spirits = 0;
     [SerializeField] private int maxSpirits = 100;
     
@@ -29,6 +36,10 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         this.rb = GetComponent<Rigidbody>();
         this.canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>();
+
+        // Start regenerating health and stamina.
+        InvokeRepeating("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
+        InvokeRepeating("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
     }
 
     public int GetAttribute(GameManager.Attributes attr) {
@@ -51,9 +62,6 @@ public class PlayerController : MonoBehaviour {
             if (val > this.maxHealth) this.health = this.maxHealth;
             else if (val < 0) this.health = 0;
             else this.health += inc;
-
-            // Update the UI.
-            this.canvas.UpdateSlider("HealthUI", this.health);
         }
 
         if (attr == GameManager.Attributes.Stamina) {
@@ -62,9 +70,6 @@ public class PlayerController : MonoBehaviour {
             if (val > this.maxStamina) this.stamina = this.maxStamina;
             else if (val < 0) this.stamina = 0;
             else this.stamina = val;
-            
-            // Update the UI.
-            this.canvas.UpdateSlider("StaminaUI", this.stamina);
         }
 
         if (attr == GameManager.Attributes.Spirits) {
@@ -73,9 +78,6 @@ public class PlayerController : MonoBehaviour {
             if (val > this.maxSpirits) this.spirits = this.maxSpirits;
             else if (val < 0) this.spirits = 0;
             else this.spirits = val;
-
-            // Update the UI.
-            this.canvas.UpdateSlider("EssenceUI", this.spirits);
         }
     }
 
@@ -90,6 +92,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
+        // Update the UI elements.
+        this.canvas.UpdateSlider("HealthUI", this.health);
+        this.canvas.UpdateSlider("StaminaUI", this.stamina);
+        this.canvas.UpdateSlider("EssenceUI", this.spirits);
 
         // Process inputs.
         if (Input.GetButton("Start") || health <= 0)
@@ -126,6 +132,12 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate() {
         HandlePlayerMovement();
     }
+
+    private void RegenerateHealth() =>
+        this.UpdateAttribute(GameManager.Attributes.Health, this.healthRegenAmount);
+
+    private void RegenerateStamina() =>
+        this.UpdateAttribute(GameManager.Attributes.Stamina, this.staminaRegenAmount);
 
     void HandlePlayerMovement(){
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
