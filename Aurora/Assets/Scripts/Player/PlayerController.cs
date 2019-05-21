@@ -12,28 +12,71 @@ public class PlayerController : MonoBehaviour {
     private float speed = 10.0f;
     
     [SerializeField] private int health = 100;
+    [SerializeField] private int maxHealth = 100;
+
     [SerializeField] private int stamina = 100;
+    [SerializeField] private int maxStamina = 100;
+
+    [SerializeField] private int spirits = 0;
+    [SerializeField] private int maxSpirits = 100;
     
     [Header("Upgrade")]
     public List<Upgrade> upgrades = new List<Upgrade>();
     [SerializeField] private int active = -1;
 
-    private int maxHealth;
-
-    [SerializeField]
-    private float healthRegenTime = 1f;
-
-    [SerializeField] private int addHealth = 5;
+    private HUDUpdater canvas;
 
     void Start() {
         this.rb = GetComponent<Rigidbody>();
-        this.maxHealth = this.health;
-        InvokeRepeating("healthRegen", 1f, healthRegenTime);
+        this.canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>();
     }
 
-    public void AddHealth(int increment) {
-        if (this.health + increment > 100) this.health = 100;
-        else this.health += increment;
+    public int GetAttribute(GameManager.Attributes attr) {
+        if (attr == GameManager.Attributes.Health)
+            return this.health;
+
+        if (attr == GameManager.Attributes.Stamina)
+            return this.stamina;
+
+        if (attr == GameManager.Attributes.Spirits)
+            return this.spirits;
+
+        return -1;
+    }
+
+    public void UpdateAttribute(GameManager.Attributes attr, int inc) {
+        if (attr == GameManager.Attributes.Health) {
+            int val = this.health + inc;
+
+            if (val > this.maxHealth) this.health = this.maxHealth;
+            else if (val < 0) this.health = 0;
+            else this.health += inc;
+
+            // Update the UI.
+            this.canvas.UpdateSlider("HealthUI", this.health);
+        }
+
+        if (attr == GameManager.Attributes.Stamina) {
+            int val = this.stamina + inc;
+
+            if (val > this.maxStamina) this.stamina = this.maxStamina;
+            else if (val < 0) this.stamina = 0;
+            else this.stamina = val;
+            
+            // Update the UI.
+            this.canvas.UpdateSlider("StaminaUI", this.stamina);
+        }
+
+        if (attr == GameManager.Attributes.Spirits) {
+            int val = this.spirits + inc;
+
+            if (val > this.maxSpirits) this.spirits = this.maxSpirits;
+            else if (val < 0) this.spirits = 0;
+            else this.spirits = val;
+
+            // Update the UI.
+            this.canvas.UpdateSlider("EssenceUI", this.spirits);
+        }
     }
 
     private void SwitchLevel(int index) {
@@ -47,10 +90,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
-        GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI", this.health);
 
+        // Process inputs.
         if (Input.GetButton("Start") || health <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        // Process dash ability.
+        if (Input.GetButtonDown("Dash")) {
+            GetComponent<PlayerDash>().Perform();
+        }
 
         if (Input.GetButtonDown("QuickSwitchLeft")) {
             for (int i = active - 1; i >= 0; i--) {
@@ -79,13 +127,6 @@ public class PlayerController : MonoBehaviour {
         HandlePlayerMovement();
     }
 
-    public void ReceiveDamage(int damage) {
-        this.health -= damage;
-        if(this.health < 0)
-            this.health = 0;
-        GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI", -damage);
-    }
-
     void HandlePlayerMovement(){
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
         direction = Quaternion.AngleAxis(mainCam.transform.localEulerAngles.y, Vector3.up) * direction; //take into account camera yaw/direction
@@ -94,12 +135,5 @@ public class PlayerController : MonoBehaviour {
         
         if (direction != Vector3.zero)
             this.rb.MoveRotation(Quaternion.LookRotation(direction));
-    }
-
-    void healthRegen(){
-        if(health < maxHealth) {
-            health = health + addHealth > maxHealth ? maxHealth : health + addHealth;
-            GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("HealthUI" , addHealth);
-        }
     }
 }

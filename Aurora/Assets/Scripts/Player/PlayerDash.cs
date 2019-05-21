@@ -6,12 +6,6 @@ public class PlayerDash : MonoBehaviour {
     public Camera mainCam;
     public GameObject PlayerBody;
 
-    [Header("Stamina")]
-    [SerializeField] private int maxStamina = 100;
-    [SerializeField] private int stamina = 0;
-    [SerializeField] private int staminaRegen = 5;
-    [SerializeField] private float regenTime = 0.25f;
-
     [Header("Dash Variables")]
     [SerializeField] private float dashForce = 50;
     [SerializeField] private float dashDuration = 0.1f;
@@ -25,7 +19,6 @@ public class PlayerDash : MonoBehaviour {
     private float dashTime;
     private float dashCooldownTime;
     private BoxCollider bodyCollider;
-    private HUDUpdater hud;
 
     // Start is called before the first frame update
     void Start() {
@@ -33,32 +26,48 @@ public class PlayerDash : MonoBehaviour {
         dashTime = 0;
         dashCooldownTime = 0;
         bodyCollider = PlayerBody.GetComponent<BoxCollider>();
-        hud = GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>();
-        hud.UpdateSlider("StaminaUI", -50 + stamina); // Change -50 to 0 (Fix HUD)
-        InvokeRepeating("RegenStamina", 1f, regenTime);
+    }
+
+    public void Perform() {
+        PlayerController player = GetComponent<PlayerController>();
+        int currStamina = player.GetAttribute(GameManager.Attributes.Stamina);
+
+        if (this.isDashing) {
+            Debug.Log("Already dashing!");
+            return;
+        }
+
+        if (currStamina - this.dashCost < 0) {
+            Debug.Log("Not enough stamina!");
+            return;
+        }
+
+        if (this.dashCooldownTime > 0) {
+            Debug.Log("Dash still in cooldown!");
+            return;
+        }
+
+        // Drain stamina before action is performed.
+        GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Stamina, -this.dashCost);
+        this.isDashing = true;
+        
+        // TODO: Change all this shit.
+        DeactivateBodyCollider();
+        dashTime = dashDuration;
+ 
     }
 
     // Update is called once per frame
     void Update() {
-        if(!isDashing) {
-            if (dashCooldownTime > 0) {
-
-                dashCooldownTime -= Time.deltaTime;
-            }
-            else if(Input.GetButton("Dash") && stamina >= dashCost) {
-                stamina -= dashCost;
-                hud.UpdateSlider("StaminaUI", -dashCost);
-                isDashing = true;
-                DeactivateBodyCollider();
-                dashTime = dashDuration;
-                dashCooldownTime = dashCooldown;
-            }
+        if(dashCooldownTime > 0) {
+            dashCooldownTime -= Time.deltaTime;
         }
         
         if (isDashing && dashTime <= 0) {
             rb.velocity = Vector3.zero;
             isDashing = false;
             ActivateBodyCollider();
+            dashCooldownTime = dashCooldown;
         }
 
         if (isDashing) {
@@ -83,13 +92,6 @@ public class PlayerDash : MonoBehaviour {
     private void ActivateBodyCollider() {
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         bodyCollider.enabled = true;
-    }
-
-    private void RegenStamina() {
-        if(stamina < maxStamina) {
-            stamina = stamina + staminaRegen > 100 ? 100 : stamina + staminaRegen;
-            hud.UpdateSlider("StaminaUI" , staminaRegen);
-        }
     }
 
     public bool IsInDashGracePeriod() => this.isInDashGracePeriod;

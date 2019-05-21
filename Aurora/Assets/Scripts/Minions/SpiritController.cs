@@ -26,7 +26,7 @@ public class SpiritController : MonoBehaviour {
 
             // Collect spirit.
             if (distance >= 0.0f && distance < 0.50f) {
-                GameObject.Find("HUDCanvas").GetComponent<HUDUpdater>().UpdateSlider("EssenceUI", 1);
+                this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Spirits, 1);
                 ObjectPooler.SharedInstance.FreePooledObject(this.gameObject);
             }
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 1.5f / distance);
