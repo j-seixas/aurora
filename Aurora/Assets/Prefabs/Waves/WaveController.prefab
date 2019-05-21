@@ -47,3 +47,9 @@ MonoBehaviour:
     type: 3}
   minionRanged: {fileID: 5999608337142371106, guid: 1872507f1fd10a94ba7841c2b070e497,
     type: 3}
+  settings:
+    name: 
+    remainingTime: 0
+    minionSettings: []
+  spawnArea: {fileID: 3386935996598221378, guid: 69561d2c015a11d31a2c2c6f1f3ca215,
+    type: 3}

@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class WaveController : MonoBehaviour {
     public GameObject minionMelee, minionRanged;
     public WaveFactory.Settings settings;
+    public Transform spawnArea;
     private Text waveTimeLabel;
 
     void Awake() {
@@ -24,13 +25,14 @@ public class WaveController : MonoBehaviour {
 
     public void StepSpawn(WaveFactory.MinionSettings minion, float toSpawn) {
         for (int i = 0; i < toSpawn; i++) {
-            Vector3 position = new Vector3(Random.Range(-20f, 20f), 0.75f, Random.Range(-20f, 20f));
-            GameObject minionObj = ObjectPooler.SharedInstance.GetPooledObject(minion.tag);
-
+            Debug.Log(spawnArea.lossyScale);
+            Vector3 position = spawnArea.transform.position + new Vector3(Random.Range(-spawnArea.lossyScale.x/2.0f,spawnArea.lossyScale.x/2.0f), 0.75f, Random.Range(-spawnArea.lossyScale.z/2.0f,spawnArea.lossyScale.z/2.0f));
+            GameObject minionObj = ObjectPooler.SharedInstance.GetInactivePooledObject(minion.tag);
             if (minionObj != null) {
                 minionObj.transform.position = position;
                 minionObj.transform.rotation = Quaternion.identity;
             }
+            minionObj.SetActive(true);
         }
     }
 
