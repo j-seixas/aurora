@@ -538,8 +538,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.3509887e-38, y: -2.3061245e+18, z: 2.1175824e-22,
-    w: 3.0092666e-36}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 3.2e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3982,10 +3981,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBody
       objectReference: {fileID: 0}
+    - target: {fileID: 6044159583728674494, guid: 7544fdd389a1f3e8f8680f242e243a46,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 75afce52af1ac7bafa6813568ed160a9, type: 3}
     - target: {fileID: 6044159583728674495, guid: 7544fdd389a1f3e8f8680f242e243a46,
         type: 3}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2360103942626417286, guid: 7544fdd389a1f3e8f8680f242e243a46,
+        type: 3}
+      propertyPath: m_Name
+      value: UpgradeIce
+      objectReference: {fileID: 0}
+    - target: {fileID: 2360103943074656061, guid: 7544fdd389a1f3e8f8680f242e243a46,
+        type: 3}
+      propertyPath: m_Name
+      value: UpgradeLife
+      objectReference: {fileID: 0}
+    - target: {fileID: 2360103943709693198, guid: 7544fdd389a1f3e8f8680f242e243a46,
+        type: 3}
+      propertyPath: m_Name
+      value: UpgradeFire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7544fdd389a1f3e8f8680f242e243a46, type: 3}

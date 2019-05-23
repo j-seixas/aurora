@@ -5,9 +5,11 @@ using UnityEngine;
 public class IceUpgrade : Upgrade {
     [Header("Specific")]
     [SerializeField] private float radius;
-    public GameObject player, freezeAOE;
+    public GameObject freezeAOE;
+    private GameObject player;
 
     public override void Active() {
+        player = GameObject.FindWithTag("Player");
         Instantiate(freezeAOE, player.transform.position, Quaternion.identity);
     }
 

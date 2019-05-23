@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour {
     public Animator animator;
-    public GameObject weapon;
+    private GameObject weapon;
 
     // Start is called before the first frame update
     void Start() {
