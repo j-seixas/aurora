@@ -538,7 +538,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -100354, z: 1.61e-43, w: 0.08203125}
+  m_BoundingSphereOverride: {x: 1.3958713e+10, y: -54.579956, z: 1.0382e-41, w: 1.0045e-41}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0266776563f60d9408acb9a6bf41000a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 0.001
+  animationSpeed: 0.00195
 --- !u!82 &1600035835
 AudioSource:
   m_ObjectHideFlags: 0
