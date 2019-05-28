@@ -93,3 +93,11 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.timeline from version 1.0.0 to 1.1.0
+
+=== Tue May 28 15:33:54 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.textmeshpro from version 2.0.0 to 2.0.1

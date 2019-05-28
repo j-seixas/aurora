@@ -18,16 +18,19 @@ public class PlayerDash : MonoBehaviour {
     private bool isDashing = false;
     private float dashTime;
     private float dashCooldownTime;
-    private BoxCollider bodyCollider;
     private AudioSource audioSource;
+
+    private int defaultLayer;
+    private int dashingLayer;
 
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody>();
         dashTime = 0;
         dashCooldownTime = 0;
-        bodyCollider = PlayerBody.GetComponent<BoxCollider>();
         this.audioSource = gameObject.GetComponent<AudioSource>();
+        defaultLayer = LayerMask.NameToLayer("Default");
+        dashingLayer = LayerMask.NameToLayer("Dashing");
     }
 
     public void Perform() {
@@ -56,7 +59,7 @@ public class PlayerDash : MonoBehaviour {
         this.isDashing = true;
         
         // TODO: Change all this shit.
-        DeactivateBodyCollider();
+        SwitchLayerToDashing();
         dashTime = dashDuration;
  
     }
@@ -70,7 +73,7 @@ public class PlayerDash : MonoBehaviour {
         if (isDashing && dashTime <= 0) {
             rb.velocity = Vector3.zero;
             isDashing = false;
-            ActivateBodyCollider();
+            SwitchLayerToDefault();
             dashCooldownTime = dashCooldown;
         }
 
@@ -88,14 +91,12 @@ public class PlayerDash : MonoBehaviour {
     private void CountDashGracePeriod() =>
         this.isInDashGracePeriod = false;
 
-    private void DeactivateBodyCollider() {
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
-        bodyCollider.enabled = false;
+    private void SwitchLayerToDashing() {
+        PlayerBody.transform.parent.gameObject.layer = dashingLayer;
     }
 
-    private void ActivateBodyCollider() {
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        bodyCollider.enabled = true;
+    private void SwitchLayerToDefault() {
+        PlayerBody.transform.parent.gameObject.layer = defaultLayer;
     }
 
     public bool IsInDashGracePeriod() => this.isInDashGracePeriod;
