@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4960194411869832422}
   - component: {fileID: 4960194411869832419}
   - component: {fileID: -5636197110523402776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
