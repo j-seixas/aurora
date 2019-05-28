@@ -19,6 +19,7 @@ public class PlayerDash : MonoBehaviour {
     private float dashTime;
     private float dashCooldownTime;
     private BoxCollider bodyCollider;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start() {
@@ -26,6 +27,7 @@ public class PlayerDash : MonoBehaviour {
         dashTime = 0;
         dashCooldownTime = 0;
         bodyCollider = PlayerBody.GetComponent<BoxCollider>();
+        this.audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     public void Perform() {
@@ -47,6 +49,8 @@ public class PlayerDash : MonoBehaviour {
             return;
         }
 
+        PlaySoundEffect();  //sound effect
+        
         // Drain stamina before action is performed.
         GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Stamina, -this.dashCost);
         this.isDashing = true;
@@ -95,4 +99,8 @@ public class PlayerDash : MonoBehaviour {
     }
 
     public bool IsInDashGracePeriod() => this.isInDashGracePeriod;
+
+    public void PlaySoundEffect(){
+        audioSource.Play();
+    }
 }

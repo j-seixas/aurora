@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour {
 
         // Process dash ability.
         if (Input.GetButtonDown("Dash")) {
-            GetComponent<PlayerDash>().Perform();
+            GetComponent<PlayerDash>().Perform();            
         }
 
         if (Input.GetButtonDown("QuickSwitchLeft")) {
