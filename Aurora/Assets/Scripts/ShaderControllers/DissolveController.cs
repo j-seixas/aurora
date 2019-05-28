@@ -6,9 +6,11 @@ public class DissolveController : MonoBehaviour {
     public float animationSpeed = 0.01f;
     private Material material;
     private bool canDissolve = false;
+    private AudioSource audioSource;
 
     void Start() {
         this.material = gameObject.GetComponent<Renderer>().material;
+        this.audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -25,5 +27,9 @@ public class DissolveController : MonoBehaviour {
 
     public void StartDissolving() {
         this.canDissolve = true;
+    }
+
+    public void PlaySoundEffect(){
+        audioSource.Play();
     }
 }

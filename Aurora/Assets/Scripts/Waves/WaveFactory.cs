@@ -74,6 +74,10 @@ public class WaveFactory : MonoBehaviour {
         ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
         
         if (this.waves.Count != 0) this.SpawnUpgrades(spawnPoints);
-        else GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>().StartDissolving();
+        else{
+            DissolveController controller = GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>();
+            controller.StartDissolving();
+            controller.PlaySoundEffect();
+        } 
     }
 }
