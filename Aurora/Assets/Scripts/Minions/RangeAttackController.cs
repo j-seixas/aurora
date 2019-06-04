@@ -34,7 +34,7 @@ public class RangeAttackController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
+        if(other.tag == "PlayerBody"){
           PlayerController player = (PlayerController) other.gameObject.GetComponentInParent<PlayerController>();
           player.UpdateAttribute(GameManager.Attributes.Health, -this.damage);
             ObjectPooler.SharedInstance.FreePooledObject(this.gameObject);

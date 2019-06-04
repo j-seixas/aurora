@@ -15,6 +15,7 @@ TagManager:
   - IceGem
   - LifeGem
   - Fireball
+  - PlayerBody
   layers:
   - Default
   - TransparentFX

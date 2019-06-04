@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-    public GameObject target;
+    private GameObject target;
 
     private Vector3 offset;                         //camera-target distance to be kept
     private float pitch = 0f;                       //rotation around X axis
@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour {
     private float cameraRotationSpeed = 4f;         //how fast camera rotates, the slower the smoother
 
     void Start() {
+        target = GameObject.FindWithTag("Player");
         offset = target.transform.position - transform.position;
     }
 

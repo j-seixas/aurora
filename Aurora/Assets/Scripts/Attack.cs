@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack : MonoBehaviour {
-    public Animator animator;
-    private GameObject weapon;
+    private Animator animator;
+    public GameObject weapon;
 
     // Start is called before the first frame update
     void Start() {
@@ -14,7 +14,7 @@ public class Attack : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetButtonDown("Attack")) {
-            this.animator.SetTrigger("Attack");
+            this.animator.SetBool("Attack",true);
         } 
     }
 

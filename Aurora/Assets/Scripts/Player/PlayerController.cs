@@ -33,10 +33,12 @@ public class PlayerController : MonoBehaviour {
 
     private HUDUpdater canvas;
 
+    private Animator animator;
+
     void Start() {
         this.rb = GetComponent<Rigidbody>();
         this.canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>();
-
+        this.animator = GetComponent<Animator>();
         // Start regenerating health and stamina.
         InvokeRepeating("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);

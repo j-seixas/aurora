@@ -51,7 +51,7 @@ public abstract class MinionController : MonoBehaviour {
     public Collider checkForPlayer(){
         Collider[] minionRadius = Physics.OverlapSphere(transform.position, lookRadius);
         foreach (Collider col in minionRadius) {
-            if (col.tag == "Player") return col;
+            if (col.tag == "PlayerBody") return col;
         }
         return null;
     }

@@ -25,7 +25,6 @@ public class WaveController : MonoBehaviour {
 
     public void StepSpawn(WaveFactory.MinionSettings minion, float toSpawn) {
         for (int i = 0; i < toSpawn; i++) {
-            Debug.Log(spawnArea.lossyScale);
             Vector3 position = spawnArea.transform.position + new Vector3(Random.Range(-spawnArea.lossyScale.x/2.0f,spawnArea.lossyScale.x/2.0f), 0.75f, Random.Range(-spawnArea.lossyScale.z/2.0f,spawnArea.lossyScale.z/2.0f));
             GameObject minionObj = ObjectPooler.SharedInstance.GetInactivePooledObject(minion.tag);
             if (minionObj != null) {
