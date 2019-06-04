@@ -93,9 +93,9 @@ public class PlayerController : MonoBehaviour {
 
     void Update() {
         // Update the UI elements.
-        this.canvas.UpdateSlider("HealthUI", this.health);
-        this.canvas.UpdateSlider("StaminaUI", this.stamina);
-        this.canvas.UpdateSlider("EssenceUI", this.spirits);
+        this.canvas.UpdateSlider("Health", this.health);
+        this.canvas.UpdateSlider("Stamina", this.stamina);
+        this.canvas.UpdateSlider("Essence", this.spirits);
 
         // Process inputs.
         if (Input.GetButton("Start") || health <= 0)
