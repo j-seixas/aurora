@@ -133,6 +133,12 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate() {
         HandlePlayerMovement();
+
+        if(rb.velocity.magnitude > 0){
+            animator.SetBool("isMoving",true);
+        }else{
+            animator.SetBool("isMoving",false);
+        }
     }
 
     private void RegenerateHealth() =>
