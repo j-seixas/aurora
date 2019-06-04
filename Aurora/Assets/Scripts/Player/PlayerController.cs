@@ -35,10 +35,13 @@ public class PlayerController : MonoBehaviour {
 
     private Animator animator;
 
+    private Vector3 lastPos;
+
     void Start() {
         this.rb = GetComponent<Rigidbody>();
         this.canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>();
         this.animator = GetComponent<Animator>();
+        this.lastPos = gameObject.transform.position;
         // Start regenerating health and stamina.
         InvokeRepeating("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
@@ -123,6 +126,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Ability")) {
             if (this.active != -1) this.upgrades[this.active].Active();
         }
+
     }
 
     public void UnlockUpgrade(string upTag) {
@@ -133,12 +137,15 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate() {
         HandlePlayerMovement();
-
-        if(rb.velocity.magnitude > 0){
-            animator.SetBool("isMoving",true);
+        Vector3 currPos = gameObject.transform.position;
+        if(currPos == this.lastPos){
+            this.animator.SetBool("isMoving",false);
         }else{
-            animator.SetBool("isMoving",false);
+            this.animator.SetBool("isMoving",true);
         }
+        this.lastPos = currPos;
+       
+
     }
 
     private void RegenerateHealth() =>
