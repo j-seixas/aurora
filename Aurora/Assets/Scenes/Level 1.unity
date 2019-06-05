@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.69933814, g: 0.56237423, b: 0.38647467, a: 1}
+  m_IndirectSpecularColor: {r: 0.6995017, g: 0.56213903, b: 0.386014, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -538,7 +538,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.6e-44, y: -2.9811951e-30, z: 1.43e-43, w: 0.03125}
+  m_BoundingSphereOverride: {x: 1.16e-43, y: 0.08984375, z: 0.1953125, w: 0.03125}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1768,7 +1768,7 @@ GameObject:
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919366487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4255,6 +4255,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8251744441615041376, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251744441615041376, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251744441615041376, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8530869281105401580, guid: 0de0847243f5f5bfb825a838590e2cac,
         type: 3}
       propertyPath: mainCam
@@ -4265,6 +4280,11 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: 8530869281105401579, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: dashForce
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8530869281105401582, guid: 0de0847243f5f5bfb825a838590e2cac,
         type: 3}
       propertyPath: m_IsKinematic
@@ -4279,6 +4299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interpolate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530869281105401578, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0de0847243f5f5bfb825a838590e2cac, type: 3}
