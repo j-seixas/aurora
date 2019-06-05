@@ -18,6 +18,10 @@ public class LifeUpgrade : Upgrade {
 
     public override void Passive() {
         GetComponentInParent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, this.health);
+        
+        foreach (ParticleSystem particle in GetComponentsInChildren<ParticleSystem>()) {
+            particle.Play();
+        }
     }
 
     public override void LevelUp() {
