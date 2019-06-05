@@ -116,7 +116,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f962f35da3904a8da54fc924452abc9
+      spriteID: 24e72debce7b5470bbe32616496d2a8b
       internalID: -2499023732122329040
       vertices: []
       indices: 
@@ -137,7 +137,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce20e1444ad54437a1b0da18559fd33
+      spriteID: 6564d16afb60243589ef67876c4788e6
       internalID: -3257267274748707624
       vertices: []
       indices: 
@@ -158,7 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c98a9a5df0213468797bf9086df988f6
+      spriteID: eb86725cdaf9e459f8e47019dddf5106
       internalID: 4594471758365745343
       vertices: []
       indices: 
@@ -179,7 +179,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11c05d57771834db797dba022072aa1f
+      spriteID: 15235d50ea6194dde9da29a5b8b094eb
       internalID: 4153456392564488130
       vertices: []
       indices: 
@@ -189,10 +189,10 @@ TextureImporter:
       name: aurora-ui_4
       rect:
         serializedVersion: 2
-        x: 77
-        y: 224
-        width: 538
-        height: 275
+        x: 160
+        y: 227
+        width: 268
+        height: 263
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,7 +200,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 304c48ba35650454085058457665ff7a
+      spriteID: 9c72d0b1e742844a1bbbc1a4d7f9b716
       internalID: 779953162558909801
       vertices: []
       indices: 
@@ -221,7 +221,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cef17142f754462083779f0c36b42e9
+      spriteID: 7f22327fea673423290a089a0a30aec6
       internalID: -2702264501407143373
       vertices: []
       indices: 
@@ -230,7 +230,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0247e160e8e5e4e2e962ee5787d7718d
+    spriteID: 08aebde19926b444f87844b98ac3d650
     internalID: 0
     vertices: []
     indices: 
