@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: -2702264501407143373
     second: aurora-ui_5
+  - first:
+      213: -1815548444650601988
+    second: aurora-ui_6
+  - first:
+      213: -8846748838595042248
+    second: aurora-ui_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -116,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24e72debce7b5470bbe32616496d2a8b
+      spriteID: a546de568a71e4d86a15dbf249d67ff8
       internalID: -2499023732122329040
       vertices: []
       indices: 
@@ -137,7 +143,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6564d16afb60243589ef67876c4788e6
+      spriteID: f51e00d5414dd406f84dda7e91803697
       internalID: -3257267274748707624
       vertices: []
       indices: 
@@ -158,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb86725cdaf9e459f8e47019dddf5106
+      spriteID: 6092ebb100dbf46469418524000592ee
       internalID: 4594471758365745343
       vertices: []
       indices: 
@@ -179,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15235d50ea6194dde9da29a5b8b094eb
+      spriteID: 2e7671d01662e4ab5a7c86d20768c6c6
       internalID: 4153456392564488130
       vertices: []
       indices: 
@@ -200,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c72d0b1e742844a1bbbc1a4d7f9b716
+      spriteID: 6825d88469bef428a98b72da91ea5103
       internalID: 779953162558909801
       vertices: []
       indices: 
@@ -208,6 +214,48 @@ TextureImporter:
       weights: []
     - serializedVersion: 2
       name: aurora-ui_5
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 366
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31bb1b1f176b4492b38672c9aa40027
+      internalID: -2702264501407143373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aurora-ui_6
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 266
+        width: 76
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed7cd1b358964ebe8218cf31fc90dcc
+      internalID: -1815548444650601988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aurora-ui_7
       rect:
         serializedVersion: 2
         x: 58
@@ -221,8 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f22327fea673423290a089a0a30aec6
-      internalID: -2702264501407143373
+      spriteID: 12534eb395eff4df197a7564ff4e8edb
+      internalID: -8846748838595042248
       vertices: []
       indices: 
       edges: []
@@ -230,7 +278,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 08aebde19926b444f87844b98ac3d650
+    spriteID: 9ff0fca5de9324de9858794e4ef30f34
     internalID: 0
     vertices: []
     indices: 
