@@ -538,7 +538,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 1.25e-43, z: 2.296e-41, w: 0}
+  m_BoundingSphereOverride: {x: 1.16e-43, y: 0.08984375, z: 0.1953125, w: 0.03125}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6550,7 +6550,7 @@ GameObject:
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919366487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13769,6 +13769,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1051740985, guid: 0de0847243f5f5bfb825a838590e2cac, type: 3}
       propertyPath: m_LocalRotation.z
+    - target: {fileID: 8251744441615041376, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251744441615041376, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251744441615041376, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530869281105401580, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 8530869281105401579, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 8530869281105401579, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: dashForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530869281105401582, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1051740985, guid: 0de0847243f5f5bfb825a838590e2cac, type: 3}
@@ -13781,6 +13814,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1051740985, guid: 0de0847243f5f5bfb825a838590e2cac, type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530869281105401578, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: BypassReverbZones
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

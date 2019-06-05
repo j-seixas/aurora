@@ -123,6 +123,8 @@ MonoBehaviour:
   speed: 10
   range: 3
   damage: 10
+  flashAnimDuration: 0.75
+  hitFlashMaterial: {fileID: 2100000, guid: 70fba02c0ba041d4da0b6292a15cda34, type: 2}
   health: 100
 --- !u!1001 &3994040383833729285
 PrefabInstance:
