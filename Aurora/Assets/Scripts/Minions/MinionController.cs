@@ -40,6 +40,11 @@ public abstract class MinionController : MonoBehaviour {
 
     protected void Update () {
         if (health <= 0) {
+            // Stop coroutine and reset material
+            if(this.coroutine != null) StopCoroutine (this.coroutine);
+            this.renderer.material = this.originalMat;
+            this.renderer.material.color = this.originalColor;
+            
             // On death, spawn a spirit in its place.
             GameObject spirit = ObjectPooler.SharedInstance.GetPooledObject ("Spirit");
             spirit.GetComponent<SpiritController> ().PositionSelf (transform);
@@ -50,11 +55,6 @@ public abstract class MinionController : MonoBehaviour {
     }
 
     protected void OnDisable () {
-        // Stop coroutine and reset material
-        StopCoroutine (this.coroutine);
-        this.renderer.material = this.originalMat;
-        this.renderer.material.color = this.originalColor;
-
         // Reset health so new minions won't have zero health.
         this.health = 100;
     }
