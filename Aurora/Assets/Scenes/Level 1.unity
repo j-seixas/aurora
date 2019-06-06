@@ -538,7 +538,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 3.3317882e-21, z: 1.3688e-41, w: 3.0531236e-21}
+  m_BoundingSphereOverride: {x: -0.0390625, y: -1, z: 9, w: 10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -13780,6 +13780,16 @@ PrefabInstance:
       propertyPath: audioAttack1
       value: 
       objectReference: {fileID: 8300000, guid: 0666c11ee5947b65ab28b5d25a237ee9, type: 3}
+    - target: {fileID: 8530869281105401580, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: audioAttack2
+      value: 
+      objectReference: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
+    - target: {fileID: 8530869281105401580, guid: 0de0847243f5f5bfb825a838590e2cac,
+        type: 3}
+      propertyPath: audioAttack3
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8530869281105401579, guid: 0de0847243f5f5bfb825a838590e2cac,
         type: 3}
       propertyPath: mainCam
