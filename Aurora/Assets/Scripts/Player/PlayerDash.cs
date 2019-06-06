@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDash : MonoBehaviour {
     public Camera mainCam;
     public GameObject PlayerBody;
+    public AudioClip audioclip;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashForce = 50;
@@ -102,6 +103,6 @@ public class PlayerDash : MonoBehaviour {
     public bool IsInDashGracePeriod() => this.isInDashGracePeriod;
 
     public void PlaySoundEffect(){
-        audioSource.Play();
+        audioSource.PlayOneShot(audioclip,1F);
     }
 }
