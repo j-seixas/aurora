@@ -15,6 +15,9 @@ public class PlayerDash : MonoBehaviour {
     [SerializeField] private int dashCost = 50;
     private bool isInDashGracePeriod = false;
 
+    [Header("Dash Particles")]
+    [SerializeField] GameObject particles;
+
     private Rigidbody rb;
     private bool isDashing = false;
     private float dashTime;
@@ -54,6 +57,8 @@ public class PlayerDash : MonoBehaviour {
         }
 
         PlaySoundEffect();  //sound effect
+        GameObject obj = Instantiate(this.particles, gameObject.transform);
+        obj.GetComponent<ParticleSystem>().Play();
         
         // Drain stamina before action is performed.
         GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Stamina, -this.dashCost);
