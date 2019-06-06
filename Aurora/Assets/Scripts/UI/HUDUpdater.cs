@@ -17,4 +17,9 @@ public class HUDUpdater : MonoBehaviour {
             txtObj.text = newValue.ToString();
         }
     }
+
+    public void LevelUpgradeElement(Upgrade.Type type, int value) {
+        Text text = GameObject.Find(type.ToString() + "PowerUp/Level").GetComponent<Text>();
+        text.text = value.ToString();
+    }
 }

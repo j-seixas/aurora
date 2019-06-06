@@ -6,6 +6,10 @@ public class FireUpgrade : Upgrade {
     [Header("Specific")]
     [SerializeField] private float radius;
 
+    private void Start() {
+        this.type = Type.Fire;
+    }
+
     public override void Active() {
         Debug.Log("FIRE ACTIVE");
     }

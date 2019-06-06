@@ -8,6 +8,10 @@ public class IceUpgrade : Upgrade {
     public GameObject freezeAOE;
     private GameObject player;
 
+    private void Start() {
+        this.type = Type.Ice;
+    }
+
     public override void Active() {
         player = GameObject.FindWithTag("Player");
         Instantiate(freezeAOE, player.transform.position, Quaternion.identity);
