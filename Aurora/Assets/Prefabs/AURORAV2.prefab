@@ -1289,7 +1289,6 @@ GameObject:
   - component: {fileID: 8251744441615041376}
   - component: {fileID: 2021577575973809690}
   - component: {fileID: 8530869281105401582}
-  - component: {fileID: 8530869281105401581}
   - component: {fileID: 8530869281105401580}
   - component: {fileID: 8530869281105401579}
   - component: {fileID: 8530869281105401578}
@@ -1355,19 +1354,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!114 &8530869281105401581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4962768883515797875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d6b015046c8ba14082173134270337b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 4434633798254565885}
 --- !u!114 &8530869281105401580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,6 +1377,10 @@ MonoBehaviour:
   staminaRegenRate: 0.1
   spirits: 0
   maxSpirits: 100
+  weapon: {fileID: 0}
+  audioAttack1: {fileID: 0}
+  audioAttack2: {fileID: 0}
+  audioAttack3: {fileID: 0}
   upgrades:
   - {fileID: 0}
   - {fileID: 0}
@@ -1410,6 +1400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
   PlayerBody: {fileID: 7270267325036441562}
+  audioclip: {fileID: 0}
   dashForce: 50
   dashDuration: 0.1
   dashCooldown: 0.2

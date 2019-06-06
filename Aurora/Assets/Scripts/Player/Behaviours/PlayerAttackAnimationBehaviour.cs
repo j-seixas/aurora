@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerAttackAnimationBehaviour : StateMachineBehaviour
 {
-    private Attack player;
+    private PlayerController player;
 
     public string type;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       this.player = animator.GetComponentInParent<Attack>();
+       this.player = animator.GetComponentInParent<PlayerController>();
        animator.SetBool("Attack",false);
-       animator.GetComponentInParent<PlayerController>().PlaySoundAttack(type);  //plays sound effect for each type of attack
+       this.player.PlaySoundAttack(type);  //plays sound effect for each type of attack
 
     }
 

@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private int spirits = 0;
     [SerializeField] private int maxSpirits = 100;
 
+    [Header ("Attack")]
+    [SerializeField] public GameObject weapon;
+
     [Header ("Sounds")]
     public AudioClip audioAttack1;
     public AudioClip audioAttack2;
@@ -115,6 +118,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButton ("Start") || health <= 0)
             SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 
+        if (Input.GetButtonDown("Attack")) {
+            this.animator.SetBool("Attack", true);
+        }
+
         // Process dash ability.
         if (Input.GetButtonDown ("Dash")) {
             GetComponent<PlayerDash> ().Perform ();
@@ -170,6 +177,14 @@ public class PlayerController : MonoBehaviour {
 
         if (direction != Vector3.zero)
             this.rb.MoveRotation (Quaternion.LookRotation (direction));
+    }
+
+    void ActivateCollider() {
+        this.weapon.GetComponent<Collider>().enabled = true;
+    }
+
+    void DeactivateCollider() {
+        this.weapon.GetComponent<Collider>().enabled = false;
     }
 
     public void PlaySoundAttack (string i) {
