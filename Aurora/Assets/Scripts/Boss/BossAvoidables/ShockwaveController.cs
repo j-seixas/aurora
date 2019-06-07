@@ -27,7 +27,7 @@ public class ShockwaveController : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player" && !other.gameObject.transform.parent.gameObject.GetComponent<PlayerDash>().IsInDashGracePeriod()) {
+        if (other.tag == "PlayerBody" && !other.gameObject.transform.parent.gameObject.GetComponent<PlayerDash>().IsInDashGracePeriod()) {
             GameObject player = other.gameObject.transform.parent.gameObject;
             player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, -this.damage);
         }

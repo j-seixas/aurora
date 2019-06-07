@@ -20,7 +20,6 @@ public class PlayerAttackAnimationBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (Input.GetButtonDown("Attack")) {
-            Debug.Log("HELLOexit");
             animator.SetBool("Attack",true);
         }else{
             animator.SetBool("Attack",false);

@@ -26,6 +26,8 @@ public abstract class MinionController : MonoBehaviour {
     private Color32 originalColor;
     private IEnumerator coroutine;
 
+    private Rigidbody rb;
+
     protected void Start () {
         agent = GetComponent<NavMeshAgent> ();
         anim = GetComponent<Animator> ();
@@ -35,6 +37,7 @@ public abstract class MinionController : MonoBehaviour {
         agent.updatePosition = true;
         this.renderer = this.transform.GetChild (0).GetChild (0).GetComponent<MeshRenderer> ();
         this.originalMat = this.renderer.material;
+        this.rb = GetComponent<Rigidbody>();
         this.originalColor = this.renderer.material.color;
     }
 
@@ -54,6 +57,10 @@ public abstract class MinionController : MonoBehaviour {
         }
     }
 
+    private void FixedUpdate() {
+        
+    }
+
     protected void OnDisable () {
         // Reset health so new minions won't have zero health.
         this.health = 100;
@@ -62,7 +69,7 @@ public abstract class MinionController : MonoBehaviour {
     public void ReceiveDamage (int damage) {
         this.coroutine = FlashRed ();
         StartCoroutine (this.coroutine);
-        this.health -= damage;
+        this.health -= damage;    
     }
 
     public Collider checkForPlayer () {

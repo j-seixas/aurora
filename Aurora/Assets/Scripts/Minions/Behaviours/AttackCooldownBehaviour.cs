@@ -17,7 +17,7 @@ public class AttackCooldownBehaviour : MinionBehaviour
             animator.SetBool("didAttack",false);    
     }
 
-    private void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {
+    override public void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {
         animator.SetBool("attacked",false);
     }
 

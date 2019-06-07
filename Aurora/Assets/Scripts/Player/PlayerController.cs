@@ -116,14 +116,14 @@ public class PlayerController : MonoBehaviour {
 
         // Process inputs.
         if (Input.GetButton ("Start") || health <= 0)
-            SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
 
         if (Input.GetButtonDown("Attack")) {
             this.animator.SetBool("Attack", true);
         }
 
         // Process dash ability.
-        if (Input.GetButtonDown ("Dash")) {
+        if (Input.GetButtonDown("Dash")) {
             GetComponent<PlayerDash> ().Perform ();
         }
 
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButtonDown ("QuickSwitchRight")) {
             for (int i = active + 1; i < upgrades.Count; i++) {
-                if (upgrades[i].GetLevel () > 0) { this.SwitchLevel (i); break; }
+                if (upgrades[i].GetLevel() > 0) { this.SwitchLevel (i); break; }
             }
         }
 
@@ -187,11 +187,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     void ActivateCollider() {
-        this.weapon.GetComponent<Collider>().enabled = true;
+        this.weapon.GetComponent<PlayerWeapon>().ToggleWeaponCollider(true);
     }
 
     void DeactivateCollider() {
-        this.weapon.GetComponent<Collider>().enabled = false;
+        this.weapon.GetComponent<PlayerWeapon>().ToggleWeaponCollider(false);
     }
 
     public void PlaySoundAttack (string i) {

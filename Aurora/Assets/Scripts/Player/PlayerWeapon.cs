@@ -18,6 +18,14 @@ public class PlayerWeapon : MonoBehaviour {
         }
     }
 
-    public void ToggleWeaponCollider(bool isActive) =>
+    public void ToggleWeaponCollider(bool isActive){
+
         this.GetComponent<Collider>().enabled = isActive;
+        Collider[] colliders = this.GetComponents<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = isActive;
+        }
+
+    }
 }

@@ -29,7 +29,7 @@ public class PlayerDash : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        rb = GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
         dashTime = 0;
         dashCooldownTime = 0;
         this.audioSource = gameObject.GetComponent<AudioSource>();
@@ -82,7 +82,7 @@ public class PlayerDash : MonoBehaviour {
             SwitchLayerToDefault();
             dashCooldownTime = dashCooldown;
         }
-
+    
         if (isDashing) {
             if (!IsInvoking("CountDashGracePeriod")) {
                 this.isInDashGracePeriod = true;
@@ -90,7 +90,8 @@ public class PlayerDash : MonoBehaviour {
             }
 
             dashTime -= Time.deltaTime;
-            rb.velocity = rb.transform.forward * dashForce;
+           
+            rb.AddForce(rb.transform.forward*dashForce,ForceMode.Impulse);
         }
     }
 
