@@ -28,6 +28,8 @@ public abstract class MinionController : MonoBehaviour {
 
     private Rigidbody rb;
 
+    private Vector3 lastVelocity;
+
     protected void Start () {
         agent = GetComponent<NavMeshAgent> ();
         anim = GetComponent<Animator> ();
@@ -55,6 +57,9 @@ public abstract class MinionController : MonoBehaviour {
             // Despawn minion.
             ObjectPooler.SharedInstance.FreePooledObject (gameObject);
         }
+        if(agent.velocity != Vector3.zero){
+            lastVelocity = agent.velocity;
+        }
     }
 
     private void FixedUpdate() {
@@ -70,6 +75,7 @@ public abstract class MinionController : MonoBehaviour {
         this.coroutine = FlashRed ();
         StartCoroutine (this.coroutine);
         this.health -= damage;    
+        rb.AddForce(lastVelocity.normalized*-15,ForceMode.Impulse);
     }
 
     public Collider checkForPlayer () {
