@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.69933814, g: 0.56237423, b: 0.38647467, a: 1}
+  m_IndirectSpecularColor: {r: 0.6995017, g: 0.56213903, b: 0.386014, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13820,7 +13820,7 @@ PrefabInstance:
         type: 3}
       propertyPath: audioAttack3
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
     - target: {fileID: 8530869281105401580, guid: 0de0847243f5f5bfb825a838590e2cac,
         type: 3}
       propertyPath: weapon
