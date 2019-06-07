@@ -143,6 +143,13 @@ public class PlayerController : MonoBehaviour {
             if (this.active != -1) this.upgrades[this.active].Active ();
         }
 
+        if (Input.GetButtonDown("Dash")) {
+            WaveFactory waveFactory = GameObject.Find("WaveFactory").GetComponent<WaveFactory>();
+            
+            if (waveFactory.IsShoppingPhase()) 
+                waveFactory.NextWave();            
+        }
+
     }
 
     public void UnlockUpgrade (string upTag) {

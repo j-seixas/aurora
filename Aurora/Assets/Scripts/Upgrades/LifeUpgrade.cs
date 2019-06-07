@@ -33,9 +33,8 @@ public class LifeUpgrade : Upgrade {
         int balance = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetAttribute(GameManager.Attributes.Spirits);
 
         if (balance >= this.spiritCostByLevel[this.level]) {
+            this.UpgradeLevel();
             this.healthGain = this.healthGainByLevel[this.level];
-            this.level++;
-            this.UpdateHUDElements();
         } else { Debug.Log("Not enough balance!"); }
     } 
 

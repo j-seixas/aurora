@@ -10,7 +10,6 @@ public class WaveFactory : MonoBehaviour {
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private List<GameObject> upgradeObjects = new List<GameObject>();
     private List<GameObject> spawnedObjs = new List<GameObject>();
-
     [System.Serializable]
     public struct Settings {
         public string name;
@@ -80,4 +79,7 @@ public class WaveFactory : MonoBehaviour {
             controller.PlaySoundEffect();
         } 
     }
+
+    public bool IsShoppingPhase() =>
+        !this.waves.Exists(wave => wave.activeSelf);
 }

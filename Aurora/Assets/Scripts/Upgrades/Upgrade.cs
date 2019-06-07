@@ -38,6 +38,9 @@ public abstract class Upgrade : MonoBehaviour {
     public void SetActive(bool state) =>
         this.active = state;
 
-    public void UpdateHUDElements() =>
+    protected void UpgradeLevel() {
+        this.level++;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Spirits, -this.spiritCostByLevel[this.level - 1]);
         GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>().LevelUpgradeElement(this.type, this.level);
+    }
 }
