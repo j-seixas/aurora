@@ -22,4 +22,10 @@ public class HUDUpdater : MonoBehaviour {
         Text text = GameObject.Find(type.ToString() + "PowerUp/Level").GetComponent<Text>();
         text.text = value.ToString();
     }
+
+    public void UpdatePowerUp(Upgrade.Type type, bool active) {
+        if(active)
+            GameObject.Find(type.ToString() + "PowerUp/Image").GetComponent<Image>().color = new Color32(255,255,255,255);
+        else GameObject.Find(type.ToString() + "PowerUp/Image").GetComponent<Image>().color = new Color32(140,140,140,255);
+    }
 }
