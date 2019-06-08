@@ -26,7 +26,9 @@ public class FireUpgrade : Upgrade {
     }
 
     public override void LevelUp() {
-        this.level++;
+        // Attempt to upgrade level and make every upgrade status change.
+        if (this.UpgradeLevel()) {
+            // Add gem specific logic here.
+        }
     } 
-
 }

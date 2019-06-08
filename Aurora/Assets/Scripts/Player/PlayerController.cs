@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour {
 
     public void UnlockUpgrade (string upTag) {
         for (int i = 0; i < this.upgrades.Count; i++) {
-            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUp (); break; }
+            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUp(); break; }
         }
     }
 

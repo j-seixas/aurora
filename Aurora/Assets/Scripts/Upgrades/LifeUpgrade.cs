@@ -30,12 +30,9 @@ public class LifeUpgrade : Upgrade {
     }
 
     public override void LevelUp() {
-        int balance = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetAttribute(GameManager.Attributes.Spirits);
-
-        if (balance >= this.spiritCostByLevel[this.level]) {
-            this.UpgradeLevel();
-            this.healthGain = this.healthGainByLevel[this.level];
-        } else { Debug.Log("Not enough balance!"); }
+        // Attempt to upgrade level and make every upgrade status change.
+        if (this.UpgradeLevel()) {
+            this.healthGain = this.healthGainByLevel[this.level];  // Gem specific logic.
+        }
     } 
-
 }

@@ -41,9 +41,20 @@ public abstract class Upgrade : MonoBehaviour {
     public void SetActive(bool state) =>
         this.active = state;
 
-    protected void UpgradeLevel() {
+    protected bool UpgradeLevel() {
+        // Does the player have enough spirits to purchase the upgrade?
+        int balance = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetAttribute(GameManager.Attributes.Spirits);
+
+        if (balance < this.spiritCostByLevel[this.level]) {
+            Debug.Log("Not enough balance!");
+            return false;
+        }
+
         this.level++;
+
+        // Decrement the spirits and update the HUD accordingly.
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Spirits, -this.spiritCostByLevel[this.level - 1]);
         GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>().LevelUpgradeElement(this.type, this.level);
+        return true;
     }
 }
