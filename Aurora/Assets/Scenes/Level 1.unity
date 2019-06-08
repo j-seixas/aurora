@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.69923186, g: 0.5623549, b: 0.38635597, a: 1}
+  m_IndirectSpecularColor: {r: 0.69933814, g: 0.56237423, b: 0.38647467, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -538,7 +538,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4, y: 1.5e-44, z: 0, w: 1}
+  m_BoundingSphereOverride: {x: 9.224498e+18, y: -1.0587912e-22, z: 1.9721523e-31,
+    w: 1.6155871e-27}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2170,7 +2171,7 @@ MonoBehaviour:
     type: 3}
   settings:
   - name: WAVE 1
-    remainingTime: 20
+    remainingTime: 5
     minionSettings:
     - tag: MinionMelee
       minimum: 2
@@ -2183,7 +2184,7 @@ MonoBehaviour:
       spawnNo: 2
       multiplier: 1
   - name: WAVE 2
-    remainingTime: 10
+    remainingTime: 30
     minionSettings:
     - tag: MinionMelee
       minimum: 2
@@ -4257,6 +4258,11 @@ PrefabInstance:
       propertyPath: upgrades.Array.data[2]
       value: 
       objectReference: {fileID: 416431900}
+    - target: {fileID: 4115967651471138986, guid: 751ff3e57053eb34ba4da4151f8c9892,
+        type: 3}
+      propertyPath: spirits
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4115967651471138987, guid: 751ff3e57053eb34ba4da4151f8c9892,
         type: 3}
       propertyPath: mainCam
@@ -4365,7 +4371,7 @@ PrefabInstance:
     - target: {fileID: 4694816043287751287, guid: 751ff3e57053eb34ba4da4151f8c9892,
         type: 3}
       propertyPath: attackDamage
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6044988187682614216, guid: 751ff3e57053eb34ba4da4151f8c9892,
         type: 3}

@@ -30,6 +30,9 @@ public abstract class Upgrade : MonoBehaviour {
     public int GetLevel() => 
         this.level;
 
+    public bool IsActiveEnabled() =>
+        this.level > 0;
+
     public void PrintStatusPopup() {
         string text = type.ToString() + " upgrade costs " + this.spiritCostByLevel[this.level].ToString() + " spirits!";
         Debug.Log(text);

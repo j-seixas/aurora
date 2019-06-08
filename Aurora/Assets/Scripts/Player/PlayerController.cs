@@ -205,8 +205,7 @@ public class PlayerController : MonoBehaviour {
         foreach (Collider collider in hitColliders)
         {
             if (collider.tag == "MinionMelee" || collider.tag == "MinionRanged") {
-                weapon.GetComponent<PlayerWeapon>().DealDamage(collider.gameObject,0);
-                
+                weapon.GetComponent<PlayerWeapon>().DealDamage(collider.gameObject, 0, false, false);
             }   
         }
     }

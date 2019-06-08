@@ -30,6 +30,9 @@ public abstract class MinionController : MonoBehaviour {
 
     private Vector3 lastVelocity;
 
+    private bool isBurning = false;
+    private bool isSlowed = false;
+
     protected void Start () {
         agent = GetComponent<NavMeshAgent> ();
         anim = GetComponent<Animator> ();
@@ -99,13 +102,47 @@ public abstract class MinionController : MonoBehaviour {
         rb.AddForce(lastVelocity.normalized*-power,ForceMode.Impulse);
     }
 
-    IEnumerator FlashRed () {
+    private IEnumerator FlashRed () {
         this.renderer.material = hitFlashMaterial;
         this.renderer.material.color = Color.red;
         yield return new WaitForSeconds (this.flashAnimDuration / 2);
         this.renderer.material = originalMat;
         this.renderer.material.color = originalColor;
         yield return new WaitForSeconds (this.flashAnimDuration / 2);
+    }
+
+    public void ApplyBurn(int damage, float rate, int ticks) {
+        if (!this.isBurning)
+            StartCoroutine(BurnEnumerator(damage, rate, ticks));
+    }
+
+    public void ApplySlow(float slow, float duration) {
+        if (!this.isSlowed)
+            StartCoroutine(SlowEnumerator(slow, duration));
+    }
+
+    private IEnumerator BurnEnumerator(int damage, float rate, int ticks) {
+        this.isBurning = true;
+
+        while (ticks-- > 0) {
+            StartCoroutine(FlashRed());
+            this.health -= damage;
+            yield return new WaitForSeconds(rate);
+        }
+
+        this.isBurning = false;
+    }
+
+    private IEnumerator SlowEnumerator(float slow, float duration) {
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        
+        agent.speed = this.speed * slow;
+        this.isSlowed = true;
+
+        yield return new WaitForSeconds(duration);
+
+        agent.speed = this.speed;
+        this.isSlowed = false;
     }
 
     public abstract bool Attack ();
