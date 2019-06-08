@@ -38,8 +38,10 @@ public abstract class Upgrade : MonoBehaviour {
         Debug.Log(text);
     }
 
-    public void SetActive(bool state) =>
+    public void SetActive(bool state) {
         this.active = state;
+        GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>().UpdatePowerUp(this.type, this.active);
+    }
 
     protected bool UpgradeLevel() {
         // Does the player have enough spirits to purchase the upgrade?
