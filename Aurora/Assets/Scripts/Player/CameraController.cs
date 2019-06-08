@@ -18,8 +18,8 @@ public class CameraController : MonoBehaviour {
     }
 
     void Update() {
-        yaw += sensitivity * Input.GetAxis("Mouse X");
-        pitch += sensitivity * Input.GetAxis("Mouse Y");
+        yaw += sensitivity * (Input.GetAxis("Mouse X") + Input.GetAxis("Joystick X"));
+        pitch += sensitivity * (Input.GetAxis("Mouse Y")+ Input.GetAxis("Joystick Y"));
     
         // if(Input.GetButtonDown("Recenter Camera")) Recenter();
         

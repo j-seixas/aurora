@@ -103,35 +103,35 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse X
-    descriptiveName: PS Controller Right Stick X-Axis
+    descriptiveName: Mouse control on X axis
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.19
-    sensitivity: 1
+    dead: 0
+    sensitivity: 0.1
     snap: 1
     invert: 0
-    type: 2
-    axis: 3
+    type: 1
+    axis: 0
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse Y
-    descriptiveName: PS Controller Right Stick Y-Axis
+    descriptiveName: Mouse control on Y axis
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.19
-    sensitivity: 1
+    dead: 0
+    sensitivity: 0.1
     snap: 0
-    invert: 0
-    type: 2
-    axis: 4
+    invert: 1
+    type: 1
+    axis: 1
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse ScrollWheel
@@ -1124,4 +1124,36 @@ InputManager:
     invert: 0
     type: 2
     axis: 5
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Joystick X
+    descriptiveName: PS Controller Right Stick X-Axis
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Joystick Y
+    descriptiveName: PS Controller Right Stick Y-Axis
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
     joyNum: 0
