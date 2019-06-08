@@ -143,11 +143,12 @@ public class PlayerController : MonoBehaviour {
             if (this.active != -1) this.upgrades[this.active].Active ();
         }
 
-        if (Input.GetButtonDown("Dash")) {
+        // TODO: The button here should be changed.
+        if (Input.GetButtonDown("Dash") && GameObject.Find("WaveFactory")) {
             WaveFactory waveFactory = GameObject.Find("WaveFactory").GetComponent<WaveFactory>();
             
             if (waveFactory.IsShoppingPhase()) 
-                waveFactory.NextWave();            
+                waveFactory.NextWave();
         }
 
 

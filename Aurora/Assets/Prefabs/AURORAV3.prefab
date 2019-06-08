@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 50
+  knockbackForce: 15
 --- !u!65 &2350219270687286098
 BoxCollider:
   m_ObjectHideFlags: 0

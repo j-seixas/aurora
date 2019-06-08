@@ -40,7 +40,7 @@ public class WaveFactory : MonoBehaviour {
         }
     }
     
-    void Start() {
+    private void Awake() {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
 
         this.settings.ForEach(setting => {
@@ -49,7 +49,7 @@ public class WaveFactory : MonoBehaviour {
             this.waves.Add(wave);
         });
 
-        this.waves[0].SetActive(true);
+        this.NextWave();
     }
 
     public void NextWave() {
