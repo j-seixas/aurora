@@ -150,12 +150,18 @@ public class PlayerController : MonoBehaviour {
                 waveFactory.NextWave();            
         }
 
+
     }
 
     public void UnlockUpgrade (string upTag) {
         for (int i = 0; i < this.upgrades.Count; i++) {
             if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUp (); break; }
         }
+    }
+
+    void OnDrawGizmosSelected () {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere (transform.position, 4);
     }
 
     void FixedUpdate () {
@@ -192,6 +198,17 @@ public class PlayerController : MonoBehaviour {
 
     void DeactivateCollider() {
         this.weapon.GetComponent<PlayerWeapon>().ToggleWeaponCollider(false);
+    }
+
+    public void AOEAttack(){
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position,4);
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider.tag == "MinionMelee" || collider.tag == "MinionRanged") {
+                weapon.GetComponent<PlayerWeapon>().DealDamage(collider.gameObject,0);
+                
+            }   
+        }
     }
 
     public void PlaySoundAttack (string i) {

@@ -75,7 +75,7 @@ public abstract class MinionController : MonoBehaviour {
         this.coroutine = FlashRed ();
         StartCoroutine (this.coroutine);
         this.health -= damage;    
-        rb.AddForce(lastVelocity.normalized*-15,ForceMode.Impulse);
+        
     }
 
     public Collider checkForPlayer () {
@@ -93,6 +93,10 @@ public abstract class MinionController : MonoBehaviour {
     protected void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (transform.position, lookRadius);
+    }
+
+    public void SimpleKnockBack(int power){
+        rb.AddForce(lastVelocity.normalized*-power,ForceMode.Impulse);
     }
 
     IEnumerator FlashRed () {
