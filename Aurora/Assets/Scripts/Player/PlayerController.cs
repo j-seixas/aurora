@@ -34,9 +34,6 @@ public class PlayerController : MonoBehaviour {
     public List<Upgrade> upgrades = new List<Upgrade> ();
     [SerializeField] private int active = -1;
 
-
-    private AudioManager audioManager;
-
     private HUDUpdater canvas;
 
     private Animator animator;
@@ -48,10 +45,10 @@ public class PlayerController : MonoBehaviour {
         this.canvas = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<HUDUpdater> ();
         this.animator = GetComponent<Animator> ();
         this.lastPos = gameObject.transform.position;
-        this.audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         // Start regenerating health and stamina.
         InvokeRepeating ("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating ("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
+        AudioManager.Instance.PlayMusic("MainTheme");
     }
 
     public int GetAttribute (GameManager.Attributes attr) {
@@ -207,6 +204,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void PlaySoundAttack (string i) {
-        this.audioManager.PlaySound("Attack" + i);
+        AudioManager.Instance.PlaySFX("Attack" + i);
     }
 }

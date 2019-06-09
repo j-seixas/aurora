@@ -25,14 +25,11 @@ public class PlayerDash : MonoBehaviour {
     private int defaultLayer;
     private int dashingLayer;
 
-    private AudioManager audioManager;
-
     // Start is called before the first frame update
     void Start() {
         rb = gameObject.GetComponent<Rigidbody>();
         dashTime = 0;
         dashCooldownTime = 0;
-        this.audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         defaultLayer = LayerMask.NameToLayer("Default");
         dashingLayer = LayerMask.NameToLayer("Dashing");
     }
@@ -56,7 +53,7 @@ public class PlayerDash : MonoBehaviour {
             return;
         }
 
-        this.audioManager.PlaySound("Dash");
+        AudioManager.Instance.PlaySFX("Dash");
         GameObject obj = Instantiate(this.particles, gameObject.transform);
         obj.GetComponent<ParticleSystem>().Play();
         

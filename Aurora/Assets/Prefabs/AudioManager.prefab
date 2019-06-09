@@ -43,28 +43,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67173ae065a4b014f8294be2b170cba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
+  sfx:
   - name: Attack1
     clip: {fileID: 8300000, guid: 0666c11ee5947b65ab28b5d25a237ee9, type: 3}
-    volume: 0.773
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Attack2
     clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
-    volume: 0.773
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Attack3
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
-    volume: 0.773
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Dash
     clip: {fileID: 8300000, guid: 92d96a97ab297f0e4a4c2e3f3c750653, type: 3}
-    volume: 0.773
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  music:
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Music2
+    clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  sfxVolume: 1
+  musicVolume: 1
