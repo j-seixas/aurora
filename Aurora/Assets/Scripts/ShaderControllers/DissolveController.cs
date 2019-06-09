@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DissolveController : MonoBehaviour {
     public float animationSpeed = 0.01f;
+    public Camera cinematicCamera, playerCamera;
+
     private Material material;
-    private bool canDissolve = false;
+    private bool canDissolve = false, isInCinemaMode = false;
     private AudioSource audioSource;
 
     void Start() {
@@ -15,6 +17,12 @@ public class DissolveController : MonoBehaviour {
 
     void Update() {
         if (this.canDissolve) {
+            
+            if (!this.isInCinemaMode) {
+                StartCoroutine(SwitchToCinematicCamera());
+                this.isInCinemaMode = true;
+            }
+
             this.material.SetFloat("_AnimationFrame", this.material.GetFloat("_AnimationFrame") + this.animationSpeed);
             this.gameObject.GetComponent<Collider>().enabled = false;
         }
@@ -23,6 +31,23 @@ public class DissolveController : MonoBehaviour {
             this.gameObject.SetActive(false);
         }
         
+    }
+
+    private IEnumerator SwitchToCinematicCamera() {
+        Animator animator = this.cinematicCamera.gameObject.GetComponent<Animator>();
+
+        this.playerCamera.enabled = false;
+        this.cinematicCamera.gameObject.SetActive(true);
+        this.cinematicCamera.enabled = true;
+        animator.SetBool("PlayCinematic", true);
+
+        yield return new WaitForSeconds(8.0f);
+
+        this.playerCamera.enabled = true;
+        this.cinematicCamera.enabled = false;
+
+        animator.SetBool("PlayCinematic", false);
+        this.cinematicCamera.gameObject.SetActive(false);
     }
 
     public void StartDissolving() {
