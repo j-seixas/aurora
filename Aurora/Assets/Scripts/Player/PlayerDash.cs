@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerDash : MonoBehaviour {
     public Camera mainCam;
     public GameObject PlayerBody;
-    public AudioClip audioclip;
 
     [Header("Dash Variables")]
     [SerializeField] private float dashForce = 50;
@@ -22,17 +21,18 @@ public class PlayerDash : MonoBehaviour {
     private bool isDashing = false;
     private float dashTime;
     private float dashCooldownTime;
-    private AudioSource audioSource;
 
     private int defaultLayer;
     private int dashingLayer;
+
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start() {
         rb = gameObject.GetComponent<Rigidbody>();
         dashTime = 0;
         dashCooldownTime = 0;
-        this.audioSource = gameObject.GetComponent<AudioSource>();
+        this.audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         defaultLayer = LayerMask.NameToLayer("Default");
         dashingLayer = LayerMask.NameToLayer("Dashing");
     }
@@ -56,7 +56,7 @@ public class PlayerDash : MonoBehaviour {
             return;
         }
 
-        PlaySoundEffect();  //sound effect
+        this.audioManager.PlaySound("Dash");
         GameObject obj = Instantiate(this.particles, gameObject.transform);
         obj.GetComponent<ParticleSystem>().Play();
         
@@ -64,7 +64,6 @@ public class PlayerDash : MonoBehaviour {
         GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Stamina, -this.dashCost);
         this.isDashing = true;
         
-        // TODO: Change all this shit.
         SwitchLayerToDashing();
         dashTime = dashDuration;
  
@@ -108,7 +107,4 @@ public class PlayerDash : MonoBehaviour {
 
     public bool IsInDashGracePeriod() => this.isInDashGracePeriod;
 
-    public void PlaySoundEffect(){
-        audioSource.PlayOneShot(audioclip,1F);
-    }
 }

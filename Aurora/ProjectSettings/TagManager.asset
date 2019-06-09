@@ -17,6 +17,7 @@ TagManager:
   - Fireball
   - PlayerBody
   - WaveFactory
+  - AudioManager
   layers:
   - Default
   - TransparentFX

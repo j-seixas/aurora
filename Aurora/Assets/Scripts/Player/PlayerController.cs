@@ -29,18 +29,13 @@ public class PlayerController : MonoBehaviour {
 
     [Header ("Attack")]
     [SerializeField] public GameObject weapon;
-
-    [Header ("Sounds")]
-    public AudioClip audioAttack1;
-    public AudioClip audioAttack2;
-    public AudioClip audioAttack3;
     
     [Header ("Upgrade")]
     public List<Upgrade> upgrades = new List<Upgrade> ();
     [SerializeField] private int active = -1;
 
 
-    private AudioSource audioSource;
+    private AudioManager audioManager;
 
     private HUDUpdater canvas;
 
@@ -53,7 +48,7 @@ public class PlayerController : MonoBehaviour {
         this.canvas = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<HUDUpdater> ();
         this.animator = GetComponent<Animator> ();
         this.lastPos = gameObject.transform.position;
-        this.audioSource = gameObject.GetComponent<AudioSource> ();
+        this.audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         // Start regenerating health and stamina.
         InvokeRepeating ("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating ("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
@@ -212,19 +207,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void PlaySoundAttack (string i) {
-        switch (i) {
-            case "1":
-                audioSource.PlayOneShot(audioAttack1, 1F);
-                break;
-            case "2":
-                audioSource.PlayOneShot(audioAttack2, 1F);
-                break;
-            case "3":
-                audioSource.PlayOneShot(audioAttack3, 1F);
-                break;
-            default:
-                Debug.Log("Incorrect sound attack");
-                break;
-        }
+        this.audioManager.PlaySound("Attack" + i);
     }
 }
