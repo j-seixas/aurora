@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour {
         // Start regenerating health and stamina.
         InvokeRepeating ("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating ("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
-        AudioManager.Instance.PlayMusic("MainTheme");
     }
 
     public int GetAttribute (GameManager.Attributes attr) {

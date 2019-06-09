@@ -56,7 +56,9 @@ public class PlayerDash : MonoBehaviour {
         AudioManager.Instance.PlaySFX("Dash");
         GameObject obj = Instantiate(this.particles, gameObject.transform);
         obj.GetComponent<ParticleSystem>().Play();
-        
+        GameObject obj2 = Instantiate(this.particles, gameObject.transform.position, gameObject.transform.rotation);
+        obj2.GetComponent<ParticleSystem>().Play();
+
         // Drain stamina before action is performed.
         GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Stamina, -this.dashCost);
         this.isDashing = true;
