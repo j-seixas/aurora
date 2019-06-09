@@ -13,14 +13,14 @@ public class ProjectileSpawner : MonoBehaviour {
     void Start() {
         this.player = GameObject.FindWithTag("Player");
         waveFactory = GameObject.FindGameObjectWithTag("WaveFactory").GetComponent<WaveFactory>();
-        InvokeRepeating("Spawner", 0.0f, spawnRate);
+        //InvokeRepeating("Spawner", 0.0f, spawnRate);
     }
 
     void Update() {
 
     }
 
-    void Spawner() {
+    public void Spawner() {
         if((waveFactory != null && waveFactory.IsShoppingPhase()) || this.isOnAir){
             return;
         }
@@ -66,4 +66,9 @@ public class ProjectileSpawner : MonoBehaviour {
         this.isOnAir = false;
         Destroy(proj, 1.0f);
     }
+
+    public bool isBeingThrown(){
+        return this.isOnAir;
+    }
+        
 }
