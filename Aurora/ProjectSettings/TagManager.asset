@@ -16,6 +16,7 @@ TagManager:
   - LifeGem
   - Fireball
   - PlayerBody
+  - WaveFactory
   layers:
   - Default
   - TransparentFX

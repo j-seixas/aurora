@@ -53,6 +53,7 @@ public class WaveFactory : MonoBehaviour {
     }
 
     public void NextWave() {
+        if(waves.Count == 0) return;
         this.DespawnUpgrades(this.spawnedObjs);
         this.waves[0].SetActive(true);  // Enable the next wave.
     }

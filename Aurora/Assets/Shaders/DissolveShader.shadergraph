@@ -16,7 +16,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Vector1ShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Name\": \"OutlineDelay\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"51ab7ce1-c3da-4984-b251-1e6ce194a901\"\n    },\n    \"m_DefaultReferenceName\": \"Vector1_2A866D95\",\n    \"m_OverrideReferenceName\": \"_OutlineDelay\",\n    \"m_Value\": 0.10000000149011612,\n    \"m_FloatType\": 0,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.0\n    },\n    \"m_Hidden\": false\n}"
+            "JSONnodeData": "{\n    \"m_Name\": \"OutlineDelay\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"51ab7ce1-c3da-4984-b251-1e6ce194a901\"\n    },\n    \"m_DefaultReferenceName\": \"Vector1_2A866D95\",\n    \"m_OverrideReferenceName\": \"_OutlineDelay\",\n    \"m_Value\": 0.009999999776482582,\n    \"m_FloatType\": 0,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.0\n    },\n    \"m_Hidden\": false\n}"
         },
         {
             "typeInfo": {

@@ -22,7 +22,7 @@ public class ShockwaveController : MonoBehaviour {
         this.sphCollider.radius = this.material.GetFloat("_RippleRadius") / transform.lossyScale.x;
 
         if (this.sphCollider.radius >= this.maxRadius) {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
