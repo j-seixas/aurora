@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Pause Menu
+  m_Text: Paused
 --- !u!114 &5398085764296805759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,11 +479,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResumeButton
       objectReference: {fileID: 0}
-    - target: {fileID: 4038507373777879191, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -542,22 +537,22 @@ PrefabInstance:
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55.875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 750
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 111.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
@@ -567,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
@@ -577,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
@@ -596,16 +591,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5398085765852124749}
@@ -616,8 +601,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
@@ -628,11 +623,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038507374616781612, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3e221db2a704d9cb70f54e4583b2ef, type: 3}
@@ -718,22 +708,22 @@ PrefabInstance:
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -167.625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 750
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 111.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
@@ -743,7 +733,7 @@ PrefabInstance:
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
@@ -753,7 +743,7 @@ PrefabInstance:
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879184, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}

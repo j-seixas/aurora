@@ -114,10 +114,10 @@ public class PlayerController : MonoBehaviour {
         this.canvas.UpdateSlider ("Stamina", this.stamina);
         this.canvas.UpdateSlider ("Essence", this.spirits);
 
-        // Process inputs.
-        if (Input.GetButton ("Start") || health <= 0)
+        if (health <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
 
+        // Process inputs.
         if (Input.GetButtonDown("Attack")) {
             this.animator.SetBool("Attack", true);
         }
