@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour {
     public float spawnRate = 5.0f, firingAngle = 65.0f, gravity = 40.0f;
-    public GameObject projectile, bullseye;
+    public GameObject projectile;
     private GameObject player;
+
+    private WaveFactory waveFactory;
+
+    private bool isOnAir = false;
     void Start() {
         this.player = GameObject.FindWithTag("Player");
+        waveFactory = GameObject.FindGameObjectWithTag("WaveFactory").GetComponent<WaveFactory>();
         InvokeRepeating("Spawner", 0.0f, spawnRate);
     }
 
-    void Update() {   
+    void Update() {
+
     }
 
     void Spawner() {
+        if((waveFactory != null && waveFactory.IsShoppingPhase()) || this.isOnAir){
+            return;
+        }
         StartCoroutine("LaunchProjectile");
     }
 
-    IEnumerator LaunchProjectile() {
-        yield return new WaitForSeconds(0f);
+    private void OnDisable() {
+        CancelInvoke();
+    }
 
+    IEnumerator LaunchProjectile() {
+
+        
+
+        this.isOnAir = true;
         // Instantiate projectile and bullseye objects.
         Vector3 target = player.transform.position;
         GameObject proj = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
-        GameObject bull = Instantiate(bullseye, target - new Vector3(0.0f, 0.99f, 0.0f), Quaternion.identity);
+        
+
         
         // Calculate distance to target.
         float distance = Vector3.Distance(proj.transform.position, target);
@@ -46,8 +62,7 @@ public class ProjectileSpawner : MonoBehaviour {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        Destroy(bull, 0.0f);
+        this.isOnAir = false;
         Destroy(proj, 1.0f);
     }
 }
