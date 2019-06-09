@@ -44,4 +44,8 @@ public class SelectOnInput : MonoBehaviour {
             }
         }
     }
+
+    public void setSelected () {
+        eventSystem.SetSelectedGameObject (selectedObject);
+    }
 }
