@@ -121,16 +121,12 @@ public abstract class MinionController : MonoBehaviour {
             StartCoroutine(SlowEnumerator(slow, duration));
     }
 
-    private void TriggerBurnEffect() {
-        StartCoroutine(FlashRed());
-        GetComponentInChildren<ParticleSystem>().Play();
-    }
-
     private IEnumerator BurnEnumerator(int damage, float rate, int ticks) {
         this.isBurning = true;
 
         while (ticks-- > 0) {
-            this.TriggerBurnEffect();
+            StartCoroutine(FlashRed());
+            transform.Find("FlamesParticleEffect").GetComponent<ParticleSystem>().Play();
             this.health -= damage;
             yield return new WaitForSeconds(rate);
         }
@@ -141,8 +137,12 @@ public abstract class MinionController : MonoBehaviour {
     private IEnumerator SlowEnumerator(float slow, float duration) {     
         this.agent.speed = this.speed * slow;
         this.isSlowed = true;
+        
+        ParticleSystem particles = transform.Find("SnowflakesParticleEffect").GetComponent<ParticleSystem>();
 
+        particles.Play();
         yield return new WaitForSeconds(duration);
+        particles.Stop();
 
         this.agent.speed = this.speed;
         this.isSlowed = false;
