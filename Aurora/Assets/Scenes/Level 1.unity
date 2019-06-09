@@ -639,6 +639,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 256436281}
+  - component: {fileID: 256436283}
+  - component: {fileID: 256436282}
   m_Layer: 0
   m_Name: SpawnPoints
   m_TagString: Untagged
@@ -663,6 +665,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &256436282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256436280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd2802374ec75644a1cc54b0a2ac532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackSkybox: {fileID: 2100000, guid: 8b54e502103f71e4c9ad6271748943d1, type: 2}
+  blackCubemap: {fileID: 8900000, guid: 5adca75df7aeecf439a1d6a6015157b0, type: 3}
+--- !u!65 &256436283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256436280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 60.278862, y: 17.810146, z: 25.482086}
+  m_Center: {x: -6.132221, y: 8.405073, z: -19.26}
 --- !u!4 &270107133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251152188144310488, guid: 2bcf0280ea5ea814898de9b965ab4121,

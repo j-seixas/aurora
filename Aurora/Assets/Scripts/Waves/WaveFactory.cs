@@ -54,6 +54,7 @@ public class WaveFactory : MonoBehaviour {
 
     public void NextWave() {
         if(waves.Count == 0) return;
+        this.spawnPoints[0].GetComponentsInParent<Collider>(true)[0].enabled = false;
         this.DespawnUpgrades(this.spawnedObjs);
         this.waves[0].SetActive(true);  // Enable the next wave.
     }
@@ -79,6 +80,7 @@ public class WaveFactory : MonoBehaviour {
             controller.StartDissolving();
             controller.PlaySoundEffect();
         } 
+        this.spawnPoints[0].GetComponentsInParent<BoxCollider>(true)[0].enabled = true;
     }
 
     public bool IsShoppingPhase() =>

@@ -18,8 +18,16 @@ public class ShopController : MonoBehaviour
         normalCubemap = RenderSettings.customReflection;
     }
 
+    private void Update() {
+        if(GetComponent<Collider>().enabled == false){
+            RenderSettings.skybox = normalSkybox;
+            RenderSettings.customReflection = normalCubemap;
+            DynamicGI.UpdateEnvironment();
+        }
+    }
+
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("HELLO enter");
+       
         if(other.tag == "PlayerBody"){
             RenderSettings.skybox = blackSkybox;
             RenderSettings.customReflection = blackCubemap;
@@ -34,4 +42,6 @@ public class ShopController : MonoBehaviour
             DynamicGI.UpdateEnvironment();
         }
     }
+
+    
 }
