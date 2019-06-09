@@ -37,17 +37,14 @@ public class DissolveController : MonoBehaviour {
         Animator animator = this.cinematicCamera.gameObject.GetComponent<Animator>();
 
         this.playerCamera.enabled = false;
-        this.cinematicCamera.gameObject.SetActive(true);
-        //this.cinematicCamera.enabled = true;
+        this.cinematicCamera.enabled = true;
         animator.SetBool("PlayCinematic", true);
 
         yield return new WaitForSeconds(8.0f);
 
         this.playerCamera.enabled = true;
-        //this.cinematicCamera.enabled = false;
-
+        this.cinematicCamera.enabled = false;
         animator.SetBool("PlayCinematic", false);
-        this.cinematicCamera.gameObject.SetActive(false);
     }
 
     public void StartDissolving() {
