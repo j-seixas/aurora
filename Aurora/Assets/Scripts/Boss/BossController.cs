@@ -11,6 +11,8 @@ public class BossController : MonoBehaviour
 
     private GameObject player;
 
+    private int level = 1;
+
     private bool coroutineRunning = false;
     // Start is called before the first frame update
     void Start()

@@ -79,8 +79,9 @@ public class WaveFactory : MonoBehaviour {
             DissolveController controller = GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>();
             controller.StartDissolving();
             controller.PlaySoundEffect();
-        } 
-        this.spawnPoints[0].GetComponentsInParent<BoxCollider>(true)[0].enabled = true;
+        }
+        if(waves.Count != 0) 
+            this.spawnPoints[0].GetComponentsInParent<BoxCollider>(true)[0].enabled = true;
     }
 
     public bool IsShoppingPhase() =>
