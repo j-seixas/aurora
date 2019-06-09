@@ -17,6 +17,7 @@ public class UpgradeController : MonoBehaviour {
     private void OnTriggerStay(Collider other) {
         if (other.tag == "PlayerBody" && Input.GetButtonDown("Accept")) {
             other.gameObject.transform.parent.gameObject.GetComponent<PlayerController>().UnlockUpgrade(tag);
+            Destroy(gameObject);
         }
     }
 }

@@ -75,7 +75,7 @@ Material:
     - _Metallic: 0
     - _NoiseScale: 200
     - _OcclusionStrength: 1
-    - _OutlineDelay: 0.1
+    - _OutlineDelay: 0.01
     - _OutlineThickness: 0.05
     - _QueueOffset: 0
     - _ReceiveShadows: 1
