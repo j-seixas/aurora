@@ -20,9 +20,11 @@ public class MinionBehaviour : StateMachineBehaviour
     {
         if(minion == null){
             minion = (MinionController) animator.GetComponentInParent<MinionController>();
+            animator.SetBool("spawnCooldown", minion.isInSpawnCooldown);
             return;
         }
-       target = minion.checkForPlayer();
+        animator.SetBool("spawnCooldown", minion.isInSpawnCooldown);
+        target = minion.checkForPlayer();
     }
 
 }

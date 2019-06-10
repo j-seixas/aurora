@@ -9,6 +9,7 @@ public abstract class MinionController : MonoBehaviour {
     public float speed = 10f;
     public float range = 3f;
     public int damage = 1;
+    public float spawnTime = 2f;
 
     public float flashAnimDuration;
     public Material hitFlashMaterial;
@@ -32,6 +33,7 @@ public abstract class MinionController : MonoBehaviour {
 
     private bool isBurning = false;
     private bool isSlowed = false;
+    public bool isInSpawnCooldown = true;
 
     protected void Start () {
         agent = GetComponent<NavMeshAgent> ();
@@ -44,6 +46,7 @@ public abstract class MinionController : MonoBehaviour {
         this.originalMat = this.renderer.material;
         this.rb = GetComponent<Rigidbody>();
         this.originalColor = this.renderer.material.color;
+        isInSpawnCooldown = true;
     }
 
     protected void Update () {
@@ -63,6 +66,7 @@ public abstract class MinionController : MonoBehaviour {
         if(agent.velocity != Vector3.zero){
             lastVelocity = agent.velocity;
         }
+
     }
 
     private void FixedUpdate() {
@@ -72,6 +76,11 @@ public abstract class MinionController : MonoBehaviour {
     protected void OnDisable () {
         // Reset health so new minions won't have zero health.
         this.health = 100;
+        this.isInSpawnCooldown = true;
+    }
+
+    protected void OnEnable() {
+        Invoke("SpawnCooldown", spawnTime);
     }
 
     public void ReceiveDamage (int damage) {
@@ -91,6 +100,10 @@ public abstract class MinionController : MonoBehaviour {
 
     public void goToPosition (Vector3 pos) {
         agent.SetDestination (pos);
+    }
+
+    public void SpawnCooldown() {
+        isInSpawnCooldown = false;
     }
 
     protected void OnDrawGizmosSelected () {
