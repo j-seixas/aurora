@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour {
             // If so, reduce a charge and don't deal damage.
             LifeUpgrade lifeUpgradeScript = GetComponentInChildren<LifeUpgrade>();
 
-            if (lifeUpgradeScript.HasShieldActive()) {
+            if (lifeUpgradeScript.HasShieldActive() && inc < 0) {
                 lifeUpgradeScript.BreakShield();
                 return;
             }

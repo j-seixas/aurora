@@ -53,10 +53,13 @@ public class WaveFactory : MonoBehaviour {
     }
 
     public void NextWave() {
-        if(waves.Count == 0) return;
+        if (waves.Count == 0) return;
         this.spawnPoints[0].GetComponentsInParent<Collider>(true)[0].enabled = false;
         this.DespawnUpgrades(this.spawnedObjs);
         this.waves[0].SetActive(true);  // Enable the next wave.
+
+        // Restore shield charges on wave change.
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeUpgrade>().RestoreActiveCharges();
     }
 
     private void SpawnUpgrades(List<Transform> spawnPoints) {
