@@ -21,7 +21,7 @@ public abstract class MinionController : MonoBehaviour {
     [SerializeField]
     protected int health = 100;
 
-    private MeshRenderer renderer;
+    private SkinnedMeshRenderer renderer;
     private Material originalMat;
     private Color32 originalColor;
     private IEnumerator coroutine;
@@ -40,7 +40,7 @@ public abstract class MinionController : MonoBehaviour {
         agent.acceleration = speed;
         agent.updateRotation = true;
         agent.updatePosition = true;
-        this.renderer = this.transform.GetChild (0).GetChild (0).GetComponent<MeshRenderer> ();
+        this.renderer = this.transform.GetChild (0).GetComponent<SkinnedMeshRenderer> ();
         this.originalMat = this.renderer.material;
         this.rb = GetComponent<Rigidbody>();
         this.originalColor = this.renderer.material.color;

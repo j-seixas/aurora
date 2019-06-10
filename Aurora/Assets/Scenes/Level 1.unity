@@ -2218,9 +2218,9 @@ MonoBehaviour:
   - {fileID: 509227852}
   - {fileID: 23835431}
   upgradeObjects:
-  - {fileID: 5121853168187620616, guid: 7fa905165b2317249bc63711d6c99d2a, type: 3}
-  - {fileID: 5121853168187620616, guid: 02447da229200894abf8485dde209070, type: 3}
-  - {fileID: 5121853168187620616, guid: e949e0ce9c0a32f48aee129fba9706f0, type: 3}
+  - {fileID: 4615751077407327278, guid: 7fa905165b2317249bc63711d6c99d2a, type: 3}
+  - {fileID: 1376726227868007245, guid: 8680b17f736cb2649b6e89e873837fd0, type: 3}
+  - {fileID: 9141902266250391132, guid: e949e0ce9c0a32f48aee129fba9706f0, type: 3}
 --- !u!4 &1122299068
 Transform:
   m_ObjectHideFlags: 0
