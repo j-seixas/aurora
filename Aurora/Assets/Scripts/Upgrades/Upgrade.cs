@@ -15,10 +15,13 @@ public abstract class Upgrade : MonoBehaviour {
     protected int[] spiritCostByLevel = {5, 10, 20, 50, 100};
 
     [Header("Mechanics")]
-    [SerializeField] protected float cooldown;
+    [SerializeField] protected float[] cooldown;
     [SerializeField] protected float duration;
     [SerializeField] protected float staminaCost;
     [SerializeField] protected int damageDealt;
+
+    [Header("Active")]
+    protected bool isActiveInCooldown = false;
 
     [Header("Passive")]
     [SerializeField] protected float tick;
@@ -43,6 +46,12 @@ public abstract class Upgrade : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>().UpdatePowerUp(this.type, this.active);
     }
 
+    protected IEnumerator ElapseActiveCooldown(float cooldown) {
+        this.isActiveInCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        this.isActiveInCooldown = false;
+    }
+
     protected bool UpgradeLevel() {
         // Does the player have enough spirits to purchase the upgrade?
         int balance = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().GetAttribute(GameManager.Attributes.Spirits);
@@ -59,4 +68,6 @@ public abstract class Upgrade : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Canvas").GetComponent<HUDUpdater>().LevelUpgradeElement(this.type, this.level);
         return true;
     }
+
+    public bool GetActiveCooldownStatus() => this.isActiveInCooldown;
 }

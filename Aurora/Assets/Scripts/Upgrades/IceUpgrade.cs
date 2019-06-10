@@ -13,6 +13,7 @@ public class IceUpgrade : Upgrade {
 
     private void Start() {
         this.type = Type.Ice;
+        this.cooldown = new float[5] {5.0f, 4.5f, 4.0f, 3.5f, 3.0f};
     }
 
     public (float slow, float duration) GetPassiveParameters() {
@@ -20,7 +21,10 @@ public class IceUpgrade : Upgrade {
     }
 
     public override void Active() {
-        gameObject.GetComponentInChildren<ParticleSystem>().Play();
+        if (!this.isActiveInCooldown) {
+            gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            StartCoroutine(this.ElapseActiveCooldown(this.cooldown[this.level]));
+        }
     }
 
     public override void Passive() { 

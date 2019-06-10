@@ -23,6 +23,15 @@ public class HUDUpdater : MonoBehaviour {
         text.text = value.ToString ();
     }
 
+    public void ShowCooldownStatus(Upgrade.Type type) {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        // TODO: Something here?
+        player.GetComponentInChildren<FireUpgrade>().GetActiveCooldownStatus();
+        player.GetComponentInChildren<IceUpgrade>().GetActiveCooldownStatus();
+        player.GetComponentInChildren<LifeUpgrade>().GetActiveCooldownStatus();
+    }
+
     public void UpdatePowerUp (Upgrade.Type type, bool active) {
         if (active) {
             GameObject.Find (type.ToString () + "PowerUp/Image").GetComponent<Image> ().color = new Color32 (255, 255, 255, 255);
