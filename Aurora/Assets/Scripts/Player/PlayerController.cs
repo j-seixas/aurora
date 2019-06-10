@@ -65,6 +65,16 @@ public class PlayerController : MonoBehaviour {
 
     public void UpdateAttribute (GameManager.Attributes attr, int inc) {
         if (attr == GameManager.Attributes.Health) {
+
+            // Check whether the player has shield charges.
+            // If so, reduce a charge and don't deal damage.
+            LifeUpgrade lifeUpgradeScript = GetComponentInChildren<LifeUpgrade>();
+
+            if (lifeUpgradeScript.HasShieldActive()) {
+                lifeUpgradeScript.BreakShield();
+                return;
+            }
+
             int val = this.health + inc;
 
             if (val > this.maxHealth) this.health = this.maxHealth;

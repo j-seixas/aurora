@@ -6,7 +6,9 @@ public class LifeUpgrade : Upgrade {
     [Header("Specific")]
     public int healthGain;
     private int[] healthGainByLevel = {5, 10, 15, 20, 25};
+
     public GameObject shieldChargeObject;
+    private List<GameObject> shields = new List<GameObject>();
 
     private void Start() {
         this.type = Type.Life;
@@ -17,8 +19,13 @@ public class LifeUpgrade : Upgrade {
             InvokeRepeating("Passive", this.tick, this.tick);
     }
 
+
     public override void Active() {
-        Instantiate(shieldChargeObject, transform.position, Quaternion.identity);
+        for (int i = 0; i < 3; i++) {
+            GameObject obj = Instantiate(shieldChargeObject, transform.position, Quaternion.identity);
+            obj.transform.SetParent(transform.root);
+            this.shields.Add(obj);
+        }
     }
 
     public override void Passive() {
@@ -28,6 +35,15 @@ public class LifeUpgrade : Upgrade {
             particle.Play();
         }
     }
+
+    public void BreakShield() {
+        if (this.shields.Count > 0) {
+            this.shields.RemoveAt(0);
+        } 
+    }
+
+    public bool HasShieldActive() =>
+        this.shields.Count > 0;
 
     public override void LevelUp() {
         // Attempt to upgrade level and make every upgrade status change.
