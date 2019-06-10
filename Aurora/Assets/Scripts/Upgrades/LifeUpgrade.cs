@@ -22,7 +22,7 @@ public class LifeUpgrade : Upgrade {
 
     public override void Active() {
         for (int i = 0; i < 3; i++) {
-            GameObject obj = Instantiate(shieldChargeObject, transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(shieldChargeObject, transform.position + Vector3.forward*2, Quaternion.identity);
             obj.transform.SetParent(transform.root);
             this.shields.Add(obj);
         }
