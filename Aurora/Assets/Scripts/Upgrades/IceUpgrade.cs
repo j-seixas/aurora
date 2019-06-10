@@ -20,8 +20,7 @@ public class IceUpgrade : Upgrade {
     }
 
     public override void Active() {
-        player = GameObject.FindWithTag("Player");
-        Instantiate(freezeAOE, player.transform.position, Quaternion.identity);
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
     }
 
     public override void Passive() { 

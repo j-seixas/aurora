@@ -147,6 +147,21 @@ public abstract class MinionController : MonoBehaviour {
         this.agent.speed = this.speed;
         this.isSlowed = false;
     }
+    
+    private void OnParticleCollision(GameObject other) {
+
+        // Whenever the fire ring particles collide with the minions, trigger a burn effect.
+        if (other.transform.parent.CompareTag("FireGem")) {
+            (int burn, float rate, int ticks) passive = other.GetComponentInParent<FireUpgrade>().GetPassiveParameters();
+            this.ApplyBurn(passive.burn, passive.rate, passive.ticks);
+        }
+
+        // Whenever the frost volley particles collide with the minions, freeze them of a while.
+        if (other.transform.parent.CompareTag("IceGem")) {
+            (float slow, float duration) passive = other.GetComponentInParent<IceUpgrade>().GetPassiveParameters();
+            this.ApplySlow(0.0f, passive.duration);
+        }
+    }
 
     public abstract bool Attack ();
 }

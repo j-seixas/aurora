@@ -18,7 +18,7 @@ public class FireUpgrade : Upgrade {
     }
 
     public override void Active() {
-        Debug.Log("FIRE ACTIVE");
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
     }
 
     public override void Passive() { 
