@@ -8127,6 +8127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff69c791520ce64e9bf319396c8921a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redFlashMaterial: {fileID: 2100000, guid: 4340b031ede9a4747af47ae7a1a67642, type: 2}
 --- !u!1001 &1610815271
 PrefabInstance:
   m_ObjectHideFlags: 0

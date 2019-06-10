@@ -72,35 +72,14 @@ public class WaveFactory : MonoBehaviour {
         upgradeObjs.Clear();
     }
 
-    private IEnumerator PlayWaveEndCutscene() {
-        GameObject cameraPlayer = GameObject.Find("Main Camera");
-        GameObject cameraLevelEnd = GameObject.Find("LevelEndCamera");
-        GameObject cameraWaveEnd = GameObject.Find("WaveEndCamera");
-
-        ParticleSystem particles = GameObject.FindGameObjectWithTag("Mountain").GetComponentInChildren<ParticleSystem>();
-
-        cameraPlayer.GetComponent<Camera>().enabled = false;
-        cameraLevelEnd.GetComponent<Camera>().enabled = false;
-        cameraWaveEnd.GetComponent<Camera>().enabled = true;
-
-        particles.Play();
-        cameraWaveEnd.GetComponent<Animator>().SetBool("PlayCinematic", true);
-
-        yield return new WaitForSeconds(5.0f);
-        cameraWaveEnd.GetComponent<Animator>().SetBool("PlayCinematic", false);
-        
-        cameraWaveEnd.GetComponent<Camera>().enabled = false;
-        cameraLevelEnd.GetComponent<Camera>().enabled = true;
-        cameraPlayer.GetComponent<Camera>().enabled = true;
-    }
-
     public void EndWave() {
         Destroy(this.waves[0]);
         this.waves.RemoveAt(0); // Remove the cleared wave.
         ObjectPooler.SharedInstance.ClearPool();  // Clear pooled game objects on the previous wave.
         
         if (this.waves.Count != 0) {
-            StartCoroutine(PlayWaveEndCutscene());
+            BossController boss = GameObject.FindGameObjectWithTag("Mountain").GetComponent<BossController>();
+            StartCoroutine(boss.PlayWaveEndCutscene());
             this.SpawnUpgrades(spawnPoints);
         }
         else {
