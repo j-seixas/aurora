@@ -19,7 +19,8 @@ public class DissolveController : MonoBehaviour {
         if (this.canDissolve) {
             
             if (!this.isInCinemaMode) {
-                StartCoroutine(SwitchToCinematicCamera());
+                BossController boss = gameObject.GetComponent<BossController>();
+                StartCoroutine(boss.PlayLevelEndCutscene());
                 this.isInCinemaMode = true;
             }
 
@@ -31,20 +32,6 @@ public class DissolveController : MonoBehaviour {
             this.gameObject.SetActive(false);
         }
         
-    }
-
-    private IEnumerator SwitchToCinematicCamera() {
-        Animator animator = this.cinematicCamera.gameObject.GetComponent<Animator>();
-
-        this.playerCamera.enabled = false;
-        this.cinematicCamera.enabled = true;
-        animator.SetBool("PlayCinematic", true);
-
-        yield return new WaitForSeconds(8.0f);
-
-        this.playerCamera.enabled = true;
-        this.cinematicCamera.enabled = false;
-        animator.SetBool("PlayCinematic", false);
     }
 
     public void StartDissolving() {
