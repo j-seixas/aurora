@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
     private float speed = 10.0f;
+    private int hurtSfx = 0;
 
     [Header ("Health")]
     [SerializeField] private int health = 100;
@@ -76,6 +77,19 @@ public class PlayerController : MonoBehaviour {
             }
 
             int val = this.health + inc;
+
+            if(inc < 0){
+                
+                System.Random rand = new System.Random();
+                int aux = this.hurtSfx;
+
+                while(aux == this.hurtSfx){ //checks if the new sound is equal to the previous one
+                    aux = rand.Next(1, 5);
+                }
+                this.hurtSfx = aux;
+
+                AudioManager.Instance.PlaySFX("aurora_hurt_" + this.hurtSfx ); //aurora sound
+            }
 
             if (val > this.maxHealth) this.health = this.maxHealth;
             else if (val < 0) this.health = 0;

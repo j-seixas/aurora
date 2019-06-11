@@ -2482,7 +2482,7 @@ PrefabInstance:
     - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
         type: 3}
       propertyPath: sfx.Array.size
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
         type: 3}
@@ -2543,6 +2543,91 @@ PrefabInstance:
         type: 3}
       propertyPath: sfx.Array.data[6].pitch
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[7].name
+      value: aurora_hurt_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b2b1a7c17af30041abd326755c4e48f, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[7].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[7].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[8].name
+      value: aurora_hurt_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 59fddd91b331a0241b7e13151d4e72a8, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[8].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[9].name
+      value: aurora_hurt_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 81cd18bb083b9a2428eaece0834598c7, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[9].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[9].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[10].name
+      value: aurora_hurt_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d478ab36cf1391d44a311143e5b1b953, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[10].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[10].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfxVolume
+      value: 0.788
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8, type: 3}
