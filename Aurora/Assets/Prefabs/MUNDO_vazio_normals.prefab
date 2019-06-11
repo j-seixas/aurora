@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 319862024973926478}
   - component: {fileID: 8731184926050384504}
   - component: {fileID: 3033155680919979649}
+  - component: {fileID: 8519506411788341212}
   m_Layer: 0
   m_Name: MUNDO_vazio_normals
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8519506411788341212
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615045840070226525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4353075598351403174, guid: d6ee2ce5794eac947a20e7478095a4f7, type: 3}
