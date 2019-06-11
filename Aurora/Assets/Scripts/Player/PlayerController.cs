@@ -214,6 +214,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void PlaySoundAttack (string i) {
-        AudioManager.Instance.PlaySFX("Attack" + i);
-    }
+        AudioManager.Instance.PlaySFX("aurora_grunt_" + i); //aurora sound
+        AudioManager.Instance.PlaySFX("Attack" + i);  //scythe sound
+    }    
 }

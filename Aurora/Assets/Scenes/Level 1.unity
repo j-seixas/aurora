@@ -2479,6 +2479,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[4].name
+      value: aurora_grunt_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 08dbf39e820c8dd4ea5f0e50e933b5c7, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[4].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[4].pitch
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[5].name
+      value: aurora_grunt_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: df544bbbe74cb9744884bcbd140ef138, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[5].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[5].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[6].name
+      value: aurora_grunt_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fbaa6618502fc6d4392582283142e689, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[6].volume
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8, type: 3}
 --- !u!1001 &6297103515215309768
