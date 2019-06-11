@@ -69,5 +69,5 @@ public abstract class Upgrade : MonoBehaviour {
         return true;
     }
 
-    public bool GetActiveCooldownStatus() => this.isActiveInCooldown;
+    public bool GetActiveCooldownStatus() => !this.isActiveInCooldown;
 }

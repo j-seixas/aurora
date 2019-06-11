@@ -23,13 +23,47 @@ public class HUDUpdater : MonoBehaviour {
         text.text = value.ToString ();
     }
 
-    public void ShowCooldownStatus(Upgrade.Type type) {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+    public void UpdateCooldownStatus () {
+        GameObject player = GameObject.FindGameObjectWithTag ("Player");
+        Image[] images = null;
 
-        // TODO: Something here?
-        player.GetComponentInChildren<FireUpgrade>().GetActiveCooldownStatus();
-        player.GetComponentInChildren<IceUpgrade>().GetActiveCooldownStatus();
-        player.GetComponentInChildren<LifeUpgrade>().GetActiveCooldownStatus();
+        if (player.GetComponentInChildren<FireUpgrade> ().GetActiveCooldownStatus ()) {
+            images = GameObject.Find ("FirePowerUp").GetComponent<RectTransform> ().gameObject.GetComponentsInChildren<Image> (true);
+            SwitchUpgradeStatus (images, true);
+        } else {
+            images = GameObject.Find ("FirePowerUp").GetComponent<RectTransform> ().gameObject.GetComponentsInChildren<Image> (true);
+            SwitchUpgradeStatus (images, false);
+        }
+
+        if (player.GetComponentInChildren<IceUpgrade> ().GetActiveCooldownStatus ()) {
+            images = GameObject.Find ("IcePowerUp").GetComponent<RectTransform> ().gameObject.GetComponentsInChildren<Image> (true);
+            SwitchUpgradeStatus (images, true);
+        } else {
+            images = GameObject.Find ("IcePowerUp").GetComponent<RectTransform> ().gameObject.GetComponentsInChildren<Image> (true);
+            SwitchUpgradeStatus (images, false);
+        }
+
+        if (player.GetComponentInChildren<LifeUpgrade> ().GetActiveCooldownStatus ()) {
+            images = GameObject.Find ("LifePowerUp").GetComponent<RectTransform> ().gameObject.GetComponentsInChildren<Image> (true);
+            SwitchUpgradeStatus (images, true);
+        } else {
+            images = GameObject.Find ("LifePowerUp").GetComponent<RectTransform> ().gameObject.GetComponentsInChildren<Image> (true);
+            SwitchUpgradeStatus (images, false);
+        }
+    }
+
+    private void SwitchUpgradeStatus (Image[] images, bool active) {
+        foreach (Image image in images) {
+            if (image.name == "Inactive") {
+                if (active)
+                    image.gameObject.SetActive (false);
+                else image.gameObject.SetActive (true);
+            } else if (image.name == "Active") {
+                if (active)
+                    image.gameObject.SetActive (true);
+                else image.gameObject.SetActive (false);
+            }
+        }
     }
 
     public void UpdatePowerUp (Upgrade.Type type, bool active) {
