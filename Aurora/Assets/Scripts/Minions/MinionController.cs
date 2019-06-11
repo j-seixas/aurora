@@ -65,6 +65,7 @@ public abstract class MinionController : MonoBehaviour {
         }
         if(agent.velocity != Vector3.zero){
             lastVelocity = agent.velocity;
+           // PlaySoundWalking();  //sound effect of minion walking
         }
 
     }
@@ -86,7 +87,8 @@ public abstract class MinionController : MonoBehaviour {
     public void ReceiveDamage (int damage) {
         this.coroutine = FlashRed ();
         StartCoroutine (this.coroutine);
-        this.health -= damage;    
+        this.health -= damage;
+        PlaySoundHurt(); //sound effect  
         
     }
 
@@ -175,6 +177,16 @@ public abstract class MinionController : MonoBehaviour {
             this.ApplySlow(0.0f, passive.duration);
         }
     }
+
+    void PlaySoundWalking(){
+        System.Random rand = new System.Random();
+        AudioManager.Instance.PlaySFX("walking" + rand.Next(1, 7) ); //aurora sound
+    }
+    
+    void PlaySoundHurt(){
+        System.Random rand = new System.Random();
+        AudioManager.Instance.PlaySFX("minion_hurt_" + rand.Next(1, 3) ); //aurora sound
+    }         
 
     public abstract bool Attack ();
 }

@@ -78,18 +78,7 @@ public class PlayerController : MonoBehaviour {
 
             int val = this.health + inc;
 
-            if(inc < 0){
-                
-                System.Random rand = new System.Random();
-                int aux = this.hurtSfx;
-
-                while(aux == this.hurtSfx){ //checks if the new sound is equal to the previous one
-                    aux = rand.Next(1, 5);
-                }
-                this.hurtSfx = aux;
-
-                AudioManager.Instance.PlaySFX("aurora_hurt_" + this.hurtSfx ); //aurora sound
-            }
+            if(inc < 0) PlaySoundHurt();
 
             if (val > this.maxHealth) this.health = this.maxHealth;
             else if (val < 0) this.health = 0;
@@ -230,5 +219,17 @@ public class PlayerController : MonoBehaviour {
     public void PlaySoundAttack (string i) {
         AudioManager.Instance.PlaySFX("aurora_grunt_" + i); //aurora sound
         AudioManager.Instance.PlaySFX("Attack" + i);  //scythe sound
-    }    
+    }
+
+    void PlaySoundHurt(){
+        System.Random rand = new System.Random();
+        int aux = this.hurtSfx;
+
+        while(aux == this.hurtSfx){ //checks if the new sound is equal to the previous one
+            aux = rand.Next(1, 5);
+        }
+        this.hurtSfx = aux;
+
+        AudioManager.Instance.PlaySFX("aurora_hurt_" + this.hurtSfx ); //aurora sound
+    }   
 }
