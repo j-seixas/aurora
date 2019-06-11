@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour {
         this.canvas.UpdateSlider ("Health", this.health);
         this.canvas.UpdateSlider ("Stamina", this.stamina);
         this.canvas.UpdateSlider ("Essence", this.spirits);
+        this.canvas.UpdateCooldownStatus ();
 
         if (health <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
