@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d581e5ccbdd6248bc051d4e9f4c559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 0
 --- !u!114 &534669908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,12 +546,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &749253295 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1260675629510801747, guid: 963d1e9051ac1904188a9c0de913ae3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1260675630237944828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801715141
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,12 +626,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &919366486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 487543491412135761, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
-    type: 3}
-  m_PrefabInstance: {fileID: 487543491189072903}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &919366488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 487543491412135775, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
@@ -1595,6 +1584,7 @@ MonoBehaviour:
   animationSpeed: 0.002
   cinematicCamera: {fileID: 1534252182}
   playerCamera: {fileID: 534669904}
+  dissolveMaterial: {fileID: 0}
 --- !u!82 &1600035835
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1808,9 +1798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001a0db2da6dea84a8e5a88430af1d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveFactory: {fileID: 1122299066}
-  projectileSpawner: {fileID: 919366486}
-  shockwaveSpawner: {fileID: 749253295}
 --- !u!1 &1778260285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,11 +2238,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4115967651471138985, guid: 751ff3e57053eb34ba4da4151f8c9892,
-        type: 3}
-      propertyPath: m_Name
-      value: AURORAV3
-      objectReference: {fileID: 0}
     - target: {fileID: 1100429846208139962, guid: 751ff3e57053eb34ba4da4151f8c9892,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2310,6 +2292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115967651471138985, guid: 751ff3e57053eb34ba4da4151f8c9892,
+        type: 3}
+      propertyPath: m_Name
+      value: AURORAV3
       objectReference: {fileID: 0}
     - target: {fileID: 4115967651471138986, guid: 751ff3e57053eb34ba4da4151f8c9892,
         type: 3}
@@ -2479,356 +2466,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.size
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[4].name
-      value: aurora_grunt_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 08dbf39e820c8dd4ea5f0e50e933b5c7, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[4].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[4].pitch
-      value: 1.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[5].name
-      value: aurora_grunt_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: df544bbbe74cb9744884bcbd140ef138, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[5].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[5].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[6].name
-      value: aurora_grunt_3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: fbaa6618502fc6d4392582283142e689, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[6].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[7].name
-      value: aurora_hurt_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5b2b1a7c17af30041abd326755c4e48f, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[7].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[7].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[8].name
-      value: aurora_hurt_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 59fddd91b331a0241b7e13151d4e72a8, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[8].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[8].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[9].name
-      value: aurora_hurt_3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[9].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 81cd18bb083b9a2428eaece0834598c7, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[9].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[9].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[10].name
-      value: aurora_hurt_4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[10].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: d478ab36cf1391d44a311143e5b1b953, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[10].volume
-      value: 0.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[10].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfxVolume
-      value: 0.788
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[11].name
-      value: walking1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[11].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a4604a2d450497f4d8d332af260b8cb8, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[11].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[11].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[11].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[12].name
-      value: walking2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[12].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 67fc2326642445a428789420fac00780, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[12].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[12].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[12].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[13].name
-      value: walking3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[13].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 40030555ae2408a4383c6fcae829c233, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[13].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[13].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[13].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[14].name
-      value: walking4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[14].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 185ab4ca3856f8d47844ed82a507abfa, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[14].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[14].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[14].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[15].name
-      value: walking5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[15].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7612ed3cb1211ed4fb86d0313a9709be, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[15].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[15].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[15].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[16].name
-      value: walking6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[16].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1c0398f6352221a48b2282db7da78a51, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[16].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[16].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[16].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[17].name
-      value: minion_hurt_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[17].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e642160a905358b44b6942a680cf62ee, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[17].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[17].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[17].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[18].name
-      value: minion_hurt_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[18].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f5ffd834ba4989343abf0011c997ca33, type: 3}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[18].volume
-      value: 0.807
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[18].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
-        type: 3}
-      propertyPath: sfx.Array.data[18].loop
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8, type: 3}
 --- !u!1001 &6297103515215309768
@@ -2838,11 +2475,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 528983944840590551, guid: 69561d2c015a11d31a2c2c6f1f3ca215,
-        type: 3}
-      propertyPath: m_Name
-      value: MinionSpawnArea
-      objectReference: {fileID: 0}
     - target: {fileID: 3386935996598221378, guid: 69561d2c015a11d31a2c2c6f1f3ca215,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2897,6 +2529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528983944840590551, guid: 69561d2c015a11d31a2c2c6f1f3ca215,
+        type: 3}
+      propertyPath: m_Name
+      value: MinionSpawnArea
       objectReference: {fileID: 0}
     - target: {fileID: 1109338226634963193, guid: 69561d2c015a11d31a2c2c6f1f3ca215,
         type: 3}
