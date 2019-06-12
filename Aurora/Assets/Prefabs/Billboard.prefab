@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7819255574690560912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 50.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.58144, y: 6.6000004}
-  m_SizeDelta: {x: 8.47, y: 5.41}
+  m_AnchoredPosition: {x: 100.58144, y: 8.38}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &7819255574690560914
 SpriteRenderer:
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79fcc57100494c499cfd392d22e06d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTransform: {fileID: 0}
 --- !u!222 &7819255574690560940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -214,4 +213,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79fcc57100494c499cfd392d22e06d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTransform: {fileID: 0}

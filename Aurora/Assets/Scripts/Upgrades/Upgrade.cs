@@ -36,6 +36,10 @@ public abstract class Upgrade : MonoBehaviour {
     public bool IsActiveEnabled () =>
         this.level > 0;
 
+    public string GetUpgradeStatus() {
+        return type.ToString ().ToUpper () + " UPGRADE\n" + "Cost: " + this.spiritCostByLevel[this.level].ToString () + " spirits";
+    }
+
     public void PrintStatusPopup (bool active) {
 
         GameObject gem = GameObject.Find (type.ToString () + "GemSP").gameObject;

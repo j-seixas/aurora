@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class UpgradeController : MonoBehaviour {
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.tag == "PlayerBody") {
-            foreach (Transform child in other.transform.parent.transform) {
-                if (child.tag == tag) child.GetComponent<Upgrade>().PrintStatusPopup(true);
-            }   
+    private GameObject billboard;
+
+    private void Start() {
+        foreach (Transform child in transform.parent) {
+            if (child.name == "Billboard")
+                this.billboard = child.gameObject;
         }
     }
 
-        private void OnTriggerExit(Collider other) {
+    private void OnTriggerEnter(Collider other) {
         if (other.tag == "PlayerBody") {
             foreach (Transform child in other.transform.parent.transform) {
-                if (child.tag == tag) child.GetComponent<Upgrade>().PrintStatusPopup(false);
+                if (child.tag == tag) {
+                    this.billboard.GetComponentInChildren<TextMesh>().text = child.GetComponent<Upgrade>().GetUpgradeStatus();
+                    this.billboard.SetActive(true);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "PlayerBody") {
+            foreach (Transform child in other.transform.parent.transform) {
+                if (child.tag == tag) {
+                    this.billboard.SetActive(false);
+                }
             }
         }
     }
