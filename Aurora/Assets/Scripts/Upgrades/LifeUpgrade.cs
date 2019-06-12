@@ -9,7 +9,6 @@ public class LifeUpgrade : Upgrade {
 
     public GameObject shieldChargeObject;
     private List<GameObject> shields = new List<GameObject>();
-    private bool canActivateShield = false;
 
     private void Start() {
         this.type = Type.Life;
@@ -22,16 +21,20 @@ public class LifeUpgrade : Upgrade {
 
 
     public override void Active() {
-        if (this.canActivateShield) {
+        if (this.isActiveInCooldown) {
             return;
         }
 
         for (int i = 0; i < 3; i++) {
-            GameObject obj = Instantiate(shieldChargeObject, transform.position + Vector3.forward*2, Quaternion.identity);
+            GameObject obj = Instantiate(shieldChargeObject, transform.position + Vector3.forward * 2, Quaternion.identity);
+
+            GameObject player = GameObject.FindGameObjectWithTag("PlayerBody");
+            obj.transform.RotateAround(player.transform.position, Vector3.up, i * 120);
+
             obj.transform.SetParent(transform.root);
             this.shields.Add(obj);
         }
-        this.canActivateShield = true;
+        this.isActiveInCooldown = true;
     }
 
     public override void Passive() {
@@ -43,7 +46,7 @@ public class LifeUpgrade : Upgrade {
     }
 
     public void RestoreActiveCharges() =>
-        this.canActivateShield = false;
+        this.isActiveInCooldown = false;
 
     public void BreakShield() {
         if (this.shields.Count > 0) {
