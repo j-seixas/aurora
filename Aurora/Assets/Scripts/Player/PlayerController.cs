@@ -105,11 +105,13 @@ public class PlayerController : MonoBehaviour {
 
             int val = this.health + inc;
 
-            if(inc < 0) PlaySoundHurt();
+            if(inc < 0) {this.animator.SetTrigger("tookDamage"); PlaySoundHurt();}
 
             if (val > this.maxHealth) this.health = this.maxHealth;
             else if (val < 0) this.health = 0;
             else this.health += inc;
+
+            
         }
 
         if (attr == GameManager.Attributes.Stamina) {
