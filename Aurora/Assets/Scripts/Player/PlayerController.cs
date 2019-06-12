@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerController : MonoBehaviour {
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 
     [Header ("Attack")]
     [SerializeField] public GameObject weapon;
-    
+
     [Header ("Upgrade")]
     public List<Upgrade> upgrades = new List<Upgrade> ();
     [SerializeField] private int active = -1;
@@ -52,11 +52,11 @@ public class PlayerController : MonoBehaviour {
         InvokeRepeating ("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
     }
 
-    private void AdjustDeathPostProcessing() {
-        PostProcessVolume ppv = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<PostProcessVolume>();
+    private void AdjustDeathPostProcessing () {
+        PostProcessVolume ppv = GameObject.FindGameObjectWithTag ("PostProcessing").GetComponent<PostProcessVolume> ();
         ColorGrading colorGradingLayer = null;
 
-        ppv.profile.TryGetSettings(out colorGradingLayer);
+        ppv.profile.TryGetSettings (out colorGradingLayer);
         colorGradingLayer.enabled.value = true;
 
         colorGradingLayer.temperature.value = 0;
@@ -64,18 +64,18 @@ public class PlayerController : MonoBehaviour {
 
         colorGradingLayer.postExposure.value = 0;
         colorGradingLayer.saturation.value = -100;
-        colorGradingLayer.colorFilter = new ColorParameter { value = new Color(0.33f, 0.24f, 0.24f, 1.0f) };
+        colorGradingLayer.colorFilter = new ColorParameter { value = new Color (0.33f, 0.24f, 0.24f, 1.0f) };
     }
 
-    private IEnumerator PlayDeathAnimation() {
-        Animator animator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
-        animator.SetBool("IsDead", true);
-        this.AdjustDeathPostProcessing();
+    private IEnumerator PlayDeathAnimation () {
+        Animator animator = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Animator> ();
+        animator.SetBool ("IsDead", true);
+        this.AdjustDeathPostProcessing ();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds (1);
     }
 
-    public bool IsDead() =>
+    public bool IsDead () =>
         this.health <= 0;
 
     public int GetAttribute (GameManager.Attributes attr) {
@@ -96,22 +96,25 @@ public class PlayerController : MonoBehaviour {
 
             // Check whether the player has shield charges.
             // If so, reduce a charge and don't deal damage.
-            LifeUpgrade lifeUpgradeScript = GetComponentInChildren<LifeUpgrade>();
+            LifeUpgrade lifeUpgradeScript = GetComponentInChildren<LifeUpgrade> ();
 
-            if (lifeUpgradeScript.HasShieldActive() && inc < 0) {
-                lifeUpgradeScript.BreakShield();
+            if (lifeUpgradeScript.HasShieldActive () && inc < 0) {
+                lifeUpgradeScript.BreakShield ();
                 return;
             }
 
             int val = this.health + inc;
 
-            if(inc < 0) {this.animator.SetTrigger("tookDamage"); PlaySoundHurt();}
+            if (inc < 0) {
+                this.animator.SetTrigger ("tookDamage");
+                if (this.health > 0)
+                    PlaySoundHurt ();
+            }
 
             if (val > this.maxHealth) this.health = this.maxHealth;
             else if (val < 0) this.health = 0;
             else this.health += inc;
 
-            
         }
 
         if (attr == GameManager.Attributes.Stamina) {
@@ -149,17 +152,17 @@ public class PlayerController : MonoBehaviour {
         this.canvas.UpdateCooldownStatus ();
 
         if (health <= 0) {
-            StartCoroutine(this.PlayDeathAnimation());
+            StartCoroutine (this.PlayDeathAnimation ());
         }
-            //SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
 
         // Process inputs.
-        if (Input.GetButtonDown("Attack")) {
-            this.animator.SetBool("Attack", true);
+        if (Input.GetButtonDown ("Attack")) {
+            this.animator.SetBool ("Attack", true);
         }
 
         // Process dash ability.
-        if (Input.GetButtonDown("Dash")) {
+        if (Input.GetButtonDown ("Dash")) {
             GetComponent<PlayerDash> ().Perform ();
         }
 
@@ -171,7 +174,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButtonDown ("QuickSwitchRight")) {
             for (int i = active + 1; i < upgrades.Count; i++) {
-                if (upgrades[i].GetLevel() > 0) { this.SwitchLevel (i); break; }
+                if (upgrades[i].GetLevel () > 0) { this.SwitchLevel (i); break; }
             }
         }
 
@@ -180,19 +183,18 @@ public class PlayerController : MonoBehaviour {
         }
 
         // TODO: The button here should be changed.
-        if (Input.GetButtonDown("Dash") && GameObject.Find("WaveFactory")) {
-            WaveFactory waveFactory = GameObject.Find("WaveFactory").GetComponent<WaveFactory>();
-            
-            if (waveFactory.IsShoppingPhase()) 
-                waveFactory.NextWave();
-        }
+        if (Input.GetButtonDown ("Dash") && GameObject.Find ("WaveFactory")) {
+            WaveFactory waveFactory = GameObject.Find ("WaveFactory").GetComponent<WaveFactory> ();
 
+            if (waveFactory.IsShoppingPhase ())
+                waveFactory.NextWave ();
+        }
 
     }
 
     public void UnlockUpgrade (string upTag) {
         for (int i = 0; i < this.upgrades.Count; i++) {
-            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUp(); break; }
+            if (this.upgrades[i].tag == upTag) { this.upgrades[i].LevelUp (); break; }
         }
     }
 
@@ -229,38 +231,37 @@ public class PlayerController : MonoBehaviour {
             this.rb.MoveRotation (Quaternion.LookRotation (direction));
     }
 
-    void ActivateCollider() {
-        this.weapon.GetComponent<PlayerWeapon>().ToggleWeaponCollider(true);
+    void ActivateCollider () {
+        this.weapon.GetComponent<PlayerWeapon> ().ToggleWeaponCollider (true);
     }
 
-    void DeactivateCollider() {
-        this.weapon.GetComponent<PlayerWeapon>().ToggleWeaponCollider(false);
+    void DeactivateCollider () {
+        this.weapon.GetComponent<PlayerWeapon> ().ToggleWeaponCollider (false);
     }
 
-    public void AOEAttack(){
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position,4);
-        foreach (Collider collider in hitColliders)
-        {
+    public void AOEAttack () {
+        Collider[] hitColliders = Physics.OverlapSphere (this.transform.position, 4);
+        foreach (Collider collider in hitColliders) {
             if (collider.tag == "MinionMelee" || collider.tag == "MinionRanged") {
-                weapon.GetComponent<PlayerWeapon>().DealDamage(collider.gameObject, 0, false, false);
-            }   
+                weapon.GetComponent<PlayerWeapon> ().DealDamage (collider.gameObject, 0, false, false);
+            }
         }
     }
 
     public void PlaySoundAttack (string i) {
-        AudioManager.Instance.PlaySFX("aurora_grunt_" + i); //aurora sound
-        AudioManager.Instance.PlaySFX("Attack" + i);  //scythe sound
+        AudioManager.Instance.PlaySFX ("aurora_grunt_" + i); //aurora sound
+        AudioManager.Instance.PlaySFX ("Attack" + i); //scythe sound
     }
 
-    void PlaySoundHurt(){
-        System.Random rand = new System.Random();
+    void PlaySoundHurt () {
+        System.Random rand = new System.Random ();
         int aux = this.hurtSfx;
 
-        while(aux == this.hurtSfx){ //checks if the new sound is equal to the previous one
-            aux = rand.Next(1, 5);
+        while (aux == this.hurtSfx) { //checks if the new sound is equal to the previous one
+            aux = rand.Next (1, 5);
         }
         this.hurtSfx = aux;
 
-        AudioManager.Instance.PlaySFX("aurora_hurt_" + this.hurtSfx ); //aurora sound
-    }   
+        AudioManager.Instance.PlaySFX ("aurora_hurt_" + this.hurtSfx); //aurora sound
+    }
 }
