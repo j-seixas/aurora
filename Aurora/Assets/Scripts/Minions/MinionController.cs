@@ -56,6 +56,8 @@ public abstract class MinionController : MonoBehaviour {
             this.renderer.material = this.originalMat;
             this.renderer.material.color = this.originalColor;
             
+            AudioManager.Instance.PlaySFX("minion_dying");  //sound effect of minion dying
+
             // On death, spawn a spirit in its place.
             GameObject spirit = ObjectPooler.SharedInstance.GetPooledObject ("Spirit");
             spirit.GetComponent<SpiritController> ().PositionSelf (transform);
