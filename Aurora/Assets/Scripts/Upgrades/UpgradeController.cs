@@ -6,11 +6,17 @@ public class UpgradeController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "PlayerBody") {
-            
             foreach (Transform child in other.transform.parent.transform) {
-                if (child.tag == tag) child.GetComponent<Upgrade>().PrintStatusPopup();
+                if (child.tag == tag) child.GetComponent<Upgrade>().PrintStatusPopup(true);
+            }   
+        }
+    }
+
+        private void OnTriggerExit(Collider other) {
+        if (other.tag == "PlayerBody") {
+            foreach (Transform child in other.transform.parent.transform) {
+                if (child.tag == tag) child.GetComponent<Upgrade>().PrintStatusPopup(false);
             }
-            
         }
     }
 

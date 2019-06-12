@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour {
 
-    public Transform camTransform;
+    Transform camTransform;
 
     Quaternion originalRotation;
 
     void Start () {
+        camTransform = GameObject.Find ("Main Camera").GetComponent<Transform> ();
         originalRotation = transform.rotation;
     }
 
