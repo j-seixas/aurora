@@ -10,6 +10,8 @@ public class WaveFactory : MonoBehaviour {
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private List<GameObject> upgradeObjects = new List<GameObject>();
     private List<GameObject> spawnedObjs = new List<GameObject>();
+
+
     [System.Serializable]
     public struct Settings {
         public string name;
@@ -40,7 +42,7 @@ public class WaveFactory : MonoBehaviour {
         }
     }
     
-    private void Awake() {
+    private void Start() {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
 
         this.settings.ForEach(setting => {
@@ -48,15 +50,20 @@ public class WaveFactory : MonoBehaviour {
             wave.GetComponent<WaveController>().Setup(setting);
             this.waves.Add(wave);
         });
-
-        this.NextWave();
     }
 
     public void NextWave() {
-        if (waves.Count == 0) return;
+        // Only ask for the next wave if it's not the last one.
+        if (waves.Count == 0) {
+            return;
+        }
+        
+        // Despawn any upgrade gems that might be active somewhere on the scene.
         this.spawnPoints[0].GetComponentsInParent<Collider>(true)[0].enabled = false;
         this.DespawnUpgrades(this.spawnedObjs);
-        this.waves[0].SetActive(true);  // Enable the next wave.
+
+        // Enable the next wave.
+        this.waves[0].SetActive(true); 
 
         // Restore shield charges on wave change.
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeUpgrade>().RestoreActiveCharges();

@@ -16,12 +16,8 @@ public class ProjectileSpawner : MonoBehaviour {
         //InvokeRepeating("Spawner", 0.0f, spawnRate);
     }
 
-    void Update() {
-
-    }
-
     public void Spawner() {
-        if((waveFactory != null && waveFactory.IsShoppingPhase()) || this.isOnAir){
+        if ((waveFactory != null && waveFactory.IsShoppingPhase()) || this.isOnAir){
             return;
         }
         StartCoroutine("LaunchProjectile");
@@ -32,10 +28,8 @@ public class ProjectileSpawner : MonoBehaviour {
     }
 
     IEnumerator LaunchProjectile() {
-
-        
-
         this.isOnAir = true;
+
         // Instantiate projectile and bullseye objects.
         Vector3 target = player.transform.position;
         GameObject proj = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);

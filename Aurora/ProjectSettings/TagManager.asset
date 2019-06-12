@@ -18,6 +18,7 @@ TagManager:
   - PlayerBody
   - WaveFactory
   - AudioManager
+  - MountainBody
   layers:
   - Default
   - TransparentFX

@@ -26,15 +26,38 @@ public class BossController : MonoBehaviour {
         this.cameraWaveEnd = GameObject.Find("WaveEndCamera");
     }
 
+    private List<Material> SaveCurrentMountainMaterial() {
+        List<Material> materials = new List<Material>();
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("MountainBody")) {
+            materials.Add(obj.GetComponent<Renderer>().material);
+        }
+
+        return materials;
+    }
+
+    private void RestoreOldMountainMaterial(List<Material> old) {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("MountainBody")) {
+            obj.GetComponent<Renderer>().material = old[0];
+            old.RemoveAt(0);
+        }
+    }
+
+    // Switches every mountain component's material to a single one.
+    public void SwitchMountainMaterial(Material material) {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("MountainBody")) {
+            obj.GetComponent<Renderer>().material = material;
+        }
+    }
+
     private IEnumerator FlashRed () {
-        Renderer renderer = GetComponent<Renderer>();
-        Material prevMaterial = GetComponent<Renderer>().material;
+        List<Material> materials = this.SaveCurrentMountainMaterial();
+        this.SwitchMountainMaterial(this.redFlashMaterial);
 
         float flashAnimationDuration = 0.5f;
-
-        renderer.material = redFlashMaterial;
         yield return new WaitForSeconds(flashAnimationDuration / 2);
-        renderer.material = prevMaterial;
+
+        this.RestoreOldMountainMaterial(materials);
         yield return new WaitForSeconds(flashAnimationDuration / 2);
     }
 

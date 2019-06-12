@@ -6,17 +6,23 @@ public class DissolveController : MonoBehaviour {
     public float animationSpeed = 0.01f;
     public Camera cinematicCamera, playerCamera;
 
-    private Material material;
-    private bool canDissolve = false, isInCinemaMode = false;
+    public Material dissolveMaterial;
+
+    private bool canDissolve = false, isInCinemaMode = false, hasAppliedMaterial = false;
     private AudioSource audioSource;
 
     void Start() {
-        this.material = gameObject.GetComponent<Renderer>().material;
+        //this.material = gameObject.GetComponent<Renderer>().material;
         this.audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update() {
         if (this.canDissolve) {
+
+            if (!this.hasAppliedMaterial) {
+                GetComponent<BossController>().SwitchMountainMaterial(this.dissolveMaterial);
+                this.hasAppliedMaterial = true;
+            }
             
             if (!this.isInCinemaMode) {
                 BossController boss = gameObject.GetComponent<BossController>();
@@ -24,14 +30,19 @@ public class DissolveController : MonoBehaviour {
                 this.isInCinemaMode = true;
             }
 
-            this.material.SetFloat("_AnimationFrame", this.material.GetFloat("_AnimationFrame") + this.animationSpeed);
-            this.gameObject.GetComponent<Collider>().enabled = false;
+            this.dissolveMaterial.SetFloat("_AnimationFrame", this.dissolveMaterial.GetFloat("_AnimationFrame") + this.animationSpeed);
+
+            // TODO: Eventually add collider here.
+            // this.gameObject.GetComponent<Collider>().enabled = false;
         }
-        if (this.material.GetFloat("_AnimationFrame") >= 1) {
+        if (this.dissolveMaterial.GetFloat("_AnimationFrame") >= 1) {
             this.canDissolve = false;
+
+            // Reset the animation frame because for some reason Unity saves this.
+            this.dissolveMaterial.SetFloat("_AnimationFrame", 0);
+            
             this.gameObject.SetActive(false);
-        }
-        
+        }     
     }
 
     public void StartDissolving() {
