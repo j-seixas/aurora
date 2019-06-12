@@ -12,8 +12,11 @@ public class CameraController : MonoBehaviour {
     private float minPitch = -5f, maxPitch = 85f;
     private float cameraRotationSpeed = 4f;         //how fast camera rotates, the slower the smoother
 
+    private PlayerController controller;
+
     void Start() {
         target = GameObject.FindWithTag("Player");
+        this.controller = this.target.GetComponent<PlayerController>();
         offset = target.transform.position - transform.position;
     }
 
@@ -23,7 +26,9 @@ public class CameraController : MonoBehaviour {
     
         // if(Input.GetButtonDown("Recenter Camera")) Recenter();
         
-        UpdateCameraTransform();
+        if (!this.controller.IsDead()) {
+            UpdateCameraTransform();
+        }
     }
 
     void UpdateCameraTransform(){

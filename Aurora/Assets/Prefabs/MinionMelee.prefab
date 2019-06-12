@@ -452,10 +452,12 @@ MonoBehaviour:
   lookRadius: 50
   speed: 10
   range: 3
-  damage: 2
+  damage: 20
+  spawnTime: 2
   flashAnimDuration: 0.75
   hitFlashMaterial: {fileID: 2100000, guid: 70fba02c0ba041d4da0b6292a15cda34, type: 2}
   health: 100
+  isInSpawnCooldown: 1
 --- !u!65 &7444389682717432493
 BoxCollider:
   m_ObjectHideFlags: 0

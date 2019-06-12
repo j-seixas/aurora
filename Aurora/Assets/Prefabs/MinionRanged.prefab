@@ -655,10 +655,12 @@ MonoBehaviour:
   lookRadius: 50
   speed: 10
   range: 15
-  damage: 5
+  damage: 30
+  spawnTime: 2
   flashAnimDuration: 0.75
   hitFlashMaterial: {fileID: 2100000, guid: 70fba02c0ba041d4da0b6292a15cda34, type: 2}
   health: 150
+  isInSpawnCooldown: 1
 --- !u!65 &197815528422256513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1091,6 +1093,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5999608337142371111}
     m_Modifications:
+    - target: {fileID: 1252762423447437531, guid: 507557cc31d69c7adbeaac686f02f8d5,
+        type: 3}
+      propertyPath: m_Name
+      value: PSSpawn
+      objectReference: {fileID: 0}
     - target: {fileID: 1252762423447437528, guid: 507557cc31d69c7adbeaac686f02f8d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1145,11 +1152,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1252762423447437531, guid: 507557cc31d69c7adbeaac686f02f8d5,
-        type: 3}
-      propertyPath: m_Name
-      value: PSSpawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 507557cc31d69c7adbeaac686f02f8d5, type: 3}

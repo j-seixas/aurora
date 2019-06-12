@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerController : MonoBehaviour {
 
@@ -47,9 +48,35 @@ public class PlayerController : MonoBehaviour {
         this.animator = GetComponent<Animator> ();
         this.lastPos = gameObject.transform.position;
         // Start regenerating health and stamina.
-        InvokeRepeating ("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
+        //InvokeRepeating ("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating ("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
     }
+
+    private void AdjustDeathPostProcessing() {
+        PostProcessVolume ppv = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<PostProcessVolume>();
+        ColorGrading colorGradingLayer = null;
+
+        ppv.profile.TryGetSettings(out colorGradingLayer);
+        colorGradingLayer.enabled.value = true;
+
+        colorGradingLayer.temperature.value = 0;
+        colorGradingLayer.tint.value = 0;
+
+        colorGradingLayer.postExposure.value = 0;
+        colorGradingLayer.saturation.value = -100;
+        colorGradingLayer.colorFilter = new ColorParameter { value = new Color(0.33f, 0.24f, 0.24f, 1.0f) };
+    }
+
+    private IEnumerator PlayDeathAnimation() {
+        Animator animator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+        animator.SetBool("IsDead", true);
+        this.AdjustDeathPostProcessing();
+
+        yield return new WaitForSeconds(1);
+    }
+
+    public bool IsDead() =>
+        this.health <= 0;
 
     public int GetAttribute (GameManager.Attributes attr) {
         if (attr == GameManager.Attributes.Health)
@@ -119,8 +146,10 @@ public class PlayerController : MonoBehaviour {
         this.canvas.UpdateSlider ("Essence", this.spirits);
         this.canvas.UpdateCooldownStatus ();
 
-        if (health <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
+        if (health <= 0) {
+            StartCoroutine(this.PlayDeathAnimation());
+        }
+            //SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
 
         // Process inputs.
         if (Input.GetButtonDown("Attack")) {

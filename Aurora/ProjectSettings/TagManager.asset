@@ -19,6 +19,7 @@ TagManager:
   - WaveFactory
   - AudioManager
   - MountainBody
+  - PostProcessing
   layers:
   - Default
   - TransparentFX
