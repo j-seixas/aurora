@@ -6,5 +6,6 @@ public class EyeController : MonoBehaviour {
 
     void Update () {
         transform.LookAt (target);
+
     }
 }
