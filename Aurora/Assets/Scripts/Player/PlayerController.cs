@@ -258,7 +258,7 @@ public class PlayerController : MonoBehaviour {
         int aux = this.hurtSfx;
 
         while (aux == this.hurtSfx) { //checks if the new sound is equal to the previous one
-            aux = rand.Next (1, 5);
+            aux = rand.Next (1, 4);
         }
         this.hurtSfx = aux;
 
