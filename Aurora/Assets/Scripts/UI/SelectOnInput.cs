@@ -68,6 +68,5 @@ public class SelectOnInput : MonoBehaviour {
 
     public void PlayMenuSound() {
         AudioManager.Instance.PlayMusic("MenuMusic");
-        Debug.Log("Playing music");
     }
 }

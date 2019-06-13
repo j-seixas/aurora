@@ -90,7 +90,8 @@ public class WaveFactory : MonoBehaviour {
 
         // Enable the next wave.
         this.waves[0].SetActive(true);
-        PlayWaveSound(); 
+        PlayWaveSound();
+        PlayBattleMusic(); 
 
         // Restore shield charges on wave change.
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeUpgrade>().RestoreActiveCharges();
@@ -135,5 +136,9 @@ public class WaveFactory : MonoBehaviour {
     
     public void PlayWaveSound() {
         AudioManager.Instance.PlaySFX("wave_info");
+    }
+
+    public void PlayBattleMusic() {
+        AudioManager.Instance.PlayMusic("BattleMusic");
     }
 }
