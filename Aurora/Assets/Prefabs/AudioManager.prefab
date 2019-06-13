@@ -189,5 +189,5 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  sfxVolume: 0.788
+  sfxVolume: 0.819
   musicVolume: 1
