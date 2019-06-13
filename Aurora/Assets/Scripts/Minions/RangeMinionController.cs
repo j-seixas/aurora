@@ -15,7 +15,7 @@ public class RangeMinionController: MinionController {
         Collider player = this.checkForPlayer();
         if(player == null)
             return false;
-        attack.setDirection(getDirection(this.transform.position,player.gameObject.transform.position));
+        attack.setDirection(getDirection(this.transform.position, player.gameObject.transform.position));
         return false;
     }
 
