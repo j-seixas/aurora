@@ -9,6 +9,7 @@ public class RangeMinionController: MinionController {
     
     
     public override bool Attack(){
+        AudioManager.Instance.PlaySFX("minion_projectil",this.transform);
         GameObject fireball = ObjectPooler.SharedInstance.GetPooledObject("Fireball");
         fireball.transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
         RangeAttackController attack = fireball.GetComponent<RangeAttackController>();

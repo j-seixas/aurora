@@ -182,6 +182,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: minion_projectil
+    clip: {fileID: 8300000, guid: 98c315998b819409aa75b014e4dddf10, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: minion_projectil_hit
+    clip: {fileID: 8300000, guid: 4b89c7f81384df1f6a9f257bba247379, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   music:
   - name: MainTheme
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
