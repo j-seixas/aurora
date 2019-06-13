@@ -4,8 +4,6 @@
 // when the _SfSrc suffixed version of this shader is modified.
 
 
-
-
 Shader "Polybrush/TriPlanar Blend Legacy" {
 
     Properties {

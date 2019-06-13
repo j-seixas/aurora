@@ -10,6 +10,8 @@ public class WaveController : MonoBehaviour {
     public Transform spawnArea;
     private Text waveTimeLabel;
 
+    private bool isTimerStopped = false;
+
     void Awake() {
         this.waveTimeLabel = GameObject.Find("WaveTime").GetComponent<Text>();
         GameObject.Find("WaveName").GetComponent<Text>().text = this.settings.name;
@@ -43,8 +45,14 @@ public class WaveController : MonoBehaviour {
         }
     }
 
+    public void StopTimer() =>
+        this.isTimerStopped = true;
+
 
     void Update() {
+        if (this.isTimerStopped) {
+            return;
+        }
 
         // If the minion count doesn't reach the minimum, spawn the remaining ones.
         this.settings.minionSettings.ForEach(minion => {
