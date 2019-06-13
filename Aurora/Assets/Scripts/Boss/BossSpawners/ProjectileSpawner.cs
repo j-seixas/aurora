@@ -13,7 +13,7 @@ public class ProjectileSpawner : MonoBehaviour {
     void Start() {
         this.player = GameObject.FindWithTag("Player");
         waveFactory = GameObject.FindGameObjectWithTag("WaveFactory").GetComponent<WaveFactory>();
-        //InvokeRepeating("Spawner", 0.0f, spawnRate);
+        InvokeRepeating("Spawner", 0.0f, spawnRate);
     }
 
     public void Spawner() {

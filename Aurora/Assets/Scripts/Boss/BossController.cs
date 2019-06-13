@@ -5,25 +5,32 @@ using UnityEngine;
 public class BossController : MonoBehaviour {
     public Material redFlashMaterial;
 
-    private ProjectileSpawner projectile;
-
+    public GameObject shockwave, projectile;
     private GameObject player;
-
-    private int level = 1;
 
     private bool coroutineRunning = false;
 
+    public WaveFactory waveFactory;
     private GameObject cameraPlayer, cameraLevelEnd, cameraWaveEnd;
 
+
     void Start() {
-        //shockwave = GetComponentsInChildren<ShockwaveSpawner>(true)[0];
-        projectile = GetComponentsInChildren<ProjectileSpawner>(true)[0];
         player = GameObject.FindWithTag("Player");
 
         // Initialize cameras which point to the mountain and the player.
         this.cameraPlayer = GameObject.Find("Main Camera");
         this.cameraLevelEnd = GameObject.Find("LevelEndCamera");
         this.cameraWaveEnd = GameObject.Find("WaveEndCamera");
+    }
+
+    public void SetBehaviourState(string name, bool state) {
+        if (name == this.shockwave.name) {
+            this.shockwave.SetActive(state);
+        }
+
+        if (name == this.projectile.name) {
+            this.projectile.SetActive(state);
+        }
     }
 
     private List<Material> SaveCurrentMountainMaterial() {
@@ -96,18 +103,12 @@ public class BossController : MonoBehaviour {
         this.cameraLevelEnd.GetComponent<Camera>().enabled = true;
         this.cameraPlayer.GetComponent<Camera>().enabled = true;
     }
-
-
-    void Update() {
-        if(!projectile.isBeingThrown()){
-            if(!coroutineRunning) StartCoroutine("HandleProjectile");
-        }
-    }
-
-    IEnumerator HandleProjectile(){
+    /*
+    IEnumerator HandleProjectile() {
         coroutineRunning = true;
         yield return new WaitForSeconds(Random.Range(projectile.spawnRate,projectile.spawnRate+2f));
         projectile.Spawner();
         coroutineRunning = false;
     }
+    */
 }

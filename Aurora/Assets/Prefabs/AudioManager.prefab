@@ -170,6 +170,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: menu_selection
+    clip: {fileID: 8300000, guid: a7be028ea1c2b6f36bb9911adedeaf11, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   music:
   - name: MainTheme
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
@@ -189,5 +195,5 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  sfxVolume: 0.788
+  sfxVolume: 0.819
   musicVolume: 1
