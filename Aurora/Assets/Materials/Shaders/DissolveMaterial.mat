@@ -62,7 +62,11 @@ Material:
     - Vector1_B681C47A: 500
     - Vector1_E38482C4: 0
     - _AlphaClip: 0
+<<<<<<< HEAD
     - _AnimationFrame: 0.6979981
+=======
+    - _AnimationFrame: 0.3300003
+>>>>>>> 9b09d2f1c249bf36692830d8e070db5fb4949705
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2

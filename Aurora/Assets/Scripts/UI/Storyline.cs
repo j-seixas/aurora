@@ -11,7 +11,7 @@ public class Storyline : MonoBehaviour {
 
 
     void Update () {
-        if (Input.GetButtonDown ("Accept")) {
+        if (Input.GetButtonDown ("Jump")) {
             SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
         }
     }

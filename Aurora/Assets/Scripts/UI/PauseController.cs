@@ -7,7 +7,7 @@ public class PauseController : MonoBehaviour {
     public GameObject pausePanel;
 
     void Update () {
-        if (Input.GetButtonDown ("Cancel")) {
+        if (Input.GetButtonDown ("Start")) {
             TogglePause ();
         }
     }
