@@ -86,16 +86,16 @@ public class HUDUpdater : MonoBehaviour {
 
         switch (type) {
             case "Fire":
-                passive = "- Passive -\nLorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                active = "- Active -\nLorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                passive = "-- Muspellheim's Rune (Passive) --\nAurora imbues her scythe with a fire rune, inflicting burn damage over time.\n";
+                active = "- Muspellheim's Demise (Active) -\nAurora unleashes a burning ring of fire, burning any minion in the surrounding area.";
                 break;
             case "Ice":
-                passive = "- Passive -\nLorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                active = "- Active -\nLorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                passive = "- Niflheim's Rune (Passive) -\nAurora freezes her scythe, striking her enemies with a slowness debuff.\n";
+                active = "- Niflheim's Breeze (Active) -\nAurora casts Niflheim's cold breeze, rooting every minion in its place.";
                 break;
             case "Life":
-                passive = "- Passive -\nLorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                active = "- Active -\nLorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                passive = "- Vanaheim's Rune (Passive) -\nAurora absorbs nature's life force, regenerating health over time.\n";
+                active = "- Vanaheim's Blessing (Active) -\nAurora calls upon the protectors of the woods, shielding her from incoming damage.";
                 break;
         }
 
