@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6630961686472396088}
   - component: {fileID: 2404621186482222862}
   - component: {fileID: 8242263869312814071}
+  - component: {fileID: 8246196774533158296}
   m_Layer: 0
   m_Name: ARVORE_1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8246196774533158296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7664758630683475755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 7826771016129891033, guid: 70e9513d7a781d041ba422b8a11843aa, type: 3}

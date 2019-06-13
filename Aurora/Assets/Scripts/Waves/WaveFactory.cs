@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveFactory : MonoBehaviour {
     public GameObject waveController;
@@ -10,6 +11,8 @@ public class WaveFactory : MonoBehaviour {
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private List<GameObject> upgradeObjects = new List<GameObject>();
     private List<GameObject> spawnedObjs = new List<GameObject>();
+
+    private float currentShoppingTime, shoppingTime = 20.0f;
 
 
     [System.Serializable]
@@ -54,6 +57,19 @@ public class WaveFactory : MonoBehaviour {
             this.waves.Add(wave);
             
         });
+    }
+
+    private void Update() {
+        if (this.IsShoppingPhase() && this.currentShoppingTime > 0) {
+            GameObject.Find("WaveName").GetComponent<Text>().text = "NEXT WAVE";
+            this.currentShoppingTime -= Time.deltaTime;
+            GameObject.Find("WaveTime").GetComponent<Text>().text = this.currentShoppingTime.ToString("F");
+        }
+
+        if (this.currentShoppingTime <= 0) {
+            this.currentShoppingTime = this.shoppingTime;
+            this.NextWave();
+        }
     }
 
     public void NextWave() {

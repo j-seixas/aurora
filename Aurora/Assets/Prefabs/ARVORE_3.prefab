@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8336285768760695231}
   - component: {fileID: 7584565303628710385}
   - component: {fileID: 7228417125741802575}
+  - component: {fileID: 5834836815075663423}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5834836815075663423
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072384531520035058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5495902117074765545, guid: b705bd8ed16befe4798f3bf89e60551b, type: 3}
 --- !u!1 &7212400426571698794
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +103,7 @@ GameObject:
   - component: {fileID: 1275647658002168225}
   - component: {fileID: 5450085732650669993}
   - component: {fileID: 4855367078398387530}
+  - component: {fileID: 4348155197511487319}
   m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
@@ -154,6 +170,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4348155197511487319
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212400426571698794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4579454407841743219, guid: b705bd8ed16befe4798f3bf89e60551b, type: 3}
 --- !u!1 &7574056712780747714
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +195,7 @@ GameObject:
   - component: {fileID: 6865506371264274897}
   m_Layer: 0
   m_Name: ARVORE_3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
