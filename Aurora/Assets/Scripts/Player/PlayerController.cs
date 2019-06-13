@@ -71,9 +71,9 @@ public class PlayerController : MonoBehaviour {
         Animator animator = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Animator>();
         animator.SetBool("IsDead", true);
         this.AdjustDeathPostProcessing();
-
         // Slow motion on death.
         Time.timeScale = 0.5f;
+        this.PlayDeathSound();
 
         // Stop current wave timer.
         GameObject.FindGameObjectWithTag("WaveFactory").GetComponent<WaveFactory>().StopTimer();
@@ -158,7 +158,10 @@ public class PlayerController : MonoBehaviour {
         this.canvas.UpdateSlider ("Essence", this.spirits);
         this.canvas.UpdateCooldownStatus ();
 
-        if (health <= 0) {
+
+        Animator mainCamAnimator = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Animator>();
+        
+        if (health <= 0 && !mainCamAnimator.GetBool("IsDead")) {
             StartCoroutine (this.PlayDeathAnimation());
             return;
         }
@@ -270,5 +273,10 @@ public class PlayerController : MonoBehaviour {
         this.hurtSfx = aux;
 
         AudioManager.Instance.PlaySFX ("aurora_hurt_" + this.hurtSfx,transform); //aurora sound
+    }
+
+    void PlayDeathSound() {
+        AudioManager.Instance.PlayMusic("DeathMusic");
+        Debug.Log("Played");
     }
 }
