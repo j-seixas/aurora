@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public abstract class MinionController : MonoBehaviour {
     public float lookRadius = 10f;
 
+    public float areaOfSight = 50;
     public float speed = 10f;
     public float range = 3f;
     public int damage = 1;
     public float spawnTime = 2f;
+
 
     public float flashAnimDuration;
     public Material hitFlashMaterial;
