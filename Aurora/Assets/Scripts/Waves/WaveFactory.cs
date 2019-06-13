@@ -102,6 +102,9 @@ public class WaveFactory : MonoBehaviour {
         }
     }
 
+    public void StopTimer() =>
+        this.waves[0].GetComponent<WaveController>().StopTimer();
+
     public bool IsShoppingPhase() =>
         !this.waves.Exists(wave => wave.activeSelf);
     
