@@ -20,6 +20,7 @@ TagManager:
   - AudioManager
   - MountainBody
   - PostProcessing
+  - Wall
   layers:
   - Default
   - TransparentFX

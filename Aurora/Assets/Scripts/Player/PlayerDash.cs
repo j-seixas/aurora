@@ -106,4 +106,6 @@ public class PlayerDash : MonoBehaviour {
 
     public bool IsInDashGracePeriod() => this.isInDashGracePeriod;
 
+    public bool IsDashing() => this.isDashing;
+
 }
