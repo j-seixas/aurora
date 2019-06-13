@@ -129,6 +129,7 @@ public class WaveFactory : MonoBehaviour {
             DissolveController controller = GameObject.FindGameObjectWithTag("Mountain").GetComponent<DissolveController>();
             controller.StartDissolving();
             controller.PlaySoundEffect();
+            controller.PlayVictoryMusic();
         }
 
         if (waves.Count != 0) {
@@ -149,5 +150,10 @@ public class WaveFactory : MonoBehaviour {
 
     public void PlayBattleMusic() {
         AudioManager.Instance.PlayMusic("BattleMusic");
+        Invoke("PlayBattleLoop", AudioManager.Instance.MusicLength("BattleMusic")-2);
+    }
+
+    public void PlayBattleLoop() {
+        AudioManager.Instance.PlayMusic("BattleMusicLoop");
     }
 }
