@@ -17,7 +17,7 @@ public class UpgradeController : MonoBehaviour {
         if (other.tag == "PlayerBody") {
             foreach (Transform child in other.transform.parent.transform) {
                 if (child.tag == tag) {
-                    this.billboard.GetComponentInChildren<TextMesh>().text = child.GetComponent<Upgrade>().GetUpgradeStatus();
+                    this.billboard.GetComponentInChildren<TextMesh>().text = child.GetComponent<Upgrade>().GetBillboardText();
                     this.billboard.SetActive(true);
                 }
             }
@@ -37,7 +37,12 @@ public class UpgradeController : MonoBehaviour {
     private void OnTriggerStay(Collider other) {
         if (other.tag == "PlayerBody" && Input.GetButtonDown("Accept")) {
             other.gameObject.transform.parent.gameObject.GetComponent<PlayerController>().UnlockUpgrade(tag);
-            Destroy(gameObject);
+            foreach (Transform child in other.transform.parent.transform) {
+                if (child.tag == tag) {
+                    this.billboard.GetComponentInChildren<TextMesh>().text = child.GetComponent<Upgrade>().GetBillboardText();
+                    this.billboard.SetActive(true);
+                }
+            }
         }
     }
 }

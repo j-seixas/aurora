@@ -20,6 +20,7 @@ public class FireUpgrade : Upgrade {
 
     public override void Active() {
         if (!this.isActiveInCooldown) {
+            AudioManager.Instance.PlaySFX("fire_ring");
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
             StartCoroutine(this.ElapseActiveCooldown(this.cooldown[this.level]));
         }
@@ -34,5 +35,22 @@ public class FireUpgrade : Upgrade {
         if (this.UpgradeLevel()) {
             // Add gem specific logic here.
         }
-    } 
+    }
+
+    public override string GetBillboardText() {        
+        string cost = "Cost: " + this.spiritCostByLevel[this.level].ToString () + " spirits";
+        string passive1, passive2, passive3;
+
+        if (this.level == 0) {
+            passive1 = "Burn damage: 0 -> " + this.burnDamageByLevel[this.level].ToString() + "\n";
+            passive2 = "Tick rate: 0 -> " + this.tickRateByLevel[this.level].ToString() + "\n";
+            passive3 = "Tick count: 0 -> " + this.tickCountByLevel[this.level].ToString() + "\n";
+        } else {
+            passive1 = "Burn damage: " + this.burnDamageByLevel[this.level-1].ToString() + " -> " + this.burnDamageByLevel[this.level].ToString() + "\n";
+            passive2 = "Tick rate: " + this.tickRateByLevel[this.level-1].ToString() + " -> " + this.tickRateByLevel[this.level].ToString() + "\n";
+            passive3 = "Tick count: " + this.tickCountByLevel[this.level-1].ToString() + " -> " + this.tickCountByLevel[this.level].ToString() + "\n";
+        }
+
+        return passive1 + passive2 + passive3 + cost;
+    }
 }

@@ -145,6 +145,7 @@ public abstract class MinionController : MonoBehaviour {
 
         while (ticks-- > 0) {
             StartCoroutine(FlashRed());
+            AudioManager.Instance.PlaySFX("fire_burn",transform); //minion sound
             transform.Find("FlamesParticleEffect").GetComponent<ParticleSystem>().Play();
             this.health -= damage;
             yield return new WaitForSeconds(rate);
@@ -184,12 +185,12 @@ public abstract class MinionController : MonoBehaviour {
 
     void PlaySoundWalking(){
         System.Random rand = new System.Random();
-        AudioManager.Instance.PlaySFX("walking" + rand.Next(1, 7),transform ); //aurora sound
+        AudioManager.Instance.PlaySFX("walking" + rand.Next(1, 7),transform ); //minion sound
     }
     
     void PlaySoundHurt(){
         System.Random rand = new System.Random();
-        AudioManager.Instance.PlaySFX("minion_hurt_" + rand.Next(1, 3),transform); //aurora sound
+        AudioManager.Instance.PlaySFX("minion_hurt_" + rand.Next(1, 3),transform); //minion sound
     }         
 
     public abstract bool Attack ();

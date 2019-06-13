@@ -14,6 +14,8 @@ public class WaveFactory : MonoBehaviour {
 
     private float currentShoppingTime, shoppingTime = 20.0f;
 
+    private bool isInIdlePhase = true;
+
 
     [System.Serializable]
     public struct Settings {
@@ -50,16 +52,20 @@ public class WaveFactory : MonoBehaviour {
     
     private void Start() {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
+        this.currentShoppingTime = this.shoppingTime;
 
         this.settings.ForEach(setting => {
             GameObject wave = Instantiate(waveController, Vector3.zero, Quaternion.identity);
             wave.GetComponent<WaveController>().Setup(setting);
             this.waves.Add(wave);
-            
         });
     }
 
     private void Update() {
+        if (this.isInIdlePhase) {
+            return;
+        }
+
         if (this.IsShoppingPhase() && this.currentShoppingTime > 0) {
             GameObject.Find("WaveName").GetComponent<Text>().text = "NEXT WAVE";
             this.currentShoppingTime -= Time.deltaTime;
@@ -73,6 +79,8 @@ public class WaveFactory : MonoBehaviour {
     }
 
     public void NextWave() {
+        this.isInIdlePhase = false;
+
         // Only ask for the next wave if it's not the last one.
         if (waves.Count == 0) {
             return;
@@ -133,6 +141,7 @@ public class WaveFactory : MonoBehaviour {
 
     public bool IsShoppingPhase() =>
         !this.waves.Exists(wave => wave.activeSelf);
+
     
     public void PlayWaveSound() {
         AudioManager.Instance.PlaySFX("wave_info");

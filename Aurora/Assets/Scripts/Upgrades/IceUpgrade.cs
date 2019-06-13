@@ -36,5 +36,20 @@ public class IceUpgrade : Upgrade {
         if (this.UpgradeLevel()) {
             // Add gem specific logic here.
         }
-    } 
+    }
+
+    public override string GetBillboardText() {
+        string passive1, passive2;
+
+        if (this.level == 0) {
+            passive1 = "Slow amount: 0 -> " + this.slowByLevel[this.level].ToString() + "\n";
+            passive2 = "Slow duration: 0 -> " + this.durationByLevel[this.level].ToString() + "\n";
+        } else {
+            passive1 = "Slow amount: " + this.slowByLevel[this.level-1].ToString() + " -> " + this.slowByLevel[this.level].ToString() + "\n";
+            passive2 = "Slow duration: " + this.durationByLevel[this.level-1].ToString() + " -> " + this.durationByLevel[this.level].ToString() + "\n";
+        }
+
+        string cost = "Cost: " + this.spiritCostByLevel[this.level].ToString () + " spirits";
+        return passive1 + passive2 + cost;
+    }
 }
