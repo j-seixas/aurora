@@ -35,5 +35,6 @@ public class SpiritController : MonoBehaviour {
 
     public void PositionSelf(Transform minion) {
         this.transform.position = minion.position;
+        this.transform.Translate(new Vector3(0, 0.5f, 0));
     }
 }
