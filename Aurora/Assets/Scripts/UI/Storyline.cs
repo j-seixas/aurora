@@ -5,9 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class Storyline : MonoBehaviour {
 
+    void Start(){
+        StartCoroutine(LoadGameAsync());
+    }
+
+
     void Update () {
         if (Input.GetButtonDown ("Accept")) {
             SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+        }
+    }
+
+    IEnumerator LoadGameAsync () {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync (SceneManager.GetActiveScene ().buildIndex + 1);
+        asyncLoad.allowSceneActivation = false;
+        while (!asyncLoad.isDone) {
+            yield return null;
         }
     }
 }

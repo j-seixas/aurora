@@ -20,6 +20,7 @@ public class FireUpgrade : Upgrade {
 
     public override void Active() {
         if (!this.isActiveInCooldown) {
+            AudioManager.Instance.PlaySFX("fire_ring");
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
             StartCoroutine(this.ElapseActiveCooldown(this.cooldown[this.level]));
         }
