@@ -99,12 +99,6 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_3
-    clip: {fileID: 8300000, guid: 81cd18bb083b9a2428eaece0834598c7, type: 3}
-    volume: 0.666
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: aurora_hurt_4
     clip: {fileID: 8300000, guid: d478ab36cf1391d44a311143e5b1b953, type: 3}
     volume: 0.666
     pitch: 1
@@ -158,9 +152,33 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: minion_dying
+    clip: {fileID: 8300000, guid: 9923d9cff304fd4ec99d80d38cb741f1, type: 3}
+    volume: 0.807
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: wave_info
+    clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: menu_nav
+    clip: {fileID: 8300000, guid: 3c57d09474e31d967b8c956c13d00115, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   music:
   - name: MainTheme
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Music2
+    clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
     volume: 1
     pitch: 1
     loop: 1

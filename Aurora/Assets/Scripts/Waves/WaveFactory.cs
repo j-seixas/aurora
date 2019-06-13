@@ -110,6 +110,5 @@ public class WaveFactory : MonoBehaviour {
     
     public void PlayWaveSound() {
         AudioManager.Instance.PlaySFX("wave_info");
-        Debug.Log("wave sfx");
     }
 }
