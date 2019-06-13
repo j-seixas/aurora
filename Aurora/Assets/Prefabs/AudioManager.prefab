@@ -170,8 +170,14 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: menu_selection
-    clip: {fileID: 8300000, guid: a7be028ea1c2b6f36bb9911adedeaf11, type: 3}
+  - name: wave_info
+    clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: minion_attack_head
+    clip: {fileID: 8300000, guid: 03fad8989278d3e788bd6a103f5d85fe, type: 3}
     volume: 0.839
     pitch: 1
     loop: 0
@@ -189,8 +195,8 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Music2
-    clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: a740edb85cf37041da1d15d8284e0ba9, type: 3}
     volume: 1
     pitch: 1
     loop: 1
