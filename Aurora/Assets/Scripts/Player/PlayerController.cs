@@ -277,6 +277,5 @@ public class PlayerController : MonoBehaviour {
 
     void PlayDeathSound() {
         AudioManager.Instance.PlayMusic("DeathMusic");
-        Debug.Log("Played");
     }
 }
