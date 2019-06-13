@@ -170,6 +170,30 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: wave_info
+    clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: minion_attack_head
+    clip: {fileID: 8300000, guid: 03fad8989278d3e788bd6a103f5d85fe, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: minion_projectil
+    clip: {fileID: 8300000, guid: 98c315998b819409aa75b014e4dddf10, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: minion_projectil_hit
+    clip: {fileID: 8300000, guid: 4b89c7f81384df1f6a9f257bba247379, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   music:
   - name: MainTheme
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
@@ -183,11 +207,11 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Music2
-    clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: a740edb85cf37041da1d15d8284e0ba9, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  sfxVolume: 0.788
+  sfxVolume: 0.819
   musicVolume: 1

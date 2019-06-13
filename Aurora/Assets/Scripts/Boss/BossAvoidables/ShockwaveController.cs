@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShockwaveController : MonoBehaviour {
-    public float speed = 0.1f, maxRadius = 25.0f;
     public int damage = 10;
 
     private ParticleSystem particles;

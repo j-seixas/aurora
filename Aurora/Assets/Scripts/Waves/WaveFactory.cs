@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveFactory : MonoBehaviour {
     public GameObject waveController;
@@ -11,14 +12,21 @@ public class WaveFactory : MonoBehaviour {
     [SerializeField] private List<GameObject> upgradeObjects = new List<GameObject>();
     private List<GameObject> spawnedObjs = new List<GameObject>();
 
+    private float currentShoppingTime, shoppingTime = 20.0f;
+
+    private bool isInIdlePhase = true;
+
 
     [System.Serializable]
     public struct Settings {
         public string name;
         public float remainingTime;
         public List<MinionSettings> minionSettings;
+        public bool shockwaveIsActive, projectileIsActive;
 
-        public Settings(string name, int minMelee, int minRanged, float freqMelee, float freqRanged, float spawnMelee, float spawnRanged, float remainingTime) {
+        public Settings(string name, int minMelee, int minRanged, float freqMelee, float freqRanged, float spawnMelee, float spawnRanged, float remainingTime, bool shockwaveIsActive, bool projectileIsActive) {            
+            this.shockwaveIsActive = shockwaveIsActive;
+            this.projectileIsActive = projectileIsActive;
             this.name = name;
             this.remainingTime = remainingTime;
             this.minionSettings = new List<MinionSettings>();
@@ -44,20 +52,45 @@ public class WaveFactory : MonoBehaviour {
     
     private void Start() {
         this.waveController.SetActive(false);   // Waves aren't enabled by default.
+        this.currentShoppingTime = this.shoppingTime;
 
         this.settings.ForEach(setting => {
             GameObject wave = Instantiate(waveController, Vector3.zero, Quaternion.identity);
             wave.GetComponent<WaveController>().Setup(setting);
             this.waves.Add(wave);
-            
         });
     }
 
+    private void Update() {
+        if (this.isInIdlePhase) {
+            return;
+        }
+
+        if (this.IsShoppingPhase() && this.currentShoppingTime > 0) {
+            GameObject.Find("WaveName").GetComponent<Text>().text = "NEXT WAVE";
+            this.currentShoppingTime -= Time.deltaTime;
+            GameObject.Find("WaveTime").GetComponent<Text>().text = this.currentShoppingTime.ToString("F");
+        }
+
+        if (this.currentShoppingTime <= 0) {
+            this.currentShoppingTime = this.shoppingTime;
+            this.NextWave();
+        }
+    }
+
     public void NextWave() {
+        this.isInIdlePhase = false;
+
         // Only ask for the next wave if it's not the last one.
         if (waves.Count == 0) {
             return;
         }
+
+        BossController boss = GameObject.FindGameObjectWithTag("Mountain").GetComponent<BossController>();
+        Settings settings = this.waves[0].GetComponent<WaveController>().settings;
+        
+        boss.SetBehaviourState("ProjectileSpawner", settings.projectileIsActive);
+        boss.SetBehaviourState("ShockwaveSpawner", settings.shockwaveIsActive);
         
         // Despawn any upgrade gems that might be active somewhere on the scene.
         this.spawnPoints[0].GetComponentsInParent<Collider>(true)[0].enabled = false;
@@ -107,6 +140,7 @@ public class WaveFactory : MonoBehaviour {
 
     public bool IsShoppingPhase() =>
         !this.waves.Exists(wave => wave.activeSelf);
+
     
     public void PlayWaveSound() {
         AudioManager.Instance.PlaySFX("wave_info");

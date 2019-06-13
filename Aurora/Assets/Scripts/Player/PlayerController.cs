@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour {
 
     public void UpdateAttribute (GameManager.Attributes attr, int inc) {
         if (attr == GameManager.Attributes.Health) {
-            return;
             // Check whether the player has shield charges.
             // If so, reduce a charge and don't deal damage.
             LifeUpgrade lifeUpgradeScript = GetComponentInChildren<LifeUpgrade> ();
@@ -123,7 +122,6 @@ public class PlayerController : MonoBehaviour {
             if (val > this.maxHealth) this.health = this.maxHealth;
             else if (val < 0) this.health = 0;
             else this.health += inc;
-
         }
 
         if (attr == GameManager.Attributes.Stamina) {
@@ -190,15 +188,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown ("Ability")) {
             if (this.active != -1) this.upgrades[this.active].Active ();
         }
-
-        // TODO: The button here should be changed.
-        if (Input.GetButtonDown ("Dash") && GameObject.Find ("WaveFactory")) {
-            WaveFactory waveFactory = GameObject.Find ("WaveFactory").GetComponent<WaveFactory> ();
-
-            if (waveFactory.IsShoppingPhase ())
-                waveFactory.NextWave ();
-        }
-
     }
 
     public void UnlockUpgrade (string upTag) {
