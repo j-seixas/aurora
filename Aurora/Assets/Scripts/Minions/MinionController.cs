@@ -159,6 +159,7 @@ public abstract class MinionController : MonoBehaviour {
         this.isSlowed = true;
         
         ParticleSystem particles = transform.Find("SnowflakesParticleEffect").GetComponent<ParticleSystem>();
+        AudioManager.Instance.PlaySFX("ice_root",transform); //minion sound
 
         particles.Play();
         yield return new WaitForSeconds(duration);

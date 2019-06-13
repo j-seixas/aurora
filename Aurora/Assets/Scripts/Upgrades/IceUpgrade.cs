@@ -22,6 +22,7 @@ public class IceUpgrade : Upgrade {
 
     public override void Active() {
         if (!this.isActiveInCooldown) {
+            AudioManager.Instance.PlaySFX("ice_volley");
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
             StartCoroutine(this.ElapseActiveCooldown(this.cooldown[this.level]));
         }
