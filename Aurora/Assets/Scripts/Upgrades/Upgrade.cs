@@ -29,16 +29,13 @@ public abstract class Upgrade : MonoBehaviour {
     public abstract void Active ();
     public abstract void Passive ();
     public abstract void LevelUp ();
+    public abstract string GetBillboardText();
 
     public int GetLevel () =>
         this.level;
 
     public bool IsActiveEnabled () =>
         this.level > 0;
-
-    public string GetUpgradeStatus() {
-        return type.ToString ().ToUpper () + " UPGRADE\n" + "Cost: " + this.spiritCostByLevel[this.level].ToString () + " spirits";
-    }
 
     public void PrintStatusPopup (bool active) {
 

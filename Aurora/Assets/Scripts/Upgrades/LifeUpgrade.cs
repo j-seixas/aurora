@@ -63,5 +63,18 @@ public class LifeUpgrade : Upgrade {
         if (this.UpgradeLevel()) {
             this.healthGain = this.healthGainByLevel[this.level];  // Gem specific logic.
         }
-    } 
+    }
+
+    public override string GetBillboardText() {
+        string passive1;
+
+        if (this.level == 0) {
+            passive1 = "Health gain: 0 -> " + this.healthGainByLevel[this.level].ToString() + "\n";
+        } else {
+            passive1 = "Health gain: " + this.healthGainByLevel[this.level-1].ToString() + " -> " + this.healthGainByLevel[this.level].ToString() + "\n";
+        }
+
+        string cost = "Cost: " + this.spiritCostByLevel[this.level].ToString () + " spirits";
+        return passive1 + cost;
+    }
 }
