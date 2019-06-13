@@ -14,6 +14,7 @@ public class MeleeMinionControler : MinionController {
         //NOT CHECKING IF ATTACK HITS
         
         GameObject.FindWithTag("Player").GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, -this.damage);
+        AudioManager.Instance.PlaySFX("minion_attack_head"); //aurora sound
         return false;
         
     }
