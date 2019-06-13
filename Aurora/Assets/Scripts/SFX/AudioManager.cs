@@ -45,9 +45,13 @@ public class AudioManager : MonoBehaviour {
         isMusic1Source = true;
     }
 
+
     public void PlayMusic (string name) {
         AudioSource activeSource = isMusic1Source ? music1 : music2;
         Sound s = Array.Find (music, sound => sound.name == name);
+        if (s == null)
+            return;
+        activeSource.loop = s.loop;
         activeSource.clip = s.clip;
         activeSource.volume = s.volume * musicVolume;
         activeSource.Play ();
@@ -73,6 +77,7 @@ public class AudioManager : MonoBehaviour {
             return;
 
         isMusic1Source = !isMusic1Source;
+        newSource.loop = s.loop;
         newSource.clip = s.clip;
         newSource.volume = s.volume * musicVolume;
         newSource.Play ();
@@ -92,6 +97,7 @@ public class AudioManager : MonoBehaviour {
 
         source.Stop ();
         source.clip = sound.clip;
+        source.loop = sound.loop;
         source.Play ();
 
         // Fade-in
