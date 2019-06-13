@@ -661,6 +661,8 @@ MonoBehaviour:
   hitFlashMaterial: {fileID: 2100000, guid: 70fba02c0ba041d4da0b6292a15cda34, type: 2}
   health: 150
   isInSpawnCooldown: 1
+  deathParticleSystem: {fileID: 1316622339140749609, guid: 45e9c7ac9c7dae54ca10bfdaa00aef7d,
+    type: 3}
 --- !u!65 &197815528422256513
 BoxCollider:
   m_ObjectHideFlags: 0
