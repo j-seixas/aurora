@@ -569,7 +569,7 @@ Transform:
   m_GameObject: {fileID: 5999608337142371106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.75, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 8359752467751019886}
   - {fileID: 401395247660563088}
@@ -653,9 +653,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 20
-  lineOfSight: 10
+  areaOfSight: 50
   speed: 10
-  range: 15
+  range: 12.13
   damage: 30
   spawnTime: 2
   flashAnimDuration: 0.75

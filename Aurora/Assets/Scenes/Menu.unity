@@ -708,6 +708,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &398034340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+    type: 3}
+  m_PrefabInstance: {fileID: 224523713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67173ae065a4b014f8294be2b170cba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &406951747
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,10 +805,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.666
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+          type: 3}
+        m_MethodName: updateVolumeMusic
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.666
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &511157078
@@ -1409,26 +1433,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -38.073
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 41.023
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -82
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -76.143
-      objectReference: {fileID: 0}
     - target: {fileID: 4038507373777879185, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1523,6 +1527,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 41.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038507373480924307, guid: 1b3e221db2a704d9cb70f54e4583b2ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -76.143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3e221db2a704d9cb70f54e4583b2ef, type: 3}
@@ -2417,10 +2441,21 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.666
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 398034340}
+        m_MethodName: updateVolumeSFX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.666
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!224 &1988599113 stripped

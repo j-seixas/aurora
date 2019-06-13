@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 50
+  areaOfSight: 50
   speed: 10
   range: 3
   damage: 20
@@ -900,7 +901,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb071b6c4cb2c5640ab14b38baff658d, type: 2}
+  - {fileID: 2100000, guid: 1149e1bbe6bcdb34b98aca19d215c412, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
