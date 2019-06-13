@@ -4782,7 +4782,7 @@ Transform:
   m_GameObject: {fileID: 7890298737052005264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 8559574987374681717}
   m_Father: {fileID: 5225818737154169935}
@@ -4916,16 +4916,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5225818737154169935}
     m_Modifications:
-    - target: {fileID: 7819255574690560912, guid: 75216465cf0c34072b89699bed961654,
-        type: 3}
-      propertyPath: m_Name
-      value: Billboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819255574690560912, guid: 75216465cf0c34072b89699bed961654,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7819255574690560943, guid: 75216465cf0c34072b89699bed961654,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5045,6 +5035,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819255574690560912, guid: 75216465cf0c34072b89699bed961654,
+        type: 3}
+      propertyPath: m_Name
+      value: Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819255574690560912, guid: 75216465cf0c34072b89699bed961654,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75216465cf0c34072b89699bed961654, type: 3}

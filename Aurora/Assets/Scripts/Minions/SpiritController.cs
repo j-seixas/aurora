@@ -8,6 +8,8 @@ public class SpiritController : MonoBehaviour {
 
     private float isCollectableCountdown = 2.0f;
 
+    private int healthBonus = 20;
+
     void Start() {
         this.player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -27,6 +29,7 @@ public class SpiritController : MonoBehaviour {
             // Collect spirit.
             if (distance >= 0.0f && distance < 0.50f) {
                 this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Spirits, 1);
+                this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, healthBonus);
                 ObjectPooler.SharedInstance.FreePooledObject(this.gameObject);
             }
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 1.5f / distance);
