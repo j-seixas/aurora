@@ -68,11 +68,20 @@ public class PlayerController : MonoBehaviour {
     }
 
     private IEnumerator PlayDeathAnimation () {
-        Animator animator = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Animator> ();
-        animator.SetBool ("IsDead", true);
-        this.AdjustDeathPostProcessing ();
+        Animator animator = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Animator>();
+        animator.SetBool("IsDead", true);
+        this.AdjustDeathPostProcessing();
 
-        yield return new WaitForSeconds (1);
+        // Slow motion on death.
+        Time.timeScale = 0.5f;
+
+        // Stop current wave timer.
+        GameObject.FindGameObjectWithTag("WaveFactory").GetComponent<WaveFactory>().StopTimer();
+
+        yield return new WaitForSeconds(5);
+
+        // Send player to main menu.
+        SceneManager.LoadScene(0);
     }
 
     public bool IsDead () =>
@@ -152,9 +161,9 @@ public class PlayerController : MonoBehaviour {
         this.canvas.UpdateCooldownStatus ();
 
         if (health <= 0) {
-            StartCoroutine (this.PlayDeathAnimation ());
+            StartCoroutine (this.PlayDeathAnimation());
+            return;
         }
-        //SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex);
 
         // Process inputs.
         if (Input.GetButtonDown ("Attack")) {
@@ -204,6 +213,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate () {
+        if (this.IsDead()) {
+            return;
+        }
+
         HandlePlayerMovement ();
         Vector3 currPos = gameObject.transform.position;
         if (currPos == this.lastPos) {
