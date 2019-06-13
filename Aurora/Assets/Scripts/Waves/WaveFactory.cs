@@ -49,6 +49,7 @@ public class WaveFactory : MonoBehaviour {
             GameObject wave = Instantiate(waveController, Vector3.zero, Quaternion.identity);
             wave.GetComponent<WaveController>().Setup(setting);
             this.waves.Add(wave);
+            
         });
     }
 
@@ -63,7 +64,8 @@ public class WaveFactory : MonoBehaviour {
         this.DespawnUpgrades(this.spawnedObjs);
 
         // Enable the next wave.
-        this.waves[0].SetActive(true); 
+        this.waves[0].SetActive(true);
+        PlayWaveSound(); 
 
         // Restore shield charges on wave change.
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeUpgrade>().RestoreActiveCharges();
@@ -105,4 +107,9 @@ public class WaveFactory : MonoBehaviour {
 
     public bool IsShoppingPhase() =>
         !this.waves.Exists(wave => wave.activeSelf);
+    
+    public void PlayWaveSound() {
+        AudioManager.Instance.PlaySFX("wave_info");
+        Debug.Log("wave sfx");
+    }
 }

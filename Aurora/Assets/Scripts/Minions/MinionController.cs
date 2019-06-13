@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public abstract class MinionController : MonoBehaviour {
     public float lookRadius = 10f;
 
+    public float areaOfSight = 50;
     public float speed = 10f;
     public float range = 3f;
     public int damage = 1;
     public float spawnTime = 2f;
+
 
     public float flashAnimDuration;
     public Material hitFlashMaterial;
@@ -71,7 +73,7 @@ public abstract class MinionController : MonoBehaviour {
         }
         if(agent.velocity != Vector3.zero){
             lastVelocity = agent.velocity;
-           // PlaySoundWalking();  //sound effect of minion walking
+           PlaySoundWalking();  //sound effect of minion walking
         }
 
     }
@@ -182,12 +184,12 @@ public abstract class MinionController : MonoBehaviour {
 
     void PlaySoundWalking(){
         System.Random rand = new System.Random();
-        AudioManager.Instance.PlaySFX("walking" + rand.Next(1, 7) ); //aurora sound
+        AudioManager.Instance.PlaySFX("walking" + rand.Next(1, 7),transform ); //aurora sound
     }
     
     void PlaySoundHurt(){
         System.Random rand = new System.Random();
-        AudioManager.Instance.PlaySFX("minion_hurt_" + rand.Next(1, 3) ); //aurora sound
+        AudioManager.Instance.PlaySFX("minion_hurt_" + rand.Next(1, 3),transform); //aurora sound
     }         
 
     public abstract bool Attack ();

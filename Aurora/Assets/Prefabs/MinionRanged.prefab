@@ -652,7 +652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed70b16163432e66a99389f6d7881c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 50
+  lookRadius: 20
+  lineOfSight: 10
   speed: 10
   range: 15
   damage: 30

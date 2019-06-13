@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour {
 
     public void UpdateAttribute (GameManager.Attributes attr, int inc) {
         if (attr == GameManager.Attributes.Health) {
-
+            return;
             // Check whether the player has shield charges.
             // If so, reduce a charge and don't deal damage.
             LifeUpgrade lifeUpgradeScript = GetComponentInChildren<LifeUpgrade> ();
@@ -262,8 +262,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void PlaySoundAttack (string i) {
-        AudioManager.Instance.PlaySFX ("aurora_grunt_" + i); //aurora sound
-        AudioManager.Instance.PlaySFX ("Attack" + i); //scythe sound
+        AudioManager.Instance.PlaySFX ("aurora_grunt_" + i,transform); //aurora sound
+        AudioManager.Instance.PlaySFX ("Attack" + i,transform); //scythe sound
     }
 
     void PlaySoundHurt () {
@@ -275,6 +275,6 @@ public class PlayerController : MonoBehaviour {
         }
         this.hurtSfx = aux;
 
-        AudioManager.Instance.PlaySFX ("aurora_hurt_" + this.hurtSfx); //aurora sound
+        AudioManager.Instance.PlaySFX ("aurora_hurt_" + this.hurtSfx,transform); //aurora sound
     }
 }
