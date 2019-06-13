@@ -86,7 +86,7 @@ public class HUDUpdater : MonoBehaviour {
 
         switch (type) {
             case "Fire":
-                passive = "-- Muspellheim's Rune (Passive) --\nAurora imbues her scythe with a fire rune, inflicting burn damage over time.\n";
+                passive = "- Muspellheim's Rune (Passive) -\nAurora imbues her scythe with a fire rune, inflicting burn damage over time.\n";
                 active = "- Muspellheim's Demise (Active) -\nAurora unleashes a burning ring of fire, burning any minion in the surrounding area.";
                 break;
             case "Ice":
