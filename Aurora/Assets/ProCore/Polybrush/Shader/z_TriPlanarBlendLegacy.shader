@@ -1,12 +1,7 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced '_Object2World' with '_Object2World'
-
 // define Z_TEXTURE_CHANNELS 4
-// define Z_MESH_ATTRIBUTES UV3
+// define Z_MESH_ATTRIBUTES 
 // Important!  This is a generated file, any changes will be overwritten
-// when the _SfTexBlendSrc suffixed version of this shader is modified.
+// when the _SfSrc suffixed version of this shader is modified.
 
 
 Shader "Polybrush/TriPlanar Blend Legacy" {
