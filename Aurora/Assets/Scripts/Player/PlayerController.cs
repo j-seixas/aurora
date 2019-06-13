@@ -188,6 +188,11 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown ("Ability")) {
             if (this.active != -1) this.upgrades[this.active].Active ();
         }
+
+        if(Input.GetButtonDown("Jump") && !animator.GetCurrentAnimatorStateInfo(0).IsName("Jump")){
+            rb.AddForce(new Vector3(0,60,0),ForceMode.Impulse);
+            animator.SetTrigger("Jump");
+        }
     }
 
     public void UnlockUpgrade (string upTag) {
