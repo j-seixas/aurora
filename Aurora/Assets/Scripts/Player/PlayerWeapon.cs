@@ -12,7 +12,7 @@ public class PlayerWeapon : MonoBehaviour {
    
 
     public void DealDamage(GameObject minion, int damage, bool applyBurn, bool applySlow) {
-        if(damage == 0) damage = this.attackDamage;
+        if (damage == 0) damage = this.attackDamage;
         MinionController minionController=  minion.GetComponent<MinionController>();
         minionController.ReceiveDamage(damage);
         minionController.SimpleKnockBack(this.knockbackForce);
