@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour {
 
         HandlePlayerMovement ();
         Vector3 currPos = gameObject.transform.position;
-        if (currPos == this.lastPos) {
+        if (Vector3.Distance(currPos, this.lastPos) < 0.1f) {
             this.animator.SetBool ("isMoving", false);
         } else {
             this.animator.SetBool ("isMoving", true);
