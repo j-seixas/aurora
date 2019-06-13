@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -283,6 +283,76 @@ PrefabInstance:
     - target: {fileID: 5915948185657438039, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[21].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[22].name
+      value: menu_sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e12940e03766e6063b201e7d7c7921c6, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[22].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[22].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfx.Array.data[22].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: music.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a740edb85cf37041da1d15d8284e0ba9, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: music.Array.data[1].name
+      value: MenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: sfxVolume
+      value: 0.833
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: music.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e12940e03766e6063b201e7d7c7921c6, type: 3}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: music.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: music.Array.data[0].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915948185657438038, guid: 6d354ebff8ee5ae45ab01f7e6f3a5ea8,
+        type: 3}
+      propertyPath: music.Array.data[2].loop
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
