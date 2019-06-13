@@ -17,8 +17,11 @@ public class WaveFactory : MonoBehaviour {
         public string name;
         public float remainingTime;
         public List<MinionSettings> minionSettings;
+        public bool shockwaveIsActive, projectileIsActive;
 
-        public Settings(string name, int minMelee, int minRanged, float freqMelee, float freqRanged, float spawnMelee, float spawnRanged, float remainingTime) {
+        public Settings(string name, int minMelee, int minRanged, float freqMelee, float freqRanged, float spawnMelee, float spawnRanged, float remainingTime, bool shockwaveIsActive, bool projectileIsActive) {            
+            this.shockwaveIsActive = shockwaveIsActive;
+            this.projectileIsActive = projectileIsActive;
             this.name = name;
             this.remainingTime = remainingTime;
             this.minionSettings = new List<MinionSettings>();
@@ -58,6 +61,12 @@ public class WaveFactory : MonoBehaviour {
         if (waves.Count == 0) {
             return;
         }
+
+        BossController boss = GameObject.FindGameObjectWithTag("Mountain").GetComponent<BossController>();
+        Settings settings = this.waves[0].GetComponent<WaveController>().settings;
+        
+        boss.SetBehaviourState("ProjectileSpawner", settings.projectileIsActive);
+        boss.SetBehaviourState("ShockwaveSpawner", settings.shockwaveIsActive);
         
         // Despawn any upgrade gems that might be active somewhere on the scene.
         this.spawnPoints[0].GetComponentsInParent<Collider>(true)[0].enabled = false;
