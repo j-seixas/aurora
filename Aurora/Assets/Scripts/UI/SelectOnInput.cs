@@ -29,9 +29,11 @@ public class SelectOnInput : MonoBehaviour {
             Text[] children = selectedObject.GetComponentsInChildren<Text> (true);
 
             for (int i = 0; i < children.Length; i++) {
-                if (children[i].name == "ArrowText")
+                if (children[i].name == "ArrowText"){
                     children[i].gameObject.SetActive (true);
+                }       
             }
+
         }
 
         if (Input.GetButtonDown ("Submit")) {
@@ -43,9 +45,17 @@ public class SelectOnInput : MonoBehaviour {
                 SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex - 1);
             }
         }
+
+        if(Input.GetKeyDown("up") || Input.GetKeyDown("down")){
+            PlayNavigationSound();
+        }
     }
 
     public void setSelected () {
         eventSystem.SetSelectedGameObject (selectedObject);
+    }
+
+     public void PlayNavigationSound() {
+        AudioManager.Instance.PlaySFX("menu_nav");
     }
 }
