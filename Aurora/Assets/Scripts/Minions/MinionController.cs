@@ -37,6 +37,8 @@ public abstract class MinionController : MonoBehaviour {
     private bool isSlowed = false;
     public bool isInSpawnCooldown = true;
 
+    public ParticleSystem deathParticleSystem;
+
     protected void Start () {
         agent = GetComponent<NavMeshAgent> ();
         anim = GetComponent<Animator> ();
@@ -54,9 +56,11 @@ public abstract class MinionController : MonoBehaviour {
     protected void Update () {
         if (health <= 0) {
             // Stop coroutine and reset material
-            if(this.coroutine != null) StopCoroutine (this.coroutine);
+            if (this.coroutine != null) StopCoroutine (this.coroutine);
             this.renderer.material = this.originalMat;
             this.renderer.material.color = this.originalColor;
+
+            Instantiate(this.deathParticleSystem, transform.position, Quaternion.Euler(-90, 0, 0));
             
             AudioManager.Instance.PlaySFX("minion_dying");  //sound effect of minion dying
 
@@ -72,10 +76,6 @@ public abstract class MinionController : MonoBehaviour {
            PlaySoundWalking();  //sound effect of minion walking
         }
 
-    }
-
-    private void FixedUpdate() {
-        
     }
 
     protected void OnDisable () {
