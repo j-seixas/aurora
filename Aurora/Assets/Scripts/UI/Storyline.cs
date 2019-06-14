@@ -23,4 +23,8 @@ public class Storyline : MonoBehaviour {
             yield return null;
         }
     }
+
+    public void PlayMainTheme() {
+        AudioManager.Instance.PlayMusic("MainTheme");
+    }
 }
