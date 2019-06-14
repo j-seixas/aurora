@@ -53,6 +53,22 @@ public abstract class Upgrade : MonoBehaviour {
     public void SetActive (bool state) {
         this.active = state;
         GameObject.FindGameObjectWithTag ("Canvas").GetComponent<HUDUpdater> ().UpdatePowerUp (this.type, this.active);
+
+        if (this.type == Type.Fire) {
+            if (state) {
+                GameObject.Find("ScytheFireParticleEffect").GetComponent<ParticleSystem>().Play();
+            } else {
+                GameObject.Find("ScytheFireParticleEffect").GetComponent<ParticleSystem>().Stop();
+            }
+        }
+
+        if (this.type == Type.Ice) {
+            if (state) {
+                GameObject.Find("ScytheSnowParticleEffect").GetComponent<ParticleSystem>().Play();
+            } else {
+                GameObject.Find("ScytheSnowParticleEffect").GetComponent<ParticleSystem>().Stop();
+            }
+        }
     }
 
     protected IEnumerator ElapseActiveCooldown (float cooldown) {
