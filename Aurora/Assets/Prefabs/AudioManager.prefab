@@ -46,193 +46,199 @@ MonoBehaviour:
   sfx:
   - name: Attack1
     clip: {fileID: 8300000, guid: 0666c11ee5947b65ab28b5d25a237ee9, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Attack2
     clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Attack3
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Dash
     clip: {fileID: 8300000, guid: 92d96a97ab297f0e4a4c2e3f3c750653, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_grunt_1
     clip: {fileID: 8300000, guid: 08dbf39e820c8dd4ea5f0e50e933b5c7, type: 3}
-    volume: 0.666
+    volume: 0.8
     pitch: 1.09
     loop: 0
     source: {fileID: 0}
   - name: aurora_grunt_2
     clip: {fileID: 8300000, guid: df544bbbe74cb9744884bcbd140ef138, type: 3}
-    volume: 0.666
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_grunt_3
     clip: {fileID: 8300000, guid: fbaa6618502fc6d4392582283142e689, type: 3}
-    volume: 0.666
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_1
     clip: {fileID: 8300000, guid: 5b2b1a7c17af30041abd326755c4e48f, type: 3}
-    volume: 0.666
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_2
     clip: {fileID: 8300000, guid: 59fddd91b331a0241b7e13151d4e72a8, type: 3}
-    volume: 0.666
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_3
     clip: {fileID: 8300000, guid: d478ab36cf1391d44a311143e5b1b953, type: 3}
-    volume: 0.666
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: walking1
     clip: {fileID: 8300000, guid: a4604a2d450497f4d8d332af260b8cb8, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: walking2
     clip: {fileID: 8300000, guid: 67fc2326642445a428789420fac00780, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: walking3
     clip: {fileID: 8300000, guid: 40030555ae2408a4383c6fcae829c233, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: walking4
     clip: {fileID: 8300000, guid: 185ab4ca3856f8d47844ed82a507abfa, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: walking5
     clip: {fileID: 8300000, guid: 7612ed3cb1211ed4fb86d0313a9709be, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: walking6
     clip: {fileID: 8300000, guid: 1c0398f6352221a48b2282db7da78a51, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: minion_hurt_1
     clip: {fileID: 8300000, guid: e642160a905358b44b6942a680cf62ee, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: minion_hurt_2
     clip: {fileID: 8300000, guid: f5ffd834ba4989343abf0011c997ca33, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: minion_dying
     clip: {fileID: 8300000, guid: 9923d9cff304fd4ec99d80d38cb741f1, type: 3}
-    volume: 0.807
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: wave_info
     clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: menu_nav
     clip: {fileID: 8300000, guid: 3c57d09474e31d967b8c956c13d00115, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: wave_info
     clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: minion_attack_head
     clip: {fileID: 8300000, guid: 03fad8989278d3e788bd6a103f5d85fe, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: minion_projectil
     clip: {fileID: 8300000, guid: 98c315998b819409aa75b014e4dddf10, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: "minion_projectil_hit\x13"
     clip: {fileID: 8300000, guid: 4b89c7f81384df1f6a9f257bba247379, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: fire_ring
     clip: {fileID: 8300000, guid: 40f413de580c2a07dabf3c3fa45f152b, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: fire_burn
     clip: {fileID: 8300000, guid: 198ddfb2bb44b27cbaf899f4cd32dc82, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ice_root
     clip: {fileID: 8300000, guid: eb054bc74e1d8ada1b86114efab0edc7, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ice_volley
     clip: {fileID: 8300000, guid: a259132a9775df9479ee2c6239a1dcaa, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: shield
     clip: {fileID: 8300000, guid: f90e46c08d8b3a4e1ac36fc950c39957, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: upgrade
     clip: {fileID: 8300000, guid: 13a42de5b4c5e47a7b9667a88a513b63, type: 3}
-    volume: 0.839
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: mountain_wave
     clip: {fileID: 8300000, guid: a03b0daeade5cab6dac2f9e798dce97d, type: 3}
-    volume: 0.839
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: projectil
+    clip: {fileID: 8300000, guid: e8a60a25d6ce02d89956ff7a88437d4d, type: 3}
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -279,5 +285,5 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  sfxVolume: 0.833
+  sfxVolume: 1
   musicVolume: 1
