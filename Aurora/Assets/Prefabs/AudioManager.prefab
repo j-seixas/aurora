@@ -259,7 +259,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a740edb85cf37041da1d15d8284e0ba9, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: BattleMusicLoop
     clip: {fileID: 8300000, guid: ed10defc3e33c8bb687b6a25e6361e30, type: 3}
@@ -277,7 +277,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5790ed74266e25a21a5bcb9ac8475aa0, type: 3}
     volume: 0.496
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: MainTheme
     clip: {fileID: 8300000, guid: 1976ce24b1ee5cf6797a5d704f91526a, type: 3}
