@@ -4,42 +4,26 @@ using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
-    public Material blackSkybox;
-    public Cubemap blackCubemap;
-
-
-    private Material normalSkybox;
-
-    private Cubemap normalCubemap;
+   
+    public Animator animator;
     // Start is called before the first frame update
-    void Start()
-    {
-        normalSkybox = RenderSettings.skybox;
-        normalCubemap = RenderSettings.customReflection;
-    }
 
     private void Update() {
         if(GetComponent<Collider>().enabled == false){
-            RenderSettings.skybox = normalSkybox;
-            RenderSettings.customReflection = normalCubemap;
-            DynamicGI.UpdateEnvironment();
+           animator.SetBool("IsShopping",false);
         }
     }
 
     private void OnTriggerEnter(Collider other) {
        
         if(other.tag == "PlayerBody"){
-            RenderSettings.skybox = blackSkybox;
-            RenderSettings.customReflection = blackCubemap;
-            DynamicGI.UpdateEnvironment();
+           animator.SetBool("IsShopping",true);
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if(other.tag == "PlayerBody"){
-            RenderSettings.skybox = normalSkybox;
-            RenderSettings.customReflection = normalCubemap;
-            DynamicGI.UpdateEnvironment();
+          animator.SetBool("IsShopping",false);
         }
     }
 
