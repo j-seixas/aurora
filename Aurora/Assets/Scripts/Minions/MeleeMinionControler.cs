@@ -6,16 +6,9 @@ using static MinionController;
 
 public class MeleeMinionControler : MinionController {
     
-    public override bool Attack(){
-        //Debug.Log("Attack melee");
-        //StartCoroutine(timeout());
-        //Debug.Log(this.damage);
-        //THIS IS ONLY UNTIL MINION HAS A WEAPON OR SOMETHING
-        //NOT CHECKING IF ATTACK HITS
-        
+    public override bool Attack(){       
         GameObject.FindWithTag("Player").GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, -this.damage);
         AudioManager.Instance.PlaySFX("minion_attack_head"); //aurora sound
         return false;
-        
     }
 }

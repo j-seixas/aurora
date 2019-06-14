@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WaveFactory : MonoBehaviour {
-    public GameObject waveController;
+    public GameObject waveController, WaveUI;
     public List<Settings> settings = new List<Settings>();
     private List<GameObject> waves = new List<GameObject>();
 
@@ -67,8 +66,9 @@ public class WaveFactory : MonoBehaviour {
             return;
         }
 
-        if (this.waves.Count == 0) {
-            SceneManager.LoadScene(0);
+
+        if (waves.Count == 0) {
+            WaveUI.SetActive(false);
             return;
         }
 
@@ -87,8 +87,12 @@ public class WaveFactory : MonoBehaviour {
     public void NextWave() {
         this.isInIdlePhase = false;
 
+        if(!WaveUI.activeSelf)
+            WaveUI.SetActive(true);
+
         // Only ask for the next wave if it's not the last one.
         if (waves.Count == 0) {
+            WaveUI.SetActive(false);
             return;
         }
 

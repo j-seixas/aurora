@@ -82,7 +82,6 @@ public abstract class Upgrade : MonoBehaviour {
         int balance = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerController> ().GetAttribute (GameManager.Attributes.Spirits);
 
         if (balance < this.spiritCostByLevel[this.level]) {
-            Debug.Log ("Not enough balance!");
             return false;
         }
 

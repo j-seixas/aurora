@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DissolveController : MonoBehaviour {
     public float animationSpeed = 0.01f;
     public Camera cinematicCamera, playerCamera;

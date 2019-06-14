@@ -39,17 +39,14 @@ public class PlayerDash : MonoBehaviour {
         int currStamina = player.GetAttribute(GameManager.Attributes.Stamina);
 
         if (this.isDashing) {
-            Debug.Log("Already dashing!");
             return;
         }
 
         if (currStamina - this.dashCost < 0) {
-            Debug.Log("Not enough stamina!");
             return;
         }
 
         if (this.dashCooldownTime > 0) {
-            Debug.Log("Dash still in cooldown!");
             return;
         }
 

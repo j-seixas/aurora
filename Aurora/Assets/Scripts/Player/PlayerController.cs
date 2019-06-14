@@ -149,7 +149,6 @@ public class PlayerController : MonoBehaviour {
 
         upgrades[index].SetActive (true);
         this.active = index;
-        Debug.Log ("Selected " + upgrades[index].tag + " upgrade.");
     }
 
     void Update () {
