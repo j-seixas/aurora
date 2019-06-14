@@ -88,6 +88,8 @@ public abstract class Upgrade : MonoBehaviour {
 
         this.level++;
 
+        AudioManager.Instance.PlaySFX("upgrade"); //upgrade sound effect
+
         // Decrement the spirits and update the HUD accordingly.
         GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerController> ().UpdateAttribute (GameManager.Attributes.Spirits, -this.spiritCostByLevel[this.level - 1]);
         GameObject.FindGameObjectWithTag ("Canvas").GetComponent<HUDUpdater> ().LevelUpgradeElement (this.type, this.level);

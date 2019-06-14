@@ -206,6 +206,30 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: ice_root
+    clip: {fileID: 8300000, guid: eb054bc74e1d8ada1b86114efab0edc7, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ice_volley
+    clip: {fileID: 8300000, guid: a259132a9775df9479ee2c6239a1dcaa, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shield
+    clip: {fileID: 8300000, guid: f90e46c08d8b3a4e1ac36fc950c39957, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: upgrade
+    clip: {fileID: 8300000, guid: 13a42de5b4c5e47a7b9667a88a513b63, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   music:
   - name: BattleMusic
     clip: {fileID: 8300000, guid: 498179e327bb99624a69d0de0b2babe5, type: 3}

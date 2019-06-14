@@ -50,6 +50,7 @@ public class LifeUpgrade : Upgrade {
 
     public void BreakShield() {
         if (this.shields.Count > 0) {
+            AudioManager.Instance.PlaySFX("shield"); // shield breaking sound effect
             Destroy(this.shields[0]);
             this.shields.RemoveAt(0);
         } 
