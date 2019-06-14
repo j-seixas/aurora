@@ -90,6 +90,8 @@ public class BossController : MonoBehaviour {
         this.cameraLevelEnd.GetComponent<Camera>().enabled = false;
         this.cameraWaveEnd.GetComponent<Camera>().enabled = true;
 
+        AudioManager.Instance.PlaySFX("mountain_wave"); // sound effect
+
         particles.Play();
         this.cameraWaveEnd.GetComponent<Animator>().SetBool("PlayCinematic", true);
         

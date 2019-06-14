@@ -99,7 +99,8 @@ public class WaveFactory : MonoBehaviour {
         // Enable the next wave.
         this.waves[0].SetActive(true);
         PlayWaveSound();
-        PlayBattleMusic(); 
+        if(waves.Count == 5)
+            PlayBattleMusic(); 
 
         // Restore shield charges on wave change.
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeUpgrade>().RestoreActiveCharges();

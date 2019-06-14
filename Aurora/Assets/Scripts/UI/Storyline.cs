@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Storyline : MonoBehaviour {
 
     void Start(){
+        PlayMainTheme();
         StartCoroutine(LoadGameAsync());
     }
 
@@ -22,5 +23,9 @@ public class Storyline : MonoBehaviour {
         while (!asyncLoad.isDone) {
             yield return null;
         }
+    }
+
+    public void PlayMainTheme() {
+        AudioManager.Instance.PlayMusic("MainTheme");
     }
 }
