@@ -230,6 +230,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: mountain_wave
+    clip: {fileID: 8300000, guid: a03b0daeade5cab6dac2f9e798dce97d, type: 3}
+    volume: 0.839
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   music:
   - name: BattleMusic
     clip: {fileID: 8300000, guid: 498179e327bb99624a69d0de0b2babe5, type: 3}
