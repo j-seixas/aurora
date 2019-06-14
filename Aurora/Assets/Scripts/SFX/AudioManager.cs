@@ -57,6 +57,13 @@ public class AudioManager : MonoBehaviour {
         activeSource.Play ();
     }
 
+    public float MusicLength (string name) {
+        Sound s = Array.Find (music, sound => sound.name == name); 
+        if (s == null)
+            return 0;
+        return s.clip.length;
+    }
+
     public void PlayMusicWithFade (string name, float transitionTime = 1.0f) {
         AudioSource activeSource = isMusic1Source ? music1 : music2;
         Sound s = Array.Find (music, sound => sound.name == name);

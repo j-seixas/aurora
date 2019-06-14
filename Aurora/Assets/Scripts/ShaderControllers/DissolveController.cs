@@ -52,4 +52,8 @@ public class DissolveController : MonoBehaviour {
     public void PlaySoundEffect(){
         audioSource.Play();
     }
+
+    public void PlayVictoryMusic(){
+        AudioManager.Instance.PlayMusic("Victory");
+    }
 }
