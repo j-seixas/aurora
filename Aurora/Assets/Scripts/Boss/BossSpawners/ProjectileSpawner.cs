@@ -58,6 +58,7 @@ public class ProjectileSpawner : MonoBehaviour {
 
         //Destroy(bull, 0.0f);
         this.isOnAir = false;
+        AudioManager.Instance.PlaySFX("projectil",proj.transform); // hitting the ground sound effect
         Destroy(proj, 1.0f);
     }
 
