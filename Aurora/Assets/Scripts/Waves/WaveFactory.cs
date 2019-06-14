@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WaveFactory : MonoBehaviour {
@@ -63,6 +64,11 @@ public class WaveFactory : MonoBehaviour {
 
     private void Update() {
         if (this.isInIdlePhase) {
+            return;
+        }
+
+        if (this.waves.Count == 0) {
+            SceneManager.LoadScene(0);
             return;
         }
 
