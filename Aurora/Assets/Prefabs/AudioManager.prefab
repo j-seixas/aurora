@@ -180,7 +180,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 03fad8989278d3e788bd6a103f5d85fe, type: 3}
     volume: 0.839
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: minion_projectil
     clip: {fileID: 8300000, guid: 98c315998b819409aa75b014e4dddf10, type: 3}
@@ -267,11 +267,17 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: MainTheme
-    clip: {fileID: 8300000, guid: 1976ce24b1ee5cf6797a5d704f91526a, type: 3}
-    volume: 0.57
+  - name: Ambience
+    clip: {fileID: 8300000, guid: 5790ed74266e25a21a5bcb9ac8475aa0, type: 3}
+    volume: 0.496
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  sfxVolume: 0.819
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: 1976ce24b1ee5cf6797a5d704f91526a, type: 3}
+    volume: 0.496
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  sfxVolume: 0.833
   musicVolume: 1

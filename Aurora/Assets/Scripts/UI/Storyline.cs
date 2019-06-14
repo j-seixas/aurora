@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Storyline : MonoBehaviour {
 
     void Start(){
+        PlayMainTheme();
         StartCoroutine(LoadGameAsync());
     }
 
