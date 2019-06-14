@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour {
         // Start regenerating health and stamina.
         //InvokeRepeating ("RegenerateHealth", this.healthRegenRate, this.healthRegenRate);
         InvokeRepeating ("RegenerateStamina", this.staminaRegenRate, this.staminaRegenRate);
+        PlayAmbience();
     }
 
     private void AdjustDeathPostProcessing () {
@@ -277,5 +278,9 @@ public class PlayerController : MonoBehaviour {
 
     void PlayDeathSound() {
         AudioManager.Instance.PlayMusic("DeathMusic");
+    }
+
+    void PlayAmbience() {
+        AudioManager.Instance.PlayMusic("Ambience");
     }
 }
