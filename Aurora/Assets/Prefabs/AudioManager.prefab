@@ -172,63 +172,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: wave_info
     clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
-    volume: 0.839
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: minion_attack_head
-    clip: {fileID: 8300000, guid: 03fad8989278d3e788bd6a103f5d85fe, type: 3}
-    volume: 0.839
+  - name: menu_sound
+    clip: {fileID: 8300000, guid: e12940e03766e6063b201e7d7c7921c6, type: 3}
+    volume: 1
     pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: minion_projectil
-    clip: {fileID: 8300000, guid: 98c315998b819409aa75b014e4dddf10, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: "minion_projectil_hit\x13"
-    clip: {fileID: 8300000, guid: 4b89c7f81384df1f6a9f257bba247379, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: fire_ring
-    clip: {fileID: 8300000, guid: 40f413de580c2a07dabf3c3fa45f152b, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: fire_burn
-    clip: {fileID: 8300000, guid: 198ddfb2bb44b27cbaf899f4cd32dc82, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ice_root
-    clip: {fileID: 8300000, guid: eb054bc74e1d8ada1b86114efab0edc7, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: ice_volley
-    clip: {fileID: 8300000, guid: a259132a9775df9479ee2c6239a1dcaa, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: shield
-    clip: {fileID: 8300000, guid: f90e46c08d8b3a4e1ac36fc950c39957, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: upgrade
-    clip: {fileID: 8300000, guid: 13a42de5b4c5e47a7b9667a88a513b63, type: 3}
-    volume: 0.839
-    pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   music:
   - name: BattleMusic
@@ -237,11 +189,11 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: DeathMusic
-    clip: {fileID: 8300000, guid: 28dc2a7cbc60c6c9ea9af62705e5ff29, type: 3}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: a740edb85cf37041da1d15d8284e0ba9, type: 3}
     volume: 0.692
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: MenuMusic
     clip: {fileID: 8300000, guid: a740edb85cf37041da1d15d8284e0ba9, type: 3}
@@ -265,7 +217,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1976ce24b1ee5cf6797a5d704f91526a, type: 3}
     volume: 0.57
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Ambience
     clip: {fileID: 8300000, guid: 5790ed74266e25a21a5bcb9ac8475aa0, type: 3}
@@ -273,5 +225,5 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  sfxVolume: 0.819
+  sfxVolume: 0.833
   musicVolume: 1
