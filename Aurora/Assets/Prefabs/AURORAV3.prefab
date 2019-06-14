@@ -11301,8 +11301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
   PlayerBody: {fileID: 1811778937451232768}
-  dashForce: 25
-  dashDuration: 0.1
+  dashForce: 35
+  dashDuration: 0.15
   dashCooldown: 0.2
   dashGracePeriod: 1
   dashCost: 25
@@ -22013,11 +22013,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4339708016214006353}
     m_Modifications:
-    - target: {fileID: 3845848621976023365, guid: 7fb1358690f33c443adb380d128874e8,
-        type: 3}
-      propertyPath: m_Name
-      value: ScytheFireParticleEffect
-      objectReference: {fileID: 0}
     - target: {fileID: 4353273925755294673, guid: 7fb1358690f33c443adb380d128874e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22073,22 +22068,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 254558437295355137, guid: 7fb1358690f33c443adb380d128874e8,
+    - target: {fileID: 3845848621976023365, guid: 7fb1358690f33c443adb380d128874e8,
+        type: 3}
+      propertyPath: m_Name
+      value: ScytheFireParticleEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064825132769514459, guid: 7fb1358690f33c443adb380d128874e8,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 254558437295355137, guid: 7fb1358690f33c443adb380d128874e8,
+    - target: {fileID: 4064825132769514459, guid: 7fb1358690f33c443adb380d128874e8,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4064825132769514459, guid: 7fb1358690f33c443adb380d128874e8,
+    - target: {fileID: 254558437295355137, guid: 7fb1358690f33c443adb380d128874e8,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4064825132769514459, guid: 7fb1358690f33c443adb380d128874e8,
+    - target: {fileID: 254558437295355137, guid: 7fb1358690f33c443adb380d128874e8,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 1
@@ -22118,11 +22118,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4339708016214006353}
     m_Modifications:
-    - target: {fileID: 1734742279500941172, guid: 0caaba665d07e1548899ecbc0f414fd2,
-        type: 3}
-      propertyPath: m_Name
-      value: ScytheSnowParticleEffect
-      objectReference: {fileID: 0}
     - target: {fileID: 3422577729578981739, guid: 0caaba665d07e1548899ecbc0f414fd2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22192,6 +22187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.0111
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734742279500941172, guid: 0caaba665d07e1548899ecbc0f414fd2,
+        type: 3}
+      propertyPath: m_Name
+      value: ScytheSnowParticleEffect
       objectReference: {fileID: 0}
     - target: {fileID: 4830645007531090921, guid: 0caaba665d07e1548899ecbc0f414fd2,
         type: 3}
