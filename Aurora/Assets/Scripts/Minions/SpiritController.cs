@@ -28,8 +28,10 @@ public class SpiritController : MonoBehaviour {
 
             // Collect spirit.
             if (distance >= 0.0f && distance < 0.50f) {
-                this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Spirits, 1);
-                this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, healthBonus);
+                if(this.player.GetComponent<PlayerController>().GetAttribute(GameManager.Attributes.Health) > 0){
+                    this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Spirits, 1);
+                    this.player.GetComponent<PlayerController>().UpdateAttribute(GameManager.Attributes.Health, healthBonus);
+                }
                 ObjectPooler.SharedInstance.FreePooledObject(this.gameObject);
             }
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 100.0f * 1.5f / distance);
