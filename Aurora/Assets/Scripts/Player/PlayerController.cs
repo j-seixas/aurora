@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds(5);
 
         // Send player to main menu.
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
