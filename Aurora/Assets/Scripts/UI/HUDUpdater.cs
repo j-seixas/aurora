@@ -68,7 +68,7 @@ public class HUDUpdater : MonoBehaviour {
     public void UpdatePowerUp (Upgrade.Type type, bool active) {
         if (active) {
             GameObject.Find (type.ToString () + "PowerUp/Image").GetComponent<Image> ().color = new Color32 (255, 255, 255, 255);
-            RectTransform[] canvasChildren = GameObject.Find ("HUDCanvas").GetComponent<Canvas> ().gameObject.GetComponentsInChildren<RectTransform> (true);
+            RectTransform[] canvasChildren = GameObject.Find ("HUD Canvas").GetComponent<Canvas> ().gameObject.GetComponentsInChildren<RectTransform> (true);
             foreach (RectTransform ui in canvasChildren) {
                 if (ui.gameObject.name == "AbilityUI") {
                     RectTransform panel = ui;
