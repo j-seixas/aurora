@@ -46,61 +46,61 @@ MonoBehaviour:
   sfx:
   - name: Attack1
     clip: {fileID: 8300000, guid: 0666c11ee5947b65ab28b5d25a237ee9, type: 3}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Attack2
     clip: {fileID: 8300000, guid: 292eafea810211f16af7f47202ca7e0a, type: 3}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Attack3
     clip: {fileID: 8300000, guid: f891b16445bdf4c1d8862538589ca610, type: 3}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Dash
     clip: {fileID: 8300000, guid: 92d96a97ab297f0e4a4c2e3f3c750653, type: 3}
-    volume: 0.8
+    volume: 0.61
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_grunt_1
     clip: {fileID: 8300000, guid: 08dbf39e820c8dd4ea5f0e50e933b5c7, type: 3}
-    volume: 0.8
+    volume: 0.896
     pitch: 1.09
     loop: 0
     source: {fileID: 0}
   - name: aurora_grunt_2
     clip: {fileID: 8300000, guid: df544bbbe74cb9744884bcbd140ef138, type: 3}
-    volume: 0.8
+    volume: 0.909
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_grunt_3
     clip: {fileID: 8300000, guid: fbaa6618502fc6d4392582283142e689, type: 3}
-    volume: 0.8
+    volume: 0.844
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_1
     clip: {fileID: 8300000, guid: 5b2b1a7c17af30041abd326755c4e48f, type: 3}
-    volume: 0.8
+    volume: 0.87
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_2
     clip: {fileID: 8300000, guid: 59fddd91b331a0241b7e13151d4e72a8, type: 3}
-    volume: 0.8
+    volume: 0.863
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: aurora_hurt_3
     clip: {fileID: 8300000, guid: d478ab36cf1391d44a311143e5b1b953, type: 3}
-    volume: 0.8
+    volume: 0.896
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -142,25 +142,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: minion_hurt_1
     clip: {fileID: 8300000, guid: e642160a905358b44b6942a680cf62ee, type: 3}
-    volume: 0.8
+    volume: 0.935
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: minion_hurt_2
     clip: {fileID: 8300000, guid: f5ffd834ba4989343abf0011c997ca33, type: 3}
-    volume: 0.8
+    volume: 0.935
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: minion_dying
     clip: {fileID: 8300000, guid: 9923d9cff304fd4ec99d80d38cb741f1, type: 3}
-    volume: 0.8
+    volume: 0.761
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: wave_info
     clip: {fileID: 8300000, guid: 6367c2db2f6cde85ba34d0846e6456a0, type: 3}
-    volume: 0.8
+    volume: 0.675
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -184,13 +184,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: minion_projectil
     clip: {fileID: 8300000, guid: 98c315998b819409aa75b014e4dddf10, type: 3}
-    volume: 0.8
+    volume: 0.909
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: "minion_projectil_hit\x13"
     clip: {fileID: 8300000, guid: 4b89c7f81384df1f6a9f257bba247379, type: 3}
-    volume: 0.8
+    volume: 0.902
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -202,13 +202,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: fire_burn
     clip: {fileID: 8300000, guid: 198ddfb2bb44b27cbaf899f4cd32dc82, type: 3}
-    volume: 0.8
+    volume: 0.941
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ice_root
     clip: {fileID: 8300000, guid: eb054bc74e1d8ada1b86114efab0edc7, type: 3}
-    volume: 0.8
+    volume: 0.896
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: upgrade
     clip: {fileID: 8300000, guid: 13a42de5b4c5e47a7b9667a88a513b63, type: 3}
-    volume: 0.8
+    volume: 0.506
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -238,20 +238,20 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: projectil
     clip: {fileID: 8300000, guid: e8a60a25d6ce02d89956ff7a88437d4d, type: 3}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   music:
   - name: BattleMusic
     clip: {fileID: 8300000, guid: 498179e327bb99624a69d0de0b2babe5, type: 3}
-    volume: 0.378
+    volume: 0.213
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: DeathMusic
     clip: {fileID: 8300000, guid: 28dc2a7cbc60c6c9ea9af62705e5ff29, type: 3}
-    volume: 0.692
+    volume: 0.532
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -263,7 +263,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BattleMusicLoop
     clip: {fileID: 8300000, guid: ed10defc3e33c8bb687b6a25e6361e30, type: 3}
-    volume: 0.387
+    volume: 0.213
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Ambience
     clip: {fileID: 8300000, guid: 5790ed74266e25a21a5bcb9ac8475aa0, type: 3}
-    volume: 0.496
+    volume: 0.141
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -286,4 +286,4 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   sfxVolume: 1
-  musicVolume: 1
+  musicVolume: 0.75
