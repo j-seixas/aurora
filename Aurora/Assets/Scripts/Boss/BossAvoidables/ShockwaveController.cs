@@ -24,9 +24,7 @@ public class ShockwaveController : MonoBehaviour {
 
     private void OnParticleTrigger () {
         this.particles.GetTriggerParticles (ParticleSystemTriggerEventType.Enter, this.triggered);
-
         foreach (ParticleSystem.Particle particle in this.triggered) {
-
             if (this.playerDash.IsInDashGracePeriod () || this.playerDash.IsDashing ()) {
                 continue;
             }
