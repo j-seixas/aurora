@@ -32,13 +32,10 @@ public class CameraController : MonoBehaviour {
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch); 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(new Vector3(pitch, yaw, 0f)), cameraRotationSpeed * Time.deltaTime);
         transform.position = target.transform.position - offset.magnitude * transform.forward - Vector3.up * offset.y;
-        //TODO: Slerp vs Lerp, try it at will, probably add to settings?
     }
 
     void Recenter(){
         pitch = target.transform.localEulerAngles.x;
         yaw = target.transform.localEulerAngles.y;
-        //TODO: Try recenter automatically (UNCOMMENT LINE BELOW), probably add to settings?
-        //transform.rotation = Quaternion.Euler(new Vector3(pitch, yaw, 0f));
     }
 }
