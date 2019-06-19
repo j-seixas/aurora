@@ -23,15 +23,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234728412703493616}
-  m_LocalRotation: {x: -0.17883097, y: 0.6841195, z: -0.17883097, w: 0.6841196}
-  m_LocalPosition: {x: -0.00033248673, y: -0.027931299, z: 0.060702257}
+  m_LocalRotation: {x: -0.34398273, y: 0.6177993, z: -0.34398273, w: 0.6177993}
+  m_LocalPosition: {x: -0.00033249, y: -0.007983, z: 0.052608}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children:
   - {fileID: 8546225823772354817}
   - {fileID: 7101500929332723476}
   m_Father: {fileID: 2279633856782409115}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -58.217}
 --- !u!1 &599301248808447982
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,15 +55,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599301248808447982}
-  m_LocalRotation: {x: 0.09890583, y: 0, z: -0, w: 0.9950968}
-  m_LocalPosition: {x: -0, y: -0.02943791, z: -0.009351211}
+  m_LocalRotation: {x: 0.5798501, y: 0, z: 0, w: 0.81472325}
+  m_LocalPosition: {x: -0, y: -0.0046239, z: 0.0045737}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
   m_Children:
   - {fileID: 4758292705105287252}
   - {fileID: 6350427802023013291}
   m_Father: {fileID: 2279633856782409115}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.88, y: 0, z: 0}
 --- !u!1 &698839134404515732
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ Animator:
   m_GameObject: {fileID: 1537893049824109574}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fc171de4afdaa1a488006db7d54e6b12, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 601ed210d15099c4a919af1ad458a835, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -402,6 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redFlashMaterial: {fileID: 2100000, guid: 4340b031ede9a4747af47ae7a1a67642, type: 2}
+  shockwave: {fileID: 0}
+  projectile: {fileID: 0}
   waveFactory: {fileID: 0}
 --- !u!1 &1933062791514443680
 GameObject:
@@ -632,6 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7205249575821443239
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,16 +704,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2525648905351730709}
     m_Modifications:
-    - target: {fileID: 487543491412135761, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
-        type: 3}
-      propertyPath: m_Name
-      value: ProjectileSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 487543491412135761, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 487543491412135775, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -776,6 +769,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 487543491412135761, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
+        type: 3}
+      propertyPath: m_Name
+      value: ProjectileSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 487543491412135761, guid: 194e2f372a2f6ce9fa96acd8ead60d4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194e2f372a2f6ce9fa96acd8ead60d4a, type: 3}
 --- !u!4 &487543491315933517 stripped
@@ -791,11 +794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2525648905351730709}
     m_Modifications:
-    - target: {fileID: 1637525452749363697, guid: 6bad653d9557983d49b14cf0463b6caa,
-        type: 3}
-      propertyPath: m_Name
-      value: RubbleParticleSystem
-      objectReference: {fileID: 0}
     - target: {fileID: 1637525452749363696, guid: 6bad653d9557983d49b14cf0463b6caa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -851,6 +849,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1637525452749363697, guid: 6bad653d9557983d49b14cf0463b6caa,
+        type: 3}
+      propertyPath: m_Name
+      value: RubbleParticleSystem
+      objectReference: {fileID: 0}
     - target: {fileID: 1637525452749363694, guid: 6bad653d9557983d49b14cf0463b6caa,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -886,11 +889,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2525648905351730709}
     m_Modifications:
-    - target: {fileID: 1260675629510801747, guid: 963d1e9051ac1904188a9c0de913ae3f,
-        type: 3}
-      propertyPath: m_Name
-      value: ShockwaveSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 1260675629510801741, guid: 963d1e9051ac1904188a9c0de913ae3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -945,6 +943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260675629510801747, guid: 963d1e9051ac1904188a9c0de913ae3f,
+        type: 3}
+      propertyPath: m_Name
+      value: ShockwaveSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 1260675629510801742, guid: 963d1e9051ac1904188a9c0de913ae3f,
         type: 3}
