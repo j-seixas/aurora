@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed70b16163432e66a99389f6d7881c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 20
+  lookRadius: 40
   areaOfSight: 50
   speed: 10
   range: 12.13
