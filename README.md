@@ -1,6 +1,12 @@
 # Aurora
 🎮 _Aurora_ is a hack and slash game developed for the Computer Games Development course at FEUP.
 
+* [GDD](http://bit.do/Aurora-GDD) 
+* [Source Code](http://bit.do/Aurora-source)
+* [Game Executable](http://bit.do/Aurora-game)
+* [Video](http://bit.do/Aurora-video)
+* [Installation](http://bit.do/Aurora-installation)
+
 ## Premise
 A cloaked figure materializes, eager to create. Traversing the mythical tree of Yggdrasil, shelter of the nine worlds, _Aurora_ harvests the land creatures’ soul essence, cleansing the soil with _Kvöld_, a scythe.
 
