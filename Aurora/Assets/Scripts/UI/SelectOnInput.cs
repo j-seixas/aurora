@@ -48,7 +48,8 @@ public class SelectOnInput : MonoBehaviour {
             else if (selectedObject.name == "StartButton") {
                 SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
             } else if (selectedObject.name == "QuitGameButton") {
-                SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex - 1);
+                Time.timeScale = 1f;
+                SceneManager.LoadScene (0);
             }
         }
 
