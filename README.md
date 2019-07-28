@@ -1,10 +1,10 @@
 # Aurora
-🎮 _Aurora_ is a hack and slash game developed for the Computer Games Development course at FEUP.
+🎮 _Aurora_ is a hack and slash game developed for the Computer Games Development (DJCO) class of the Master in Informatics and Computer Engineering (MIEIC) at the Faculty of Engineering of the University of Porto (FEUP).
 
-* [GDD](http://bit.do/Aurora-GDD) 
+* [Game Design Document](http://bit.do/Aurora-GDD) 
 * [Source Code](http://bit.do/Aurora-source)
 * [Game Executable](http://bit.do/Aurora-game)
-* [Video](http://bit.do/Aurora-video)
+* [Youtube Trailer](https://youtu.be/mE_P_KUOvS8)
 * [Installation](http://bit.do/Aurora-installation)
 
 ## Premise
@@ -63,3 +63,19 @@ _Aurora_ aims to take all these ideas into consideration on our quest to creatin
 We hope the players immerse themselves in our storyline yet the narrative should be ambiguous enough so that the story can be interpreted differently, resulting on unique experiences.
 Moreover, Aurora’s gameplay should feel intuitive and satisfying.
 
+## Credits
+### Game Development
+- Carlos Miguel Freitas, [@CarlosFr97](https://github.com/CarlosFr97)
+- João Conde, [@joao-conde](https://github.com/joao-conde)
+- João Seixas, [@j-seixas](https://github.com/j-seixas)
+- Miguel Mano Fernandes, [@aquelemiguel](https://github.com/aquelemiguel)
+- Sofia Silva, [@literallysofia](https://github.com/literallysofia)
+
+### Sound
+- Luís Correia, [@luigicorreia](https://github.com/luigicorreia)
+- Pedro Reis, [@veryprofessionaldodo](https://github.com/veryprofessionaldodo)
+- Vicente Espinha, [@vicente-espinha](https://github.com/vicente-espinha)
+
+### Graphics
+- Joana Cadeco
+- Rita Ferreira
